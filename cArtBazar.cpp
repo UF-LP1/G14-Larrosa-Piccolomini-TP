@@ -1,10 +1,8 @@
-/**
- * Project Untitled
- */
-
-
 #include "cArtBazar.h"
 
-/**
- * cArtBazar implementation
- */
+cArtBazar::cArtBazar(eArtBazar Tipo, double Precio, const string Medidas) : cProducto(Precio,Medidas) {
+	tipo = Tipo;
+}
+
+cArtBazar::~cArtBazar() {
+}

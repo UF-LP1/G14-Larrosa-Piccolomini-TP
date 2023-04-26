@@ -1,10 +1,8 @@
-/**
- * Project Untitled
- */
-
-
 #include "cArtCerraje.h"
 
-/**
- * cArtCerraje implementation
- */
+cArtCerraje::cArtCerraje(eArtCerraje Tipo, double Precio, const string Medidas) : cProducto(Precio, Medidas) {
+	tipo = Tipo;
+}
+
+cArtCerraje::~cArtCerraje() {
+}

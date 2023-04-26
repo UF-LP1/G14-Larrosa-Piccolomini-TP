@@ -1,63 +1,43 @@
-/**
- * Project Untitled
- */
-
+#include "headers.h"
+#include "cInventario.h"
+#include "cDuenyo.h"
+#include "cPlomero.h"
+#include "cCerrajero.h"
+#include "cDespachante.h"
 
 #ifndef _CFERRETERIA_H
 #define _CFERRETERIA_H
 
+// MATI WAS HERE
+
 class cFerreteria {
-public: 
-    
-/**
- * @param bool
- */
-void setEstado(void bool);
-    
-void abrirLocal();
-    
-void cerrarLocal();
-    
-/**
- * @param double
- */
-void setFondos(void double);
-    
-double getFondos();
-    
-/**
- * @param cDuenyo
- * @param cPlomero
- * @param cCerrajero
- * @param cDespachante
- */
-void pagarSueldos(void cDuenyo, void cPlomero, void cCerrajero, void cDespachante);
-    
-bool chequearStock();
-    
-/**
- * @param double
- * @param int
- * @param int
- * @param int
- * @param int
- * @param int
- * @param int
- */
-bool reestablecerStock(void double, void int, void int, void int, void int, void int, void int);
-private: 
+private:
     const string name;
     const string adress;
     const string telNum;
     const string email;
     const string paginaWeb;
+    cInventario* inventario;
     bool abierta;
-    cListaProductos inventario;
     double fondos;
-    cDuenyo duenyo;
-    cPlomero plomero;
-    cCerrajero cerrajero;
-    cDespachante despachante;
+    cDuenyo* duenyo;
+    cPlomero* plomero;
+    cCerrajero* cerrajero;
+    cDespachante* despachante;
+
+public: 
+    cFerreteria(const string Name, const string Adress, const string TelNum, const string Email, const string PagWeb, bool Estado);
+    ~cFerreteria();
+
+    void setEstado(bool Abierta);
+    void abrirLocal();
+    void cerrarLocal();
+    void setFondos(double Fondos);
+    double getFondos();
+    void pagarSueldos();
+    bool chequearStock();
+    void reestablecerStock();
+
 };
 
 #endif //_CFERRETERIA_H

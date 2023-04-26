@@ -139,7 +139,7 @@
     <ClCompile Include="cDuenyo.cpp" />
     <ClCompile Include="cEmpleado.cpp" />
     <ClCompile Include="cFerreteria.cpp" />
-    <ClCompile Include="cListaProductos.cpp" />
+    <ClCompile Include="cInventario.cpp" />
     <ClCompile Include="cPersona.cpp" />
     <ClCompile Include="cPlomero.cpp" />
     <ClCompile Include="cProducto.cpp" />
@@ -159,7 +159,7 @@
     <ClInclude Include="cDuenyo.h" />
     <ClInclude Include="cEmpleado.h" />
     <ClInclude Include="cFerreteria.h" />
-    <ClInclude Include="cListaProductos.h" />
+    <ClInclude Include="cInventario.h" />
     <ClInclude Include="cPersona.h" />
     <ClInclude Include="cPlomero.h" />
     <ClInclude Include="cProducto.h" />

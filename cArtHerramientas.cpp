@@ -1,10 +1,8 @@
-/**
- * Project Untitled
- */
-
-
 #include "cArtHerramientas.h"
 
-/**
- * cArtHerramientas implementation
- */
+cArtHerramientas::cArtHerramientas(eArtHerramientas Tipo, double Precio, const string Medidas) : cProducto(Precio, Medidas) {
+	tipo = Tipo;
+}
+
+cArtHerramientas::~cArtHerramientas() {
+}

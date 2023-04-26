@@ -1,80 +1,65 @@
-/**
- * Project Untitled
- */
-
-
 #include "cFerreteria.h"
 
-/**
- * cFerreteria implementation
- */
-
-
-/**
- * @param bool
- * @return void
- */
-void cFerreteria::setEstado(void bool) {
-    return;
+// Inicializa la ferreteria pasandoles los strings de datos del local, y si esta abierto o no como booleano,
+// el resto se nulifica para posterior uso
+cFerreteria::cFerreteria(const string Name, const string Adress, const string TelNum, const string Email, const string PagWeb, bool Estado) : name(Name), adress(Adress), telNum(TelNum), email(Email), paginaWeb(PagWeb) {
+    fondos = NULL;
+    abierta = Estado;
+    inventario = nullptr;
+    duenyo = nullptr;
+    plomero = nullptr;
+    cerrajero = nullptr;
+    despachante = nullptr;
 }
 
-/**
- * @return void
- */
+// Va vacio, no hay que hacer ningun delete
+cFerreteria::~cFerreteria() {
+}
+
+// Cambia si esta abierto o cerrado el local
+void cFerreteria::setEstado(bool newEstado) {
+    abierta = newEstado;
+}
+
+// Setea el estado en abierto
 void cFerreteria::abrirLocal() {
+    setEstado(true);
     return;
 }
 
-/**
- * @return void
- */
+// Setea el estado en cerrado
 void cFerreteria::cerrarLocal() {
+    setEstado(false);
     return;
 }
 
-/**
- * @param double
- * @return void
- */
-void cFerreteria::setFondos(void double) {
-    return;
-}
-
-/**
- * @return double
- */
+// Retorna la cantidad de fondos del local
 double cFerreteria::getFondos() {
-    return 0.0;
+    return fondos;
 }
 
-/**
- * @param cDuenyo
- * @param cPlomero
- * @param cCerrajero
- * @param cDespachante
- * @return void
- */
-void cFerreteria::pagarSueldos(void cDuenyo, void cPlomero, void cCerrajero, void cDespachante) {
-    return;
+// Setea el valor de los fondos monetarios del local, pasados por parametro
+void cFerreteria::setFondos(double newFondos) {
+    fondos = newFondos;
 }
 
-/**
- * @return bool
- */
+// Resta los sueldos de cada empleado en parcicular del atributo fondos
+// Puede quedar negativo, significando una deuda
+void cFerreteria::pagarSueldos() {
+    double sumaSueldos = 0.0;
+    setFondos(sumaSueldos);
+}
+
+// Mira el stock de todos los productos
+// Si no falta nada, retorna false (0)
+// Si falta algo, por minimo que sea, retorna true (1)
 bool cFerreteria::chequearStock() {
-    return false;
+    bool flag = false;
+    return flag;
 }
 
-/**
- * @param double
- * @param int
- * @param int
- * @param int
- * @param int
- * @param int
- * @param int
- * @return bool
- */
-bool cFerreteria::reestablecerStock(void double, void int, void int, void int, void int, void int, void int) {
-    return false;
+// Chequea si hay faltante de algun producto (cantidad = 0), y en caso de que si,
+// resta el precio de compra de fondos y reestablece dicha cantidad en en inventario
+void cFerreteria::reestablecerStock() {
+
 }
