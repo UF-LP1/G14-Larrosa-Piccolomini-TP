@@ -171,6 +171,7 @@
     <ClInclude Include="..\archivosUML\eArtFerre.h" />
     <ClInclude Include="..\archivosUML\eHerramCaras.h" />
     <ClInclude Include="..\archivosUML\eTiposPago.h" />
+    <ClInclude Include="headers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
