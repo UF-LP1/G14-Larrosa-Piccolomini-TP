@@ -1,20 +1,9 @@
-/**
- * Project Untitled
- */
-
-
 #include "cDespachante.h"
 
-/**
- * cDespachante implementation
- */
+//creo constructor de despachante
+cDespachante::cDespachante() : cPersona(Dni, Name, Tel, Email, Adress)
+{}
 
-
-/**
- * @param const string
- * @param const string
- * @return bool
- */
 bool cDespachante::entregaDomicilio(void const string, void const string) {
     return false;
 }

@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 
 #ifndef _CDUENYO_H
 #define _CDUENYO_H
@@ -12,27 +8,15 @@
 
 class cDuenyo: public cEmpleado, public cEmpleado {
 public: 
-    void Attribute1;
-    
-/**
- * @param cProducto
- * @param cCliente
- */
+    cDuenyo(const string Dni, const string Name, string Tel, string Email, string Adress)
+    {}
+
 void venderProd(void cProducto, void cCliente);
     
-/**
- * @param cProducto
- */
 void cobrarProd(void cProducto);
-    
-/**
- * @param Recibo
- */
+
 void archivarRecibo(void Recibo);
-    
-/**
- * @param cCliente
- */
+
 void atenderCliente(void cCliente);
 };
 
