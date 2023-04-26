@@ -1,10 +1,7 @@
-/**
- * Project Untitled
- */
-
-
 #include "cPlomero.h"
 
-/**
- * cPlomero implementation
- */
+cPlomero:: cPlomero() : cPersona(Dni, Name, Tel, Email, Adress)
+{}
+
+
+

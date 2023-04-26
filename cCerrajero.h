@@ -1,8 +1,3 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _CCERRAJERO_H
 #define _CCERRAJERO_H
 
@@ -10,23 +5,22 @@
 
 
 class cCerrajero: public cEmpleado {
+
+private:
+    bool autorizacionMag;
+
 public: 
+    cCerrajero(bool autorizacionMag, const string Dni, const string Name, string Tel, string Email, string Adress)
+    {}
     
 cArtCerraje hacerLlave();
-    
-/**
- * @param bool
- */
+ 
 void setAutorizacionMag(void bool);
     
 bool getAutorizacionMag();
     
-/**
- * @param bool
- */
 cArtCerraje hacerLlaveMag(void bool);
-private: 
-    bool atorizacionMag;
+
 };
 
 #endif //_CCERRAJERO_H

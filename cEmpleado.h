@@ -1,6 +1,3 @@
-/**
- * Project Untitled
- */
 
 
 #ifndef _CEMPLEADO_H
@@ -11,23 +8,17 @@
 
 class cEmpleado: public cPersona {
 public: 
+    cEmpleado(const string Dni, const string Name, string Tel, string Email, string Adress, double sueldo)
+    {}
     
-/**
- * @param double
- * @param string
- */
+
 void cEmpleado(void double, void string);
     
 double getSueldo();
-    
-/**
- * @param double
- */
+ 
 void setSueldo(void double);
     
-/**
- * @param double
- */
+
 void cobrarSueldo(void double);
 protected: 
     
