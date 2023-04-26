@@ -1,17 +1,14 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _CARTCERRAJE_H
 #define _CARTCERRAJE_H
 
 #include "cProducto.h"
 
-
 class cArtCerraje: public cProducto {
-private: 
-    eListArtCerraje tipo;
+private:
+    eArtCerraje tipo;
+public:
+    cArtCerraje(eArtCerraje Tipo, double Precio, const string Medidas);
+    ~cArtCerraje();
 };
 
 #endif //_CARTCERRAJE_H

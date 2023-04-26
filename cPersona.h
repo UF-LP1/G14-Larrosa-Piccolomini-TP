@@ -11,9 +11,7 @@ public:
     
 const string getDni();
     
-/**
- * @param string
- */
+
 void setTel(void string);
     
 /**

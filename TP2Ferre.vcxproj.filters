@@ -54,7 +54,7 @@
     <ClCompile Include="cFerreteria.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="cListaProductos.cpp">
+    <ClCompile Include="cInventario.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="cPersona.cpp">
@@ -110,7 +110,7 @@
     <ClInclude Include="cFerreteria.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="cListaProductos.h">
+    <ClInclude Include="cInventario.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="cPersona.h">

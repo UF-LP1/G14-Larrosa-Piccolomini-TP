@@ -12,5 +12,5 @@ enum eArtBazar { tenderesRopa, tablasPlanchar, sogas, tablasInodoro, impBanyera 
 enum eArtCerraje { llaveSimple, laveDobleTambor, llaveCod, llaveMagne };
 enum eArtElect { cables, lamparas, portalamparas, enchufes };
 enum eArtFerre { clavos, tarugos, tornillos, caños, flexibles, tapones };
-enum eHerramCaras { amoladora, lijadora, perforadora };
+enum eArtHerramientas { amoladora, lijadora, perforadora };
 enum eTiposPago { tarjetaDebito, mercadoPago, efectivo, tarjetaCredito };

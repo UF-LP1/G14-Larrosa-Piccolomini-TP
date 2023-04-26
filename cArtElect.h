@@ -1,8 +1,3 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _CARTELECT_H
 #define _CARTELECT_H
 
@@ -10,8 +5,11 @@
 
 
 class cArtElect: public cProducto {
-private: 
+private:
     eArtElect tipo;
+public:
+    cArtElect(eArtElect Tipo, double Precio, const string Medidas);
+    ~cArtElect();
 };
 
 #endif //_CARTELECT_H
