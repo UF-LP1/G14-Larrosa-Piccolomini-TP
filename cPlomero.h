@@ -3,10 +3,10 @@
 
 #include "cEmpleado.h"
 
-
 class cPlomero: public cEmpleado {
-	cPlomero(const string Dni, const string Name, string Tel, string Email, string Adress)
-	{}
+public:
+	cPlomero(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
+	~cPlomero();
 };
 
 #endif //_CPLOMERO_H

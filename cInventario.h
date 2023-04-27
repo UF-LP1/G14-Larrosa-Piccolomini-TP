@@ -6,16 +6,29 @@
 class cInventario {
 private: 
     int sArtFerre;
-    int stockArtElect;
-    int stockArtBazar;
-    int stockArtBanyo;
-    int stockArtCerraje;
-    int stockArtHerramientas;
+    int sArtElect;
+    int sArtBazar;
+    int sArtBanyo;
+    int sArtCerraje;
+    int sArtHerramientas;
 
 public:
-    cInventario();
+    cInventario(int ArtFerre, int ArtElect, int ArtBazar, int ArtBanyo, int ArtCerraje, int ArtHerramientas);
     ~cInventario();
-    void getStocks();
+
+    int getArtFerre();
+    int getArtElect();
+    int getArtBazar();
+    int getArtBanyo();
+    int getArtCerraje();
+    int getArtHerramientas();
+
+    void setArtFerre(int newArt);
+    void setArtElect(int newArt);
+    void setArtBazar(int newArt);
+    void setArtBanyo(int newArt);
+    void setArtCerraje(int newArt);
+    void setArtHerramientas(int newArt);
 };
 
 #endif //_CINVENTARIO_H

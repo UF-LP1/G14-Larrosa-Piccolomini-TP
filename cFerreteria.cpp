@@ -3,13 +3,13 @@
 // Inicializa la ferreteria pasandoles los strings de datos del local, y si esta abierto o no como booleano,
 // el resto se nulifica para posterior uso
 cFerreteria::cFerreteria(const string Name, const string Adress, const string TelNum, const string Email, const string PagWeb, bool Estado) : name(Name), adress(Adress), telNum(TelNum), email(Email), paginaWeb(PagWeb) {
-    fondos = NULL;
-    abierta = Estado;
-    inventario = nullptr;
-    duenyo = nullptr;
-    plomero = nullptr;
-    cerrajero = nullptr;
-    despachante = nullptr;
+    this->fondos = NULL;
+    this->abierta = Estado;
+    this->inventario = nullptr;
+    this->duenyo = nullptr;
+    this->plomero = nullptr;
+    this->cerrajero = nullptr;
+    this->despachante = nullptr;
 }
 
 // Va vacio, no hay que hacer ningun delete
@@ -18,7 +18,7 @@ cFerreteria::~cFerreteria() {
 
 // Cambia si esta abierto o cerrado el local
 void cFerreteria::setEstado(bool newEstado) {
-    abierta = newEstado;
+    this->abierta = newEstado;
 }
 
 // Setea el estado en abierto
@@ -35,12 +35,12 @@ void cFerreteria::cerrarLocal() {
 
 // Retorna la cantidad de fondos del local
 double cFerreteria::getFondos() {
-    return fondos;
+    return this->fondos;
 }
 
 // Setea el valor de los fondos monetarios del local, pasados por parametro
 void cFerreteria::setFondos(double newFondos) {
-    fondos = newFondos;
+    this->fondos = newFondos;
 }
 
 // Resta los sueldos de cada empleado en parcicular del atributo fondos

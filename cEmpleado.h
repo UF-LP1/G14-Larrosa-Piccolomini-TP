@@ -1,30 +1,18 @@
-
-
 #ifndef _CEMPLEADO_H
 #define _CEMPLEADO_H
 
 #include "cPersona.h"
 
-
 class cEmpleado: public cPersona {
-public: 
-    cEmpleado(const string Dni, const string Name, string Tel, string Email, string Adress, double sueldo)
-    {}
-    
-
-void cEmpleado(void double, void string);
-    
-double getSueldo();
- 
-void setSueldo(void double);
-    
-
-void cobrarSueldo(void double);
-protected: 
-    
-void cEmpleado();
-private: 
+private:
     double sueldo;
+public: 
+    cEmpleado(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
+    ~cEmpleado();
+    double getSueldo();
+    void setSueldo(double Sueldo);
+    void cobrarSueldo(double Cobro);
+
 };
 
 #endif //_CEMPLEADO_H

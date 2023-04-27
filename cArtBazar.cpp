@@ -1,7 +1,7 @@
 #include "cArtBazar.h"
 
 cArtBazar::cArtBazar(eArtBazar Tipo, double Precio, const string Medidas) : cProducto(Precio,Medidas) {
-	tipo = Tipo;
+	this->tipo = Tipo;
 }
 
 cArtBazar::~cArtBazar() {

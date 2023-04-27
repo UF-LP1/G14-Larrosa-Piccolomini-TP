@@ -1,20 +1,26 @@
 #include "cDuenyo.h"
-cDuenyo::cDuenyo() : cPersona(Dni, Name, Tel, Email, Adress)
-{}
 
-void cDuenyo::venderProd(void cProducto, void cCliente) {
+cDuenyo::cDuenyo(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress) : cEmpleado(sueldo,Dni,Name,Tel,Email,Adress) {
+}
+
+cDuenyo::~cDuenyo() {
+}
+
+
+
+void cDuenyo::venderProd(cProducto, cCliente) {
     return;
 }
 
 
-void cDuenyo::cobrarProd(void cProducto) {
+void cDuenyo::cobrarProd(cProducto) {
     return;
 }
 
-void cDuenyo::archivarRecibo(void Recibo) {
+void cDuenyo::archivarRecibo(cRecibo) {
     return;
 }
 
-void cDuenyo::atenderCliente(void cCliente) {
+void cDuenyo::atenderCliente(cCliente) {
     return;
 }

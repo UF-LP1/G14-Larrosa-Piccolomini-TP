@@ -1,6 +1,6 @@
 #ifndef _CPERSONA_H
 #define _CPERSONA_H
-#include <headers.h>
+#include "headers.h"
 
 class cPersona {
 private:
@@ -10,15 +10,13 @@ private:
     string email;
     string adress;
 
-public: 
-    
-const string getDni();
-    
-void setTel(void string);
- 
-void setEmail(void string);
-    
-void setAdress(void string);
+public:
+    cPersona(const string Dni, const string Name, const string Tel, string Email, string Adress);
+    ~cPersona();
+    const string getDni();
+    void setTel(string);
+    void setEmail(string);
+    void setAdress(string);
 
 };
 

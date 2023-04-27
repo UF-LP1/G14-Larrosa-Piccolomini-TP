@@ -3,21 +3,17 @@
 #define _CDUENYO_H
 
 #include "cEmpleado.h"
-#include "cEmpleado.h"
+#include "cCliente.h"
+#include "cRecibo.h"
 
-
-class cDuenyo: public cEmpleado, public cEmpleado {
-public: 
-    cDuenyo(const string Dni, const string Name, string Tel, string Email, string Adress)
-    {}
-
-void venderProd(void cProducto, void cCliente);
-    
-void cobrarProd(void cProducto);
-
-void archivarRecibo(void Recibo);
-
-void atenderCliente(void cCliente);
+class cDuenyo: public cEmpleado {
+public:
+    cDuenyo(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
+    ~cDuenyo();
+    void venderProd(cProducto, cCliente);
+    void cobrarProd(cProducto);
+    void archivarRecibo(cRecibo);
+    void atenderCliente(cCliente);
 };
 
 #endif //_CDUENYO_H

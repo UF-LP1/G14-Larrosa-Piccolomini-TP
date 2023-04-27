@@ -1,25 +1,20 @@
 #include "cEmpleado.h"
 
-cEmpleado::cEmpleado(double sueldo) : cPersona(Dni, Name, Tel, Email, Adress)
-{}
-
-void cEmpleado::cEmpleado(void double, void string) {
-
+cEmpleado::cEmpleado(double Sueldo, const string Dni, const string Name, string Tel, string Email, string Adress) : cPersona(Dni, Name, Tel, Email, Adress) {
+    this->sueldo = Sueldo;
 }
 
+cEmpleado::~cEmpleado() {
+}
 
 double cEmpleado::getSueldo() {
-    return 0.0;
+    return this->sueldo;
 }
 
-void cEmpleado::setSueldo(void double) {
-    return;
+void cEmpleado::setSueldo(double newSueldo) {
+    this->sueldo = newSueldo;
 }
 
-void cEmpleado::cobrarSueldo(void double) {
-    return;
-}
-
-void cEmpleado::cEmpleado() {
-
+void cEmpleado::cobrarSueldo(double Cobro) {
+    setSueldo(Cobro);
 }

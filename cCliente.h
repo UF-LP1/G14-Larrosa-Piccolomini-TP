@@ -3,45 +3,43 @@
 
 #include "cPersona.h"
 #include "cProducto.h"
+#include "cRecibo.h"
 
 
 class cCliente: public cPersona {
    
 private:
-    cProducto* objeto;
+    vector<cProducto> listaCompras;
     bool buscaRepuesto;
     bool foto;
     bool artRoto;
     bool cambio;
     string tarjeta;
     double fondos;
-    cRecibo reciboCliente;
+    cRecibo* reciboCliente;
     bool alquilerProducto;
 
 public: 
-    cCliente(cProducto Objeto, bool BuscaRespuesto, bool Foto, bool ArtRoto, bool Cambio, string Tarjeta, double Fondos, cRecibo ReciboCliente,
-        bool AlquilerProducto, const string Dni, const string Name, string Tel, string Email, string Adress)
-    {}
+    cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, string Tarjeta, double Fondos, 
+        const string Dni, const string Name, string Tel, string Email, string Adress);
+    ~cCliente();
 
-    double generarPresupuesto();
+    void agregarProducto(const cProducto& objeto);
+    void generarPresupuesto(vector<cProducto> ListaCompras);
+    bool comprarProd();
+    void cambiarProd(bool, cProducto);
+    void alquilarProducto(bool, cProducto);
+    void pagarPresupuesto();
 
- bool comprarProd(void bool, void cProducto);
+    vector<cProducto> getListaCompras() {
+        return listaCompras;
+    }
 
-void cambiarProd(void bool, void cProducto);
-    
-void alquilarProducto(void bool, void cProducto);
-
-double pagarProd(void bool);
- 
-void getPrecioArt(void string, void cFerreteria);
- 
-void setTarjeta(void string);
-
-void setFondos(void double);
-    
-double getFondos();
-    
-void setRecibo(void cRecibo);
+    void setRecibo(const cRecibo& newRecibo);
+    void setTarjeta(string);
+    void setFondos(double);
+    double getFondos();
+    void setRecibo(cRecibo*);
 };
 
-#endif //_CCLIENTE_H
+#endif //_CCERRAJERO_H

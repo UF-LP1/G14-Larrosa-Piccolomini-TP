@@ -1,36 +1,19 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _CRECIBO_H
 #define _CRECIBO_H
 
+#include "headers.h"
+
 class cRecibo {
-public: 
-    
-/**
- * @param TiposPago
- * @param int
- * @param double
- * @param double
- * @param bool
- */
-void emitir(void TiposPago, void int, void double, void double, void bool);
-    
-/**
- * @param TiposPago
- */
-void getTipoPago(void TiposPago);
-    
-/**
- * @param Cuotas
- */
-void setCuotas(void Cuotas);
-private: 
+private:
     eTiposPago metodoPago;
     unsigned int cuotas;
-    cProducto objetoComprado;
+public:
+    cRecibo(eTiposPago tipoPago, unsigned int Cuotas);
+    ~cRecibo();
+    eTiposPago getTipoPago();
+    unsigned int getCuotas();
+    void setCuotas(unsigned int Cuotas);
+
 };
 
 #endif //_CRECIBO_H

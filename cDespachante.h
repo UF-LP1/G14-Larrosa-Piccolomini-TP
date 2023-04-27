@@ -6,10 +6,8 @@
 
 class cDespachante: public cEmpleado {
 public: 
-    cDespachante(const string Dni, const string Name, string Tel, string Email, string Adress)
-    {}
-    
-bool entregaDomicilio(void const string, void const string);
+    cDespachante(const string Dni, const string Name, string Tel, string Email, string Adress);
+    bool entregaDomicilio(const string, const string);
 };
 
 #endif //_CDESPACHANTE_H

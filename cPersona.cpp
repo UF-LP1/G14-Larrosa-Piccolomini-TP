@@ -1,26 +1,27 @@
 #include "cPersona.h"
 
 //creo el constructor de persona
-cPersona::cPersona(const string Dni, const string Name, string Tel, string Email, string Adress) : dni(Dni), name(Name)
-{
-    tel = Tel;
-    email = Email;
-    adress = Adress;
-
+cPersona::cPersona(const string Dni, const string Name, string Tel, string Email, string Adress) : dni(Dni), name(Name) {
+    this->tel = Tel;
+    this->email = Email;
+    this->adress = Adress;
 }
+
+cPersona::~cPersona() {
+}
+
 const string cPersona::getDni() {
-       
-    return dni;
+    return this->dni;
 }
 
-void cPersona::setTel(void String) {
-    tel = String;
+void cPersona::setTel(string newTel) {
+    this->tel = newTel;
 }
 
-void cPersona::setEmail(void String) {
-    email = String;
+void cPersona::setEmail(string newEmail) {
+    this->email = newEmail;
 }
 
-void cPersona::setAdress(void String) {
-    adress = String;
+void cPersona::setAdress(string newAdress) {
+    this->adress = newAdress;
 }

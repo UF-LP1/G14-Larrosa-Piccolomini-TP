@@ -2,24 +2,19 @@
 #define _CCERRAJERO_H
 
 #include "cEmpleado.h"
-
+#include "cArtCerraje.h"
 
 class cCerrajero: public cEmpleado {
 
 private:
     bool autorizacionMag;
-
 public: 
-    cCerrajero(bool autorizacionMag, const string Dni, const string Name, string Tel, string Email, string Adress)
-    {}
-    
-cArtCerraje hacerLlave();
- 
-void setAutorizacionMag(void bool);
-    
-bool getAutorizacionMag();
-    
-cArtCerraje hacerLlaveMag(void bool);
+    cCerrajero(bool AutorizacionMag, double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
+    ~cCerrajero();
+    cArtCerraje* hacerLlave();
+    void setAutorizacionMag(bool autorizo);
+    bool getAutorizacionMag();
+    cArtCerraje* hacerLlaveMag();
 
 };
 

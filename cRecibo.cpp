@@ -1,38 +1,23 @@
-/**
- * Project Untitled
- */
-
-
 #include "cRecibo.h"
 
-/**
- * cRecibo implementation
- */
-
-
-/**
- * @param TiposPago
- * @param int
- * @param double
- * @param double
- * @param bool
- */
-void cRecibo::emitir(void TiposPago, void int, void double, void double, void bool) {
-
+cRecibo::cRecibo(eTiposPago tipoPago, unsigned int Cuotas) {
+    this->metodoPago = tipoPago;
+    this->cuotas = Cuotas;
 }
 
-/**
- * @param TiposPago
- * @return void
- */
-void cRecibo::getTipoPago(void TiposPago) {
-    return;
+cRecibo::~cRecibo() {
 }
 
-/**
- * @param Cuotas
- * @return void
- */
-void cRecibo::setCuotas(void Cuotas) {
-    return;
+unsigned int cRecibo::getCuotas() {
+    return this->cuotas;
+}
+
+void cRecibo::setCuotas(unsigned int Cuotas) {
+    this->cuotas = Cuotas;
+}
+
+
+
+eTiposPago cRecibo::getTipoPago() {
+    return this->metodoPago;
 }
