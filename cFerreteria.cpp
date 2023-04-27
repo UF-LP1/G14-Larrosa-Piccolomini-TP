@@ -16,6 +16,22 @@ cFerreteria::cFerreteria(const string Name, const string Adress, const string Te
 cFerreteria::~cFerreteria() {
 }
 
+void cFerreteria::setDuenyo(cDuenyo* Duenyo) {
+    this->duenyo = Duenyo;
+}
+
+void cFerreteria::setPlomero(cPlomero* Plomero) {
+    this->plomero = Plomero;
+}
+
+void cFerreteria::setCerrajero(cCerrajero* Cerrajero) {
+    this->cerrajero = Cerrajero;
+}
+
+void cFerreteria::setDespachante(cDespachante* Despachante) {
+    this->despachante = Despachante;
+}
+
 // Cambia si esta abierto o cerrado el local
 void cFerreteria::setEstado(bool newEstado) {
     this->abierta = newEstado;
@@ -45,6 +61,7 @@ void cFerreteria::setFondos(double newFondos) {
 
 // Resta los sueldos de cada empleado en parcicular del atributo fondos
 // Puede quedar negativo, significando una deuda
+// FALTA TERMINAR
 void cFerreteria::pagarSueldos() {
     double sumaSueldos = 0.0;
     setFondos(sumaSueldos);

@@ -29,14 +29,23 @@ public:
     cFerreteria(const string Name, const string Adress, const string TelNum, const string Email, const string PagWeb, bool Estado);
     ~cFerreteria();
 
+    void setDuenyo(cDuenyo* Duenyo);
+    void setPlomero(cPlomero* Plomero);
+    void setCerrajero(cCerrajero* Cerrajero);
+    void setDespachante(cDespachante* Despachante);
+
     void setEstado(bool Abierta);
+    void setFondos(double Fondos);
+
+
     void abrirLocal();
     void cerrarLocal();
-    void setFondos(double Fondos);
-    double getFondos();
     void pagarSueldos();
     bool chequearStock();
     void reestablecerStock();
+
+    double getFondos();
+
 
 };
 

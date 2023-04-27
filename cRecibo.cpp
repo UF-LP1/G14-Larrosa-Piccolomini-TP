@@ -16,8 +16,6 @@ void cRecibo::setCuotas(unsigned int Cuotas) {
     this->cuotas = Cuotas;
 }
 
-
-
 eTiposPago cRecibo::getTipoPago() {
     return this->metodoPago;
 }

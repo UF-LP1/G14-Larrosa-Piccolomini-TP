@@ -26,16 +26,16 @@ void cCliente::agregarProducto(const cProducto& objeto) {
 }
 
 // FUNCION OBLIGATORIAAAAA
-double generarPresupuesto() {
-    int i = 0;
+double cCliente::generarPresupuesto(vector<cProducto> ListaCompras) {
     double suma = 0;
-    vector<cProducto>
-    // Aca va el procedimiento de compras basically
-    // Se suma todo lo que el cliente quiere comprar, llegando a un precio final
+    for (int i = 0; i < ListaCompras.size(); i++) {
+        suma += ListaCompras[i].getPrecio();
+    }
+    return suma;
 }
 
 
-
+// Funciones sin realizar (a desarrollar)
 bool cCliente::comprarProd() {
     return false;
 }
@@ -48,10 +48,16 @@ void cCliente::alquilarProducto(bool, cProducto) {
     return;
 }
 
-void pagarPresupuesto() {
-    // invoco generar presupuesto
-    // lo que retorne se lo resto a los fondos del cliente
-    // queda re pobre ja
+void cCliente::pagarPresupuesto() {
+    setFondos(getFondos() - generarPresupuesto(this->listaCompras));
+}
+
+vector<cProducto> cCliente::getListaCompras() {
+    return this->listaCompras;
+}
+
+void cCliente::setListaCompras(vector<cProducto> newListaCompras) {
+    this->listaCompras = newListaCompras;
 }
 
 void cCliente::setTarjeta(string Tarjeta) {

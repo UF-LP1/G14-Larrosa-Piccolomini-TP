@@ -25,21 +25,19 @@ public:
     ~cCliente();
 
     void agregarProducto(const cProducto& objeto);
-    void generarPresupuesto(vector<cProducto> ListaCompras);
+    double generarPresupuesto(vector<cProducto> ListaCompras);
     bool comprarProd();
     void cambiarProd(bool, cProducto);
     void alquilarProducto(bool, cProducto);
     void pagarPresupuesto();
 
-    vector<cProducto> getListaCompras() {
-        return listaCompras;
-    }
+    void setListaCompras(vector<cProducto> newListaCompras);
+    void setTarjeta(string newTarjeta);
+    void setFondos(double newFondos);
+    void setRecibo(cRecibo* newRecibo);
 
-    void setRecibo(const cRecibo& newRecibo);
-    void setTarjeta(string);
-    void setFondos(double);
+    vector<cProducto> getListaCompras();
     double getFondos();
-    void setRecibo(cRecibo*);
 };
 
 #endif //_CCERRAJERO_H

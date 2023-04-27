@@ -6,21 +6,7 @@ cDuenyo::cDuenyo(double sueldo, const string Dni, const string Name, string Tel,
 cDuenyo::~cDuenyo() {
 }
 
+void cDuenyo::cobrarPago() {
 
-
-void cDuenyo::venderProd(cProducto, cCliente) {
-    return;
 }
 
-
-void cDuenyo::cobrarProd(cProducto) {
-    return;
-}
-
-void cDuenyo::archivarRecibo(cRecibo) {
-    return;
-}
-
-void cDuenyo::atenderCliente(cCliente) {
-    return;
-}

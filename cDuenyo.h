@@ -10,8 +10,7 @@ class cDuenyo: public cEmpleado {
 public:
     cDuenyo(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
     ~cDuenyo();
-    void venderProd(cProducto, cCliente);
-    void cobrarProd(cProducto);
+
     void archivarRecibo(cRecibo);
     void atenderCliente(cCliente);
 };
