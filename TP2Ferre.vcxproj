@@ -127,7 +127,44 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cArtBanyo.cpp" />
+    <ClCompile Include="cArtBazar.cpp" />
+    <ClCompile Include="cArtCerraje.cpp" />
+    <ClCompile Include="cArtElect.cpp" />
+    <ClCompile Include="cArtFerre.cpp" />
+    <ClCompile Include="cArtHerramientas.cpp" />
+    <ClCompile Include="cCerrajero.cpp" />
+    <ClCompile Include="cCliente.cpp" />
+    <ClCompile Include="cDespachante.cpp" />
+    <ClCompile Include="cDuenyo.cpp" />
+    <ClCompile Include="cEmpleado.cpp" />
+    <ClCompile Include="cFerreteria.cpp" />
+    <ClCompile Include="cInventario.cpp" />
+    <ClCompile Include="cPersona.cpp" />
+    <ClCompile Include="cPlomero.cpp" />
+    <ClCompile Include="cProducto.cpp" />
+    <ClCompile Include="cRecibo.cpp" />
     <ClCompile Include="TP2Ferre.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cArtBanyo.h" />
+    <ClInclude Include="cArtBazar.h" />
+    <ClInclude Include="cArtCerraje.h" />
+    <ClInclude Include="cArtElect.h" />
+    <ClInclude Include="cArtFerre.h" />
+    <ClInclude Include="cArtHerramientas.h" />
+    <ClInclude Include="cCerrajero.h" />
+    <ClInclude Include="cCliente.h" />
+    <ClInclude Include="cDespachante.h" />
+    <ClInclude Include="cDuenyo.h" />
+    <ClInclude Include="cEmpleado.h" />
+    <ClInclude Include="cFerreteria.h" />
+    <ClInclude Include="cInventario.h" />
+    <ClInclude Include="cPersona.h" />
+    <ClInclude Include="cPlomero.h" />
+    <ClInclude Include="cProducto.h" />
+    <ClInclude Include="cRecibo.h" />
+    <ClInclude Include="headers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
