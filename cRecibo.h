@@ -10,7 +10,10 @@ private:
 public:
     cRecibo(eTiposPago tipoPago, unsigned int Cuotas);
     ~cRecibo();
+    
     eTiposPago getTipoPago();
+    void setTipoPago(eTiposPago newTipoPago);
+
     unsigned int getCuotas();
     void setCuotas(unsigned int Cuotas);
 

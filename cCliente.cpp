@@ -13,7 +13,7 @@ cCliente::cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, st
     this->reciboCliente = nullptr;
     this->alquilerProducto = false;
     // Lista compras no es necesario inicializarla porque comienza en nulo por default
-    // Gracias C++
+    // Gracias C++ :)
 }
 
 
@@ -56,6 +56,22 @@ vector<cProducto> cCliente::getListaCompras() {
     return this->listaCompras;
 }
 
+bool cCliente::getBuscarRepuesto() {
+    return this->buscaRepuesto;
+}
+
+bool cCliente::getFoto() {
+    return this->foto;
+}
+
+bool cCliente::getArtRoto() {
+    return this->artRoto;
+}
+
+bool cCliente::getCambio() {
+    return this->cambio;
+}
+
 void cCliente::setListaCompras(vector<cProducto> newListaCompras) {
     this->listaCompras = newListaCompras;
 }
@@ -74,5 +90,21 @@ double cCliente::getFondos() {
 
 void cCliente::setRecibo(cRecibo* newRecibo) {
     this->reciboCliente = newRecibo;
+}
+
+void cCliente::setBuscarRepuesto(bool newBuscarRepuesto) {
+    this->buscaRepuesto = newBuscarRepuesto;
+}
+
+void cCliente::setFoto(bool newFoto) {
+    this->foto = newFoto;
+}
+
+void cCliente::setArtRoto(bool newArtRoto) {
+    this->artRoto = newArtRoto;
+}
+
+void cCliente::setCambio(bool newCambio) {
+    this->cambio = newCambio;
 }
 

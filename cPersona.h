@@ -14,8 +14,15 @@ public:
     cPersona(const string Dni, const string Name, const string Tel, string Email, string Adress);
     ~cPersona();
     const string getDni();
+    const string getName();
+
+    string getTel();
     void setTel(string);
+
+    string getEmail();
     void setEmail(string);
+
+    string getAdress();
     void setAdress(string);
 
 };

@@ -9,7 +9,8 @@
 class cCliente: public cPersona {
    
 private:
-    vector<cProducto> listaCompras;
+    // Lista de punteros de tipo producto, donde cada uno de estos punteros puede apuntar a las clases hijas
+    vector<cProducto*> listaCompras;
     bool buscaRepuesto;
     bool foto;
     bool artRoto;
@@ -35,8 +36,16 @@ public:
     void setTarjeta(string newTarjeta);
     void setFondos(double newFondos);
     void setRecibo(cRecibo* newRecibo);
+    void setBuscarRepuesto(bool newBuscarRepuesto);
+    void setFoto(bool newFoto);
+    void setArtRoto(bool newArtRoto);
+    void setCambio(bool newCambio);
 
     vector<cProducto> getListaCompras();
+    bool getBuscarRepuesto();
+    bool getFoto();
+    bool getArtRoto();
+    bool getCambio();
     double getFondos();
 };
 
