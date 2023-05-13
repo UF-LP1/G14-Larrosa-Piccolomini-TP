@@ -13,8 +13,8 @@ public:
 
     void archivarRecibo(cRecibo);
     void atenderCliente(cCliente);
-    void cobrarPago();
-    void calcularVuelto();
+    float cobrarPago(vector <cProducto> listaCompras);
+    void calcularVuelto(float montoCompra);
  };
 
 #endif //_CDUENYO_H
