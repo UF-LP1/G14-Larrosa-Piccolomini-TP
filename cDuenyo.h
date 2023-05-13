@@ -13,6 +13,8 @@ public:
 
     void archivarRecibo(cRecibo);
     void atenderCliente(cCliente);
-};
+    void cobrarPago();
+    void calcularVuelto();
+ };
 
 #endif //_CDUENYO_H

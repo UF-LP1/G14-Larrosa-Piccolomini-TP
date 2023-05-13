@@ -11,7 +11,7 @@ private:
     unsigned int stock;
 
 public:    
-    cProducto(double Precio, const string Medidas);
+    cProducto(double Precio, const string Medidas, unsigned int stock);
     ~cProducto();
     double getPrecio();
     void setPrecio(double Precio);
