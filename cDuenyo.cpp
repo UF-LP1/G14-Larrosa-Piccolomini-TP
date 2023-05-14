@@ -10,11 +10,11 @@ cDuenyo::cDuenyo(double sueldo, const string Dni, const string Name, string Tel,
 cDuenyo::~cDuenyo() {
 }
 
-
+/*
 cRecibo* cDuenyo::generarRecibo() {
 
 }
-
+*/
 void cDuenyo::atenderCliente() {
 
 }
@@ -33,7 +33,7 @@ double cDuenyo::cobrarPago(vector<cProducto*> listaCompras) {
 	return montoTotal; //monto será sumado a fondos de ferreteria y restado a fondos de cliente
 }
 
-//tres opciones. metodo de pago online. no hay vuelto. dinero? entonces vuelvo.
+// Tres opciones. metodo de pago online. no hay vuelto. dinero? entonces vuelvo.
 void cDuenyo::calcularVuelto(float montoCompra) {
 
 }
