@@ -11,9 +11,9 @@ public:
     cDuenyo(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
     ~cDuenyo();
 
-    void archivarRecibo(cRecibo);
-    void atenderCliente(cCliente);
-    float cobrarPago(vector <cProducto> listaCompras);
+    void archivarRecibo(cRecibo*);
+    void atenderCliente(cCliente*);
+    float cobrarPago(vector <cProducto*> listaCompras);
     void calcularVuelto(float montoCompra);
  };
 

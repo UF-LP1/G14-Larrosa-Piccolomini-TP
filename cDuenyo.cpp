@@ -6,18 +6,18 @@ cDuenyo::cDuenyo(double sueldo, const string Dni, const string Name, string Tel,
 cDuenyo::~cDuenyo() {
 }
 
-void cDuenyo:: archivarRecibo(cRecibo)
+void cDuenyo:: archivarRecibo(cRecibo*)
 {
 
 }
 
-void cDuenyo::atenderCliente(cCliente)
+void cDuenyo::atenderCliente(cCliente*)
 {
 
 }
 
 //Dueño cumple la funcion de cajero y realiza en tiempo de ejecucion
-float cDuenyo::cobrarPago(vector <cProducto> listaCompras)
+float cDuenyo::cobrarPago(vector <cProducto*> listaCompras)
 {
 	if (listaCompras.empty())//no cobro monto nulo	
 		return;
