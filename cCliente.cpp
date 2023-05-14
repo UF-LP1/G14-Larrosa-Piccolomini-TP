@@ -3,7 +3,8 @@
 
 // Constructor de Cliente, los atributos del recibo y de si quiere alquilar o no, van por default
 // Siendo que no tiene recibo alguno en un principio, y no esta ddefinido de si quiere alquilar o no (false)
-cCliente::cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, string Tarjeta, double Fondos, const string Dni, const string Name, string Tel, string Email, string Adress) : cPersona(Dni, Name, Tel, Email, Adress) {
+cCliente::cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, string Tarjeta, double Fondos, const string Dni, const string Name, string Tel,
+    string Email, string Adress) : cPersona(Dni, Name, Tel, Email, Adress) {
     this->buscaRepuesto = BuscarRepuesto;
     this->foto = Foto;
     this->artRoto = ArtRoto;
@@ -40,11 +41,11 @@ bool cCliente::comprarProd() {
     return false;
 }
 
-void cCliente::cambiarProd(bool, cProducto) {
+void cCliente::cambiarProd(bool, cProducto*) {  
     return;
 }
 
-void cCliente::alquilarProducto(bool, cProducto) {
+void cCliente::alquilarProducto(bool, cProducto*) {
     return;
 }
 
