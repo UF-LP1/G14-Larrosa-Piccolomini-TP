@@ -1,6 +1,8 @@
 #include "cDuenyo.h"
 
 cDuenyo::cDuenyo(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress) : cEmpleado(sueldo, Dni, Name, Tel, Email, Adress) {
+	// La lista de recibos comienza con nullptr
+	// y Dicha a posicion se le va a asignar el recibo del primer cliente
 	this->listaRecibos.push_back(nullptr);
 	this->recaudaciones = 0.0;
 }
@@ -13,18 +15,17 @@ cRecibo* cDuenyo::generarRecibo() {
 
 }
 
-void cDuenyo::atenderCliente(cCliente*) {
+void cDuenyo::atenderCliente() {
 
 }
 
 //Dueño cumple la funcion de cajero y realiza en tiempo de ejecucion
-float cDuenyo::cobrarPago(vector <cProducto*> listaCompras)
-{
+double cDuenyo::cobrarPago(vector<cProducto*> listaCompras) {
 	if (listaCompras.empty()) {
 		//no cobro monto nulo
-		return;
+		return 0.0;
 	}
-	float montoTotal = 0.0;
+	double montoTotal = 0.0;
 	for (int i = 0; i < listaCompras.size(); i++)
 	{
 		montoTotal += listaCompras[i]->getPrecio();
@@ -45,7 +46,7 @@ void cDuenyo::setListaRecibos(vector<cRecibo*> newListado) {
 	this->listaRecibos = newListado;
 }
 
-float cDuenyo::getRecaudaciones() {
+double cDuenyo::getRecaudaciones() {
 	return this->recaudaciones;
 }
 

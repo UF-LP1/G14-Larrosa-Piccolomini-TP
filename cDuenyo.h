@@ -2,7 +2,7 @@
 #define _CDUENYO_H
 
 #include "cEmpleado.h"
-#include "cCliente.h"
+#include "cProducto.h"
 #include "cRecibo.h"
 
 class cDuenyo : public cEmpleado {
@@ -13,14 +13,14 @@ public:
 	~cDuenyo();
 
 	cRecibo* generarRecibo();
-	void atenderCliente(cCliente*);
-	float cobrarPago(vector <cProducto*> listaCompras);
+	void atenderCliente();
+	double cobrarPago(vector<cProducto*> listaCompras);
 	void calcularVuelto(float montoCompra);
-
+	
 	vector<cRecibo*> getListaRecibos();
 	void setListaRecibos(vector<cRecibo*> newListado);
 
-	float getRecaudaciones();
+	double getRecaudaciones();
 	void setRecaudaciones(double newRecaudaciones);
 };
 

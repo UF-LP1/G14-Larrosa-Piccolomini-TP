@@ -1,0 +1,23 @@
+﻿  TP2Ferre.cpp
+D:\Favaloro\2023\1C\LP1\TP3\TP2Ferre.cpp(30,47): error C2512: 'cInventario::cInventario': no hay disponible un constructor predeterminado adecuado
+D:\Favaloro\2023\1C\LP1\TP3\TP2Ferre.cpp(30,47): message : al hacer coincidir la lista de argumentos '()'
+  cArtBanyo.cpp
+  cArtBazar.cpp
+  cArtCerraje.cpp
+  cArtElect.cpp
+  cArtFerre.cpp
+  cArtHerramientas.cpp
+  cCerrajero.cpp
+  cCliente.cpp
+  cDespachante.cpp
+  cDuenyo.cpp
+  cEmpleado.cpp
+  cFerreteria.cpp
+  cInventario.cpp
+D:\Favaloro\2023\1C\LP1\TP3\cInventario.cpp(41,20): error C2059: error de sintaxis: ')'
+  cPersona.cpp
+  cPlomero.cpp
+  cProducto.cpp
+  cRecibo.cpp
+  Generando código...
+D:\Favaloro\2023\1C\LP1\TP3\cDuenyo.cpp(16): error C4716: 'cDuenyo::generarRecibo': debe devolver un valor

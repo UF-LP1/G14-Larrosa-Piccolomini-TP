@@ -40,6 +40,10 @@ public:
     cDespachante* getDespachante();
 
     void setEstado(bool Abierta);
+    bool getEstado();
+
+    void setInventario(cInventario* newInventario);
+    cInventario* getInventario();
 
     void pagarSueldos();
     void reestablecerStock();

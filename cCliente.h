@@ -5,7 +5,6 @@
 #include "cProducto.h"
 #include "cRecibo.h"
 
-
 class cCliente: public cPersona {
    
 private:
@@ -48,6 +47,7 @@ public:
     bool getArtRoto();
     bool getCambio();
     double getFondos();
+
 };
 
 #endif //_CCERRAJERO_H

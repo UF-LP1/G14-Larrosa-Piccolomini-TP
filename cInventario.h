@@ -33,7 +33,6 @@ public:
     void setArtHerramientas(int newArt);
 
     static int getCant();
-    static void setCant();
 };
 
 #endif //_CINVENTARIO_H

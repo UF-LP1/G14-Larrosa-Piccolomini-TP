@@ -36,7 +36,7 @@ double cCliente::generarPresupuesto(vector<cProducto*> ListaCompras) {
 
 // Funciones sin realizar (a desarrollar)
 void cCliente::comprarProducto() {
-    float aPagar = generarPresupuesto(getListaCompras());
+    double aPagar = generarPresupuesto(getListaCompras());
     if (aPagar > getFondos()) {
         // NO SE QUE TENEMOS QUE TIRAR, PERO ESTA LA IDEA
         // EL CATCH SE HACE EN EL MAIN
