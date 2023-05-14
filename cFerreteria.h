@@ -37,11 +37,7 @@ public:
     void setEstado(bool Abierta);
     void setFondos(double Fondos);
 
-
-    void abrirLocal();
-    void cerrarLocal();
     void pagarSueldos();
-    bool chequearStock();
     void reestablecerStock();
 
     double getFondos();

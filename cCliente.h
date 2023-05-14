@@ -27,9 +27,10 @@ public:
 
     void agregarProducto(cProducto* objeto);
     double generarPresupuesto(vector<cProducto*> ListaCompras);
-    bool comprarProd();
-    void cambiarProd(bool, cProducto*);
-    void alquilarProducto(bool, cProducto*);
+    void comprarProducto();
+    void comprarRepuesto();
+    void cambiarProd();
+    void alquilarProducto();
     void pagarPresupuesto();
 
     void setListaCompras(vector<cProducto*> newListaCompras);

@@ -5,6 +5,8 @@
 
 class cInventario {
 private: 
+    // Cant contará la cantidad de productos que hay en total
+    static int cant;
     int sArtFerre;
     int sArtElect;
     int sArtBazar;
@@ -29,6 +31,9 @@ public:
     void setArtBanyo(int newArt);
     void setArtCerraje(int newArt);
     void setArtHerramientas(int newArt);
+
+    static int getCant();
+    static void setCant();
 };
 
 #endif //_CINVENTARIO_H

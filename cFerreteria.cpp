@@ -37,18 +37,6 @@ void cFerreteria::setEstado(bool newEstado) {
     this->abierta = newEstado;
 }
 
-// Setea el estado en abierto
-void cFerreteria::abrirLocal() {
-    setEstado(true);
-    return;
-}
-
-// Setea el estado en cerrado
-void cFerreteria::cerrarLocal() {
-    setEstado(false);
-    return;
-}
-
 // Retorna la cantidad de fondos del local
 double cFerreteria::getFondos() {
     return this->fondos;
@@ -60,23 +48,51 @@ void cFerreteria::setFondos(double newFondos) {
 }
 
 // Resta los sueldos de cada empleado en parcicular del atributo fondos
-// Puede quedar negativo, significando una deuda
-// FALTA TERMINAR
+// Puede quedar negativo, significando una deuda, y en dicho caso se hace un throw al main
+// Diciendo que estamos en quiebra
 void cFerreteria::pagarSueldos() {
     double sumaSueldos = 0.0;
-    setFondos(sumaSueldos);
-}
+    sumaSueldos += duenyo->getSueldo();
+    sumaSueldos += plomero->getSueldo();
+    sumaSueldos += cerrajero->getSueldo();
+    sumaSueldos += despachante->getSueldo();
 
-// Mira el stock de todos los productos
-// Si no falta nada, retorna false (0)
-// Si falta algo, por minimo que sea, retorna true (1)
-bool cFerreteria::chequearStock() {
-    bool flag = false;
-    return flag;
+    // Si no hay suficiente plata para poder pagar lo sueldos
+    if (getFondos() < sumaSueldos) {
+        throw;
+    }
+
+    setFondos(getFondos() - sumaSueldos);
 }
 
 // Chequea si hay faltante de algun producto (cantidad = 0), y en caso de que si,
-// resta el precio de compra de fondos y reestablece dicha cantidad en en inventario
+// resta el precio de compra de fondos y reestablece dicha cantidad en en inventario de a 100
+// ACLARACION: solo se tiene el precio por el TIPO de producto, no el producto en si
+// Nos simplifica un poco la vida
 void cFerreteria::reestablecerStock() {
 
+    if (inventario->getArtFerre() == 0) {
+        inventario->setArtFerre(100);
+        setFondos(getFondos() - 100 * 150);
+    }
+    if (inventario->getArtElect() == 0) {
+        inventario->setArtElect(100);
+        setFondos(getFondos() - 100 * 250);
+    }
+    if (inventario->getArtBazar() == 0) {
+        inventario->setArtBazar(100);
+        setFondos(getFondos() - 100 * 400);
+    }
+    if (inventario->getArtBanyo() == 0) {
+        inventario->setArtBanyo(100);
+        setFondos(getFondos() - 100 * 300);
+    }
+    if (inventario->getArtCerraje() == 0) {
+        inventario->setArtCerraje(100);
+        setFondos(getFondos() - 100 * 600);
+    }
+    if (inventario->getArtHerramientas() == 0) {
+        inventario->setArtHerramientas(100);
+        setFondos(getFondos() - 100 * 1000);
+    }
 }

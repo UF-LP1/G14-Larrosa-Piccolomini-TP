@@ -7,7 +7,7 @@ cCliente::cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, st
     this->buscaRepuesto = BuscarRepuesto;
     this->foto = Foto;
     this->artRoto = ArtRoto;
-    this->cambio = cambio;
+    this->cambio = Cambio;
     this->tarjeta = Tarjeta;
     this->fondos = Fondos;
     this->reciboCliente = nullptr;
@@ -25,7 +25,6 @@ void cCliente::agregarProducto(cProducto* objeto) {
     this->listaCompras.push_back(objeto);
 }
 
-// FUNCION OBLIGATORIAAAAA
 double cCliente::generarPresupuesto(vector<cProducto*> ListaCompras) {
     double suma = 0;
     for (int i = 0; i < ListaCompras.size(); i++) {
@@ -36,20 +35,41 @@ double cCliente::generarPresupuesto(vector<cProducto*> ListaCompras) {
 
 
 // Funciones sin realizar (a desarrollar)
-bool cCliente::comprarProd() {
-    return false;
+void cCliente::comprarProducto() {
+    float aPagar = generarPresupuesto(getListaCompras());
+    if (aPagar > getFondos()) {
+        // NO SE QUE TENEMOS QUE TIRAR, PERO ESTA LA IDEA
+        // EL CATCH SE HACE EN EL MAIN
+        throw;
+    }
+    pagarPresupuesto();
+
+    // Hay que hacer que en lista se queden todos los productos que NO pudo comprar el cliente
+    // Puede ser un metodo separado
 }
 
-void cCliente::cambiarProd(bool, cProducto) {
-    return;
+
+void cCliente::comprarRepuesto() {
+    if (!getBuscarRepuesto()) {
+        return;
+    }
+    
+
 }
 
-void cCliente::alquilarProducto(bool, cProducto) {
+void cCliente::cambiarProd() {
+    if ( !getCambio() || ( !getFoto() && !getArtRoto() ) ) {
+        return;
+    }
+
+}
+
+void cCliente::alquilarProducto() {
     return;
 }
 
 void cCliente::pagarPresupuesto() {
-    setFondos(getFondos() - generarPresupuesto(this->listaCompras));
+    setFondos(getFondos() - generarPresupuesto(getListaCompras()));
 }
 
 vector<cProducto*> cCliente::getListaCompras() {

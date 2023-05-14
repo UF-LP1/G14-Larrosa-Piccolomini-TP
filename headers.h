@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
+#include <ctime>
+// srand(time(0));
 
 using namespace std;
 

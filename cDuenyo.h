@@ -11,7 +11,7 @@ public:
     cDuenyo(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
     ~cDuenyo();
 
-    void archivarRecibo(cRecibo);
+    void generarRecibo(cRecibo);
     void atenderCliente(cCliente);
 };
 

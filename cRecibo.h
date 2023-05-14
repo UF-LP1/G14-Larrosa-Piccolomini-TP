@@ -3,20 +3,29 @@
 
 #include "headers.h"
 
+// El duenyo va a generar un recibo, y el cliente recibira una copia del mismo
+// eTiposPago { tarjetaDebito, mercadoPago, efectivo, tarjetaCredito }
 class cRecibo {
 private:
+    float pago;
     eTiposPago metodoPago;
     unsigned int cuotas;
 public:
-    cRecibo(eTiposPago tipoPago, unsigned int Cuotas);
+    // Constructor por parametro
+    cRecibo(float Pago, eTiposPago tipoPago);
+
+    // Constructor por copia
+    // (duenyo se queda con el original, cliente con la copia)
+    cRecibo(const cRecibo& paraCopiar);
     ~cRecibo();
     
+    float getPago();
+    void setPago(float newPago);
+
     eTiposPago getTipoPago();
     void setTipoPago(eTiposPago newTipoPago);
 
     unsigned int getCuotas();
-    void setCuotas(unsigned int Cuotas);
-
 };
 
 #endif //_CRECIBO_H

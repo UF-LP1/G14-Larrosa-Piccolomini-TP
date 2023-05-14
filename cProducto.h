@@ -5,6 +5,7 @@
 
 class cProducto {
 private:
+    
     double precio;
     const string medidas;
     bool envoltorio;
@@ -13,8 +14,10 @@ private:
 public:    
     cProducto(double Precio, const string Medidas);
     ~cProducto();
+
     double getPrecio();
     void setPrecio(double Precio);
+
     void setEnvoltorio(bool newEnvol);
     bool getEnvoltorio();
 };
