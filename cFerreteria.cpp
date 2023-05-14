@@ -32,6 +32,22 @@ void cFerreteria::setDespachante(cDespachante* Despachante) {
     this->despachante = Despachante;
 }
 
+cDuenyo* cFerreteria::getDuenyo() {
+    return this->duenyo;
+}
+
+cPlomero* cFerreteria::getPlomero() {
+    return this->plomero;
+}
+
+cCerrajero* cFerreteria::getCerrajero() {
+    return this->cerrajero;
+}
+
+cDespachante* cFerreteria::getDespachante() {
+    return this->despachante;
+}
+
 // Cambia si esta abierto o cerrado el local
 void cFerreteria::setEstado(bool newEstado) {
     this->abierta = newEstado;
@@ -45,6 +61,12 @@ double cFerreteria::getFondos() {
 // Setea el valor de los fondos monetarios del local, pasados por parametro
 void cFerreteria::setFondos(double newFondos) {
     this->fondos = newFondos;
+}
+
+void cFerreteria::depositarRecaudaciones() {
+    double plata = getDuenyo()->getRecaudaciones();
+    plata += getFondos();
+    setFondos( plata );
 }
 
 // Resta los sueldos de cada empleado en parcicular del atributo fondos

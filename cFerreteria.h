@@ -34,14 +34,19 @@ public:
     void setCerrajero(cCerrajero* Cerrajero);
     void setDespachante(cDespachante* Despachante);
 
+    cDuenyo* getDuenyo();
+    cPlomero* getPlomero();
+    cCerrajero* getCerrajero();
+    cDespachante* getDespachante();
+
     void setEstado(bool Abierta);
-    void setFondos(double Fondos);
 
     void pagarSueldos();
     void reestablecerStock();
+    void depositarRecaudaciones();
 
     double getFondos();
-
+    void setFondos(double Fondos);
 
 };
 
