@@ -25,14 +25,14 @@ public:
         const string Dni, const string Name, string Tel, string Email, string Adress);
     ~cCliente();
 
-    void agregarProducto(const cProducto& objeto);
-    double generarPresupuesto(vector<cProducto> ListaCompras);
+    void agregarProducto(cProducto* objeto);
+    double generarPresupuesto(vector<cProducto*> ListaCompras);
     bool comprarProd();
-    void cambiarProd(bool, cProducto);
-    void alquilarProducto(bool, cProducto);
+    void cambiarProd(bool, cProducto*);
+    void alquilarProducto(bool, cProducto*);
     void pagarPresupuesto();
 
-    void setListaCompras(vector<cProducto> newListaCompras);
+    void setListaCompras(vector<cProducto*> newListaCompras);
     void setTarjeta(string newTarjeta);
     void setFondos(double newFondos);
     void setRecibo(cRecibo* newRecibo);
@@ -41,7 +41,7 @@ public:
     void setArtRoto(bool newArtRoto);
     void setCambio(bool newCambio);
 
-    vector<cProducto> getListaCompras();
+    vector<cProducto*> getListaCompras();
     bool getBuscarRepuesto();
     bool getFoto();
     bool getArtRoto();

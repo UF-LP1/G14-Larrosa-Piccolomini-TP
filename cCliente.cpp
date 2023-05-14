@@ -21,15 +21,15 @@ cCliente::~cCliente() {
 }
 
 
-void cCliente::agregarProducto(const cProducto& objeto) {
+void cCliente::agregarProducto(cProducto* objeto) {
     this->listaCompras.push_back(objeto);
 }
 
 // FUNCION OBLIGATORIAAAAA
-double cCliente::generarPresupuesto(vector<cProducto> ListaCompras) {
+double cCliente::generarPresupuesto(vector<cProducto*> ListaCompras) {
     double suma = 0;
     for (int i = 0; i < ListaCompras.size(); i++) {
-        suma += ListaCompras[i].getPrecio();
+        suma += ListaCompras[i]->getPrecio();
     }
     return suma;
 }
@@ -52,7 +52,7 @@ void cCliente::pagarPresupuesto() {
     setFondos(getFondos() - generarPresupuesto(this->listaCompras));
 }
 
-vector<cProducto> cCliente::getListaCompras() {
+vector<cProducto*> cCliente::getListaCompras() {
     return this->listaCompras;
 }
 
@@ -72,7 +72,7 @@ bool cCliente::getCambio() {
     return this->cambio;
 }
 
-void cCliente::setListaCompras(vector<cProducto> newListaCompras) {
+void cCliente::setListaCompras(vector<cProducto*> newListaCompras) {
     this->listaCompras = newListaCompras;
 }
 
