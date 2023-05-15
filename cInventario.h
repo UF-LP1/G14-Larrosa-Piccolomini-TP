@@ -1,4 +1,4 @@
-#include "headers.h"
+    #include "headers.h"
 
 #ifndef _CINVENTARIO_H
 #define _CINVENTARIO_H
@@ -6,7 +6,7 @@
 class cInventario {
 private: 
     // Cant contará la cantidad de productos que hay en total
-    // static int cant;
+    static int cant;
     int sArtFerre;
     int sArtElect;
     int sArtBazar;
@@ -32,7 +32,7 @@ public:
     void setArtCerraje(int newArt);
     void setArtHerramientas(int newArt);
 
-    // static int getCant();
+    static int getCant();
 };
 
 #endif //_CINVENTARIO_H
