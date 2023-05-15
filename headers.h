@@ -11,7 +11,7 @@ using namespace std;
 
 enum eArtBanyo { barralesCortina, cepilloLimpieza, virulana, lanaMetal };
 enum eArtBazar { tenderesRopa, tablasPlanchar, sogas, tablasInodoro, impBanyera };
-enum eArtCerraje { llaveSimple, laveDobleTambor, llaveCod, llaveMagne };
+enum eArtCerraje { llaveSimple, llaveDobleTambor, llaveCod, llaveMagne };
 enum eArtElect { cables, lamparas, portalamparas, enchufes };
 enum eArtFerre { clavos, tarugos, tornillos, caños, flexibles, tapones };
 enum eArtHerramientas { amoladora, lijadora, perforadora };

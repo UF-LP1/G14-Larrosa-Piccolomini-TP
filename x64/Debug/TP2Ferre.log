@@ -1,5 +1,6 @@
 ﻿  TP2Ferre.cpp
+D:\Favaloro\2023\1C\LP1\TP3\TP2Ferre.cpp(72,31): error C2061: error de sintaxis: identificador 'cArtBazar'
+  cArtBazar.cpp
   cFerreteria.cpp
   cInventario.cpp
   Generando código...
-  TP2Ferre.vcxproj -> D:\Favaloro\2023\1C\LP1\TP3\x64\Debug\TP2Ferre.exe

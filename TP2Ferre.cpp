@@ -14,7 +14,7 @@
 #include "cCliente.h"
 
 #include "cArtBanyo.h"
-#include "cArtBanyo.h"
+#include "cArtBazar.h"
 #include "cArtCerraje.h"
 #include "cArtElect.h"
 #include "cArtFerre.h"
@@ -24,9 +24,10 @@
 int main(void) {
 
 	// Primero inicializamos el local (abierto) y su inventario
-	// El inventario de por si ya estara con 10 de cada tipo de articulo
-	cFerreteria* ferreteriaBala = new cFerreteria("Carlitos Bala", "Calle Falsa 123", "08002090", "bala@ferreteria.com", "balaferre.com.ar", true /*abierta*/);
-	cInventario* inventarioBala = new cInventario(10, 10, 10, 10, 10, 10);
+	// El inventario de por si ya estara cargado con los datos iniciales
+	cFerreteria* ferreteriaBala = new cFerreteria("Carlitos Bala", "Calle Falsa 123", "08002090", "bala@ferreteria.com", "balaferre.com.ar", true ); // abierta
+	// int ArtFerre, int ArtElect, int ArtBazar, int ArtBanyo, int ArtCerraje, int ArtHerramientas)
+	cInventario* inventarioBala = new cInventario(10, 10, 9, 5, 4, 10);
 	ferreteriaBala->setInventario(inventarioBala);
 
 	// Ahora vamos con el personal del local, primero el duenyo y jefe
@@ -51,6 +52,46 @@ int main(void) {
 	// Uno que quiere cambiar una compra previa
 	cPersona* cliente4 = new cCliente(false, false, false, true, "888", 2000, "1234", "Grando Smokio", "555", "groove@street.com", "av8");
 
+	/* Dejamos los enum en comentarios para que se vea mas o menos todos los tipos de herramientas que puede haber
+	ArtBanyo { barralesCortina, cepilloLimpieza, virulana, lanaMetal };
+	ArtBazar { tenderesRopa, tablasPlanchar, sogas, tablasInodoro, impBanyera };
+	ArtCerraje { llaveSimple, llaveDobleTambor, llaveCod, llaveMagne };
+	ArtElect { cables, lamparas, portalamparas, enchufes };
+	ArtFerre { clavos, tarugos, tornillos, caños, flexibles, tapones };
+	ArtHerramientas { amoladora, lijadora, perforadora };
+	*/
+
+	// Ahora comenzamos armando todos los objetos que representen productos del local
+	// Primero los de baño
+	cProducto* barralCortina1 = new cArtBanyo(barralesCortina, 300, "Gris, 2,2 metros de largo, fijacion por sopapas");
+	cProducto* cepilloLimpieza1 = new cArtBanyo(cepilloLimpieza, 200, "Blanco, pelo grueso y duro");
+	cProducto* paqueteVirulana1 = new cArtBanyo(virulana, 50, "Ultrafina, 6 unidades");
+	cProducto* paqueteVirulana2 = new cArtBanyo(virulana, 60, "Fina, 6 unidades");
+	cProducto* paqueteLanaMetal1 = new cArtBanyo(lanaMetal, 70, "Gruesa, 4 unidades");
+
+	// Los de bazar
+	cProducto* tenderRopa1 = new cArtBazar(tenderesRopa, 250, "Blanco, de metal");
+	cProducto* tenderRopa2 = new cArtBazar(tenderesRopa, 200, "Blanco, de plastico");
+	cProducto* tablasPlanchar1 = new cArtBazar(tablasPlanchar, 280, "Gris, 35cm de ancho y 145cm de largo");
+	cProducto* soga1 = new cArtBazar(sogas, 50, "Nylon, 1 metro, fina");
+	cProducto* soga2 = new cArtBazar(sogas, 50, "Nylon, 1 metro, gruesa");
+	cProducto* soga3 = new cArtBazar(sogas, 45, "Cuerda, 1 metro, fina");
+	cProducto* tablasInodoro1 = new cArtBazar(tablasInodoro, 100, "Blanca");
+	cProducto* tablasInodoro2 = new cArtBazar(tablasInodoro, 100, "Negra");
+	cProducto* impBanyera1 = new cArtBazar(impBanyera, 70, "Jabonera");
+
+	// Los de cerrajeria
+	cProducto* llaveSimple1 = new cArtCerraje(llaveSimple, 100, "Bronce, mango redondo");
+	cProducto* llaveSimple2 = new cArtCerraje(llaveSimple, 100, "Bronce, mango cuadrado");
+	cProducto* llaveDobleTamb1 = new cArtCerraje(llaveDobleTambor, 100, "Bronce, mango cuadrado");
+	cProducto* llaveCod1 = new cArtCerraje(llaveCod, 150, "Acero, mango cuadrado");
+
+	// Los de electricidad
+
+
+	// Por ultimo, las herramientas caras
+	cProducto* amoladora1 = new cArtHerramientas(amoladora, 1000, "Roja,con bateria,marca Milwaukee");
+
 
 	delete ferreteriaBala;
 	delete inventarioBala;
@@ -64,6 +105,29 @@ int main(void) {
 	delete cliente2;
 	delete cliente3;
 	delete cliente4;
+
+	delete barralCortina1;
+	delete cepilloLimpieza1;
+	delete paqueteVirulana1;
+	delete paqueteVirulana2;
+	delete paqueteLanaMetal1;
+
+	delete tenderRopa1;
+	delete tenderRopa2;
+	delete tablasPlanchar1;
+	delete soga1;
+	delete soga2;
+	delete soga3;
+	delete tablasInodoro1;
+	delete tablasInodoro2;
+	delete impBanyera1;
+
+	delete llaveSimple1;
+	delete llaveSimple2;
+	delete llaveDobleTamb1;
+	delete llaveCod1;
+
+	delete amoladora1;
 
 	return 0;
 }
