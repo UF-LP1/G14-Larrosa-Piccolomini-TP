@@ -5,5 +5,9 @@ cArtCerraje::cArtCerraje(eArtCerraje Tipo, double Precio, const string Medidas) 
 	this->tipo = Tipo;
 }
 
+cArtCerraje::cArtCerraje(const cArtCerraje& paraCopiar) : cProducto(paraCopiar) {
+	this->tipo = paraCopiar.tipo;
+}
+
 cArtCerraje::~cArtCerraje() {
 }

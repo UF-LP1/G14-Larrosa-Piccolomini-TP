@@ -1,6 +1,12 @@
 ﻿  TP2Ferre.cpp
-D:\Favaloro\2023\1C\LP1\TP3\TP2Ferre.cpp(72,31): error C2061: error de sintaxis: identificador 'cArtBazar'
-  cArtBazar.cpp
+D:\Favaloro\2023\1C\LP1\TP3\TP2Ferre.cpp(88,43): error C2665: 'cArtCerraje::cArtCerraje':ninguna función sobrecargada pudo convertir todos los tipos de argumento
+D:\Favaloro\2023\1C\LP1\TP3\cArtCerraje.h(11,5): message : puede ser 'cArtCerraje::cArtCerraje(const cArtCerraje &)'
+D:\Favaloro\2023\1C\LP1\TP3\TP2Ferre.cpp(88,43): message : 'cArtCerraje::cArtCerraje(const cArtCerraje &)': el argumento 1 no puede convertirse de 'cProducto' a 'const cArtCerraje &'
+D:\Favaloro\2023\1C\LP1\TP3\TP2Ferre.cpp(88,44): message : Razón: no se puede realizar la conversión de 'cProducto' a 'const cArtCerraje'
+D:\Favaloro\2023\1C\LP1\TP3\TP2Ferre.cpp(88,44): message : No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
+D:\Favaloro\2023\1C\LP1\TP3\TP2Ferre.cpp(88,43): message : al hacer coincidir la lista de argumentos '(cProducto)'
+  cArtCerraje.cpp
+  cCerrajero.cpp
   cFerreteria.cpp
-  cInventario.cpp
+  cProducto.cpp
   Generando código...

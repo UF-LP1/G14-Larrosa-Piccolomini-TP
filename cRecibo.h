@@ -4,7 +4,6 @@
 #include "headers.h"
 
 // El duenyo va a generar un recibo, y el cliente recibira una copia del mismo
-// eTiposPago { tarjetaDebito, mercadoPago, efectivo, tarjetaCredito }
 class cRecibo {
 private:
     float pago;
@@ -26,6 +25,10 @@ public:
     void setTipoPago(eTiposPago newTipoPago);
 
     unsigned int getCuotas();
+
+    void imprimir() {
+        cout << pago << "\t" << metodoPago << "\t" << cuotas << endl;
+    }
 };
 
 #endif //_CRECIBO_H

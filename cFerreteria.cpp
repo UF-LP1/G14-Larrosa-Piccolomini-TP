@@ -14,6 +14,10 @@ cFerreteria::cFerreteria(const string Name, const string Adress, const string Te
 
 // Va vacio, no hay que hacer ningun delete
 cFerreteria::~cFerreteria() {
+    delete duenyo;
+    delete plomero;
+    delete cerrajero;
+    delete despachante;
 }
 
 void cFerreteria::setDuenyo(cDuenyo* Duenyo) {

@@ -12,6 +12,7 @@ private:
 
 public:    
     cProducto(double Precio, const string Medidas);
+    cProducto(const cProducto& paraCopíar);
     ~cProducto();
 
     double getPrecio();

@@ -25,9 +25,10 @@ int main(void) {
 
 	// Primero inicializamos el local (abierto) y su inventario
 	// El inventario de por si ya estara cargado con los datos iniciales
-	cFerreteria* ferreteriaBala = new cFerreteria("Carlitos Bala", "Calle Falsa 123", "08002090", "bala@ferreteria.com", "balaferre.com.ar", true ); // abierta
+
+	cFerreteria* ferreteriaBala = new cFerreteria("Carlitos Bala", "Calle Falsa 123", "08002090", "bala@ferreteria.com", "balaferre.com.ar", true); // abierta
 	// int ArtFerre, int ArtElect, int ArtBazar, int ArtBanyo, int ArtCerraje, int ArtHerramientas)
-	cInventario* inventarioBala = new cInventario(10, 10, 9, 5, 4, 10);
+	cInventario* inventarioBala = new cInventario(10, 4, 9, 5, 4, 3);
 	ferreteriaBala->setInventario(inventarioBala);
 
 	// Ahora vamos con el personal del local, primero el duenyo y jefe
@@ -51,11 +52,9 @@ int main(void) {
 	cPersona* cliente3 = new cCliente(true, false, true, false, "777", 2000, "6969", "2pac", "894", "california@love.com", "av7");
 	// Uno que quiere cambiar una compra previa
 	cPersona* cliente4 = new cCliente(false, false, false, true, "888", 2000, "1234", "Grando Smokio", "555", "groove@street.com", "av8");
-
+	/*FALTA HACERLE EL OBJETO QUE QUIERA CAMBIAR*/
 	/* 
-	* 
 	Dejamos los enum en comentarios para que se vea mas o menos todos los tipos de herramientas que puede haber
-	
 	ArtBanyo { barralesCortina, cepilloLimpieza, virulana, lanaMetal };
 	ArtBazar { tenderesRopa, tablasPlanchar, sogas, tablasInodoro, impBanyera };
 	ArtCerraje { llaveSimple, llaveDobleTambor, llaveCod, llaveMagne };
@@ -85,16 +84,32 @@ int main(void) {
 
 	// Los de cerrajeria
 	cProducto* llaveSimple1 = new cArtCerraje(llaveSimple, 100, "Bronce, mango redondo");
-	cProducto* llaveSimple2 = new cArtCerraje(llaveSimple, 100, "Bronce, mango cuadrado");
+	/*Hacer llavesSimple2 con un constructor por copia*/
+	cProducto* llaveSimple2 = new cArtCerraje(*llaveSimple1);
 	cProducto* llaveDobleTamb1 = new cArtCerraje(llaveDobleTambor, 100, "Bronce, mango cuadrado");
 	cProducto* llaveCod1 = new cArtCerraje(llaveCod, 150, "Acero, mango cuadrado");
 
 	// Los de electricidad
+	cProducto* cable1 = new cArtElect(cables, 25, "20 metros de largo, 1 cm de grueso");
+	cProducto* lampara1 = new cArtElect(lamparas, 165, "30 cm de alto");
+	cProducto* portaLampara1 = new cArtElect(portalamparas, 20, "10 cm de alto x 3 cm de radio");
+	cProducto* enchufe1 = new cArtElect(enchufes, 30, "5 cm de alto x 7 cm de largo");
 
+	// Los de Ferreteria mas genericos
 
 	// Por ultimo, las herramientas caras
-	cProducto* amoladora1 = new cArtHerramientas(amoladora, 1000, "Roja, con bateria, marca Milwaukee");
+	cProducto* amoladora1 = new cArtHerramientas(amoladora, 1000, "Roja,con bateria,marca Milwaukee");
+	cProducto* lijadora1 = new cArtHerramientas(lijadora, 900, "Verde,con bateria,marca Husqvarna");
+	cProducto* perforadora1 = new cArtHerramientas(perforadora, 2000, "Negra,con bateria,marca deWalt");
 
+	// Dejamos en comentario un ejemplo de constructor de copia por las dudas
+	/* ESTO FUNCIONA, 100% confirmado
+	cRecibo* reciboPrueba = new cRecibo(1000, efectivo);
+	cRecibo* reciboCopia = new cRecibo(*reciboPrueba);
+
+	delete reciboPrueba;
+	delete reciboCopia
+	*/
 
 	delete ferreteriaBala;
 	delete inventarioBala;
@@ -126,11 +141,18 @@ int main(void) {
 	delete impBanyera1;
 
 	delete llaveSimple1;
-	delete llaveSimple2;
+	//delete llaveSimple2;
 	delete llaveDobleTamb1;
 	delete llaveCod1;
 
+	delete cable1;
+	delete lampara1;
+	delete portaLampara1;
+	delete enchufe1;
+
 	delete amoladora1;
+	delete lijadora1;
+	delete perforadora1;
 
 	return 0;
 }
