@@ -37,16 +37,16 @@ void cFerreteria::setEstado(bool newEstado) {
     this->abierta = newEstado;
 }
 
-// Setea el estado en abierto
-void cFerreteria::abrirLocal() {
-    setEstado(true);
-    return;
+bool cFerreteria::getEstado() {
+    return abierta;
 }
 
-// Setea el estado en cerrado
-void cFerreteria::cerrarLocal() {
-    setEstado(false);
-    return;
+void cFerreteria::setInventario(cInventario* newInventario) {
+    this->inventario = newInventario;
+}
+
+cInventario* cFerreteria::getInventario() {
+    return inventario;
 }
 
 // Retorna la cantidad de fondos del local

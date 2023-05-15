@@ -35,16 +35,18 @@ public:
     void setDespachante(cDespachante* Despachante);
 
     void setEstado(bool Abierta);
-    void setFondos(double Fondos);
+    bool getEstado();
+
+    void setInventario(cInventario* newInventario);
+    cInventario* getInventario();
 
 
-    void abrirLocal();
-    void cerrarLocal();
     void pagarSueldos();
     bool chequearStock();
     void reestablecerStock();
 
     double getFondos();
+    void setFondos(double Fondos);
 
 
 };

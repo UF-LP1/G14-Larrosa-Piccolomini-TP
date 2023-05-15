@@ -3,18 +3,17 @@
 
 // Constructor de Cliente, los atributos del recibo y de si quiere alquilar o no, van por default
 // Siendo que no tiene recibo alguno en un principio, y no esta ddefinido de si quiere alquilar o no (false)
-cCliente::cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, string Tarjeta, double Fondos, const string Dni, const string Name, string Tel,
-    string Email, string Adress) : cPersona(Dni, Name, Tel, Email, Adress) {
+cCliente::cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, string Tarjeta, double Fondos, const string Dni, const string Name, string Tel, string Email, string Adress) : cPersona(Dni, Name, Tel, Email, Adress) {
     this->buscaRepuesto = BuscarRepuesto;
     this->foto = Foto;
     this->artRoto = ArtRoto;
-    this->cambio = cambio;
+    this->cambio = Cambio;
     this->tarjeta = Tarjeta;
     this->fondos = Fondos;
     this->reciboCliente = nullptr;
     this->alquilerProducto = false;
     // Lista compras no es necesario inicializarla porque comienza en nulo por default
-    // Gracias C++
+    // Gracias C++ :)
 }
 
 
@@ -22,42 +21,78 @@ cCliente::~cCliente() {
 }
 
 
-void cCliente::agregarProducto(const cProducto& objeto) {
+void cCliente::agregarProducto(cProducto* objeto) {
     this->listaCompras.push_back(objeto);
 }
 
-// FUNCION OBLIGATORIAAAAA
-double cCliente::generarPresupuesto(vector<cProducto> ListaCompras) {
+double cCliente::generarPresupuesto(vector<cProducto*> ListaCompras) {
     double suma = 0;
     for (int i = 0; i < ListaCompras.size(); i++) {
-        suma += ListaCompras[i].getPrecio();
+        suma += ListaCompras[i]->getPrecio();
     }
     return suma;
 }
 
 
 // Funciones sin realizar (a desarrollar)
-bool cCliente::comprarProd() {
-    return false;
+void cCliente::comprarProducto() {
+    double aPagar = generarPresupuesto(getListaCompras());
+    if (aPagar > getFondos()) {
+        // NO SE QUE TENEMOS QUE TIRAR, PERO ESTA LA IDEA
+        // EL CATCH SE HACE EN EL MAIN
+        throw;
+    }
+    pagarPresupuesto();
+
+    // Hay que hacer que en lista se queden todos los productos que NO pudo comprar el cliente
+    // Puede ser un metodo separado
 }
 
-void cCliente::cambiarProd(bool, cProducto*) {  
-    return;
+
+void cCliente::comprarRepuesto() {
+    if (!getBuscarRepuesto()) {
+        return;
+    }
+
+
 }
 
-void cCliente::alquilarProducto(bool, cProducto*) {
+void cCliente::cambiarProd() {
+    if (!getCambio() || (!getFoto() && !getArtRoto())) {
+        return;
+    }
+
+}
+
+void cCliente::alquilarProducto() {
     return;
 }
 
 void cCliente::pagarPresupuesto() {
-    setFondos(getFondos() - generarPresupuesto(this->listaCompras));
+    setFondos(getFondos() - generarPresupuesto(getListaCompras()));
 }
 
-vector<cProducto> cCliente::getListaCompras() {
+vector<cProducto*> cCliente::getListaCompras() {
     return this->listaCompras;
 }
 
-void cCliente::setListaCompras(vector<cProducto> newListaCompras) {
+bool cCliente::getBuscarRepuesto() {
+    return this->buscaRepuesto;
+}
+
+bool cCliente::getFoto() {
+    return this->foto;
+}
+
+bool cCliente::getArtRoto() {
+    return this->artRoto;
+}
+
+bool cCliente::getCambio() {
+    return this->cambio;
+}
+
+void cCliente::setListaCompras(vector<cProducto*> newListaCompras) {
     this->listaCompras = newListaCompras;
 }
 
@@ -77,3 +112,18 @@ void cCliente::setRecibo(cRecibo* newRecibo) {
     this->reciboCliente = newRecibo;
 }
 
+void cCliente::setBuscarRepuesto(bool newBuscarRepuesto) {
+    this->buscaRepuesto = newBuscarRepuesto;
+}
+
+void cCliente::setFoto(bool newFoto) {
+    this->foto = newFoto;
+}
+
+void cCliente::setArtRoto(bool newArtRoto) {
+    this->artRoto = newArtRoto;
+}
+
+void cCliente::setCambio(bool newCambio) {
+    this->cambio = newCambio;
+}

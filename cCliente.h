@@ -5,11 +5,11 @@
 #include "cProducto.h"
 #include "cRecibo.h"
 
+class cCliente : public cPersona {
 
-class cCliente: public cPersona {
-   
 private:
-    vector<cProducto> listaCompras;
+    // Lista de punteros de tipo producto, donde cada uno de estos punteros puede apuntar a las clases hijas
+    vector<cProducto*> listaCompras;
     bool buscaRepuesto;
     bool foto;
     bool artRoto;
@@ -19,25 +19,35 @@ private:
     cRecibo* reciboCliente;
     bool alquilerProducto;
 
-public: 
-    cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, string Tarjeta, double Fondos, 
+public:
+    cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, string Tarjeta, double Fondos,
         const string Dni, const string Name, string Tel, string Email, string Adress);
     ~cCliente();
 
-    void agregarProducto(const cProducto& objeto);
-    double generarPresupuesto(vector<cProducto> ListaCompras);
-    bool comprarProd();
-    void cambiarProd(bool, cProducto*);
-    void alquilarProducto(bool, cProducto*);
+    void agregarProducto(cProducto* objeto);
+    double generarPresupuesto(vector<cProducto*> ListaCompras);
+    void comprarProducto();
+    void comprarRepuesto();
+    void cambiarProd();
+    void alquilarProducto();
     void pagarPresupuesto();
 
-    void setListaCompras(vector<cProducto> newListaCompras);
+    void setListaCompras(vector<cProducto*> newListaCompras);
     void setTarjeta(string newTarjeta);
     void setFondos(double newFondos);
     void setRecibo(cRecibo* newRecibo);
+    void setBuscarRepuesto(bool newBuscarRepuesto);
+    void setFoto(bool newFoto);
+    void setArtRoto(bool newArtRoto);
+    void setCambio(bool newCambio);
 
-    vector<cProducto> getListaCompras();
+    vector<cProducto*> getListaCompras();
+    bool getBuscarRepuesto();
+    bool getFoto();
+    bool getArtRoto();
+    bool getCambio();
     double getFondos();
+
 };
 
 #endif //_CCERRAJERO_H
