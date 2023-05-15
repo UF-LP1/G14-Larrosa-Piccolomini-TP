@@ -52,7 +52,10 @@ int main(void) {
 	// Uno que quiere cambiar una compra previa
 	cPersona* cliente4 = new cCliente(false, false, false, true, "888", 2000, "1234", "Grando Smokio", "555", "groove@street.com", "av8");
 
-	/* Dejamos los enum en comentarios para que se vea mas o menos todos los tipos de herramientas que puede haber
+	/* 
+	* 
+	Dejamos los enum en comentarios para que se vea mas o menos todos los tipos de herramientas que puede haber
+	
 	ArtBanyo { barralesCortina, cepilloLimpieza, virulana, lanaMetal };
 	ArtBazar { tenderesRopa, tablasPlanchar, sogas, tablasInodoro, impBanyera };
 	ArtCerraje { llaveSimple, llaveDobleTambor, llaveCod, llaveMagne };
@@ -90,7 +93,7 @@ int main(void) {
 
 
 	// Por ultimo, las herramientas caras
-	cProducto* amoladora1 = new cArtHerramientas(amoladora, 1000, "Roja,con bateria,marca Milwaukee");
+	cProducto* amoladora1 = new cArtHerramientas(amoladora, 1000, "Roja, con bateria, marca Milwaukee");
 
 
 	delete ferreteriaBala;

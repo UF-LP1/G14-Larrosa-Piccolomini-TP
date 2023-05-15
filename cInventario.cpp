@@ -1,5 +1,7 @@
 #include "cInventario.h"
 
+int cInventario::cant = 0;
+
 cInventario::cInventario(int ArtFerre, int ArtElect, int ArtBazar, int ArtBanyo, int ArtCerraje, int ArtHerramientas) {
     this->sArtFerre = ArtFerre;
     this->sArtElect = ArtElect;
@@ -7,15 +9,12 @@ cInventario::cInventario(int ArtFerre, int ArtElect, int ArtBazar, int ArtBanyo,
     this->sArtBanyo = ArtBanyo;
     this->sArtCerraje = ArtCerraje;
     this->sArtHerramientas = ArtHerramientas;
-    cant++; //constructor incrementa el contador cada vez que se crea una nueva instancia de la clase
     cant = ArtFerre + ArtElect + ArtBazar + ArtBanyo + ArtCerraje + ArtHerramientas;
     //estamos vinculando un static con instancias de la clase (objetos)
 }
 // definición del atributo estático "contador" e inicialización en 0
-int cInventario::cant = 0;
 
 cInventario::~cInventario() {
-    cant--;
 }
 
 int cInventario::getCant() {
