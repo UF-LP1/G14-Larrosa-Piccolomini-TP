@@ -91,12 +91,10 @@ int main(void) {
 	* el constructor de cproducto necesita. precio medidas envoltorio
 	* CONSTRUCTOR de ARTCERRAJE necesita
 	*/
-	/*Hacer llavesSimple2 con un constructor por copia*/
-
+	
 	cArtCerraje* llaveSimple3 = new cArtCerraje(*llaveSimple1);
 	llaveSimple1->imprimir();
 	llaveSimple3->imprimir();
-	//IMPRIMIR METODO IMPRIMIR EN CERRAJERIA
 
 	// Los de electricidad
 	cProducto* cable1 = new cArtElect(cables,25,"20 metros de largo, 1 cm de grueso");

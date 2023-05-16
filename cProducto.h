@@ -19,6 +19,11 @@ public:
     bool getEnvoltorio();
     
     friend class cArtCerraje;
+    friend class cArtBanyo;
+    friend class cArtBazar;
+    friend class cArtElect;
+    friend class cArtFerre;
+    friend class cArtHerramientas;
 };
 
 
