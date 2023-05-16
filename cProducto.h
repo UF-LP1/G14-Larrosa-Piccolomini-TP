@@ -21,8 +21,6 @@ public:
     void setEnvoltorio(bool newEnvol);
     bool getEnvoltorio();
 
-
-
     friend class cArtBanyo;
     friend class cArtBazar;
     friend class cArtCerraje;

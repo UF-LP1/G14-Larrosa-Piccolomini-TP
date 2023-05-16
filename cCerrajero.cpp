@@ -9,9 +9,10 @@ cCerrajero::~cCerrajero() {
 }
 
 // A esto le falta desarrollo, no se especifica el tipo de llave por ejemplo
-cArtCerraje* cCerrajero::hacerLlave() {
-    cArtCerraje* llave = nullptr;
-    return llave;
+cArtCerraje* cCerrajero::copiarLlave(const cArtCerraje& paraCopiar) {
+    cArtCerraje* nuevaLlave = nullptr;
+    nuevaLlave = new cArtCerraje(paraCopiar);
+    return nuevaLlave;
 }
 
 // Setea si esta avalada o no la autorizacion por parametro

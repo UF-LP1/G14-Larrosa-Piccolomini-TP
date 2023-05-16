@@ -20,6 +20,18 @@ cFerreteria::~cFerreteria() {
     delete despachante;
 }
 
+void cFerreteria::setListaInventario(vector<cProducto*> newLista) {
+    this->listaInventario = newLista;
+}
+
+vector<cProducto*> cFerreteria::getListaInventario() {
+    return listaInventario;
+}
+
+void cFerreteria::agregarAlListado(cProducto* newElement) {
+    getListaInventario().push_back(newElement);
+}
+
 void cFerreteria::setDuenyo(cDuenyo* Duenyo) {
     this->duenyo = Duenyo;
 }
@@ -110,27 +122,27 @@ void cFerreteria::pagarSueldos() {
 void cFerreteria::reestablecerStock() {
 
     if (inventario->getArtFerre() == 0) {
-        inventario->setArtFerre(100);
-        setFondos(getFondos() - 100 * 150);
+        inventario->setArtFerre(10);
+        setFondos(getFondos() - 10 * 15);
     }
     if (inventario->getArtElect() == 0) {
-        inventario->setArtElect(100);
-        setFondos(getFondos() - 100 * 250);
+        inventario->setArtElect(10);
+        setFondos(getFondos() - 10 * 25);
     }
     if (inventario->getArtBazar() == 0) {
-        inventario->setArtBazar(100);
-        setFondos(getFondos() - 100 * 400);
+        inventario->setArtBazar(10);
+        setFondos(getFondos() - 10 * 40);
     }
     if (inventario->getArtBanyo() == 0) {
-        inventario->setArtBanyo(100);
-        setFondos(getFondos() - 100 * 300);
+        inventario->setArtBanyo(10);
+        setFondos(getFondos() - 10 * 30);
     }
     if (inventario->getArtCerraje() == 0) {
-        inventario->setArtCerraje(100);
-        setFondos(getFondos() - 100 * 600);
+        inventario->setArtCerraje(10);
+        setFondos(getFondos() - 10 * 60);
     }
     if (inventario->getArtHerramientas() == 0) {
-        inventario->setArtHerramientas(100);
-        setFondos(getFondos() - 100 * 1000);
+        inventario->setArtHerramientas(10);
+        setFondos(getFondos() - 10 * 100);
     }
 }

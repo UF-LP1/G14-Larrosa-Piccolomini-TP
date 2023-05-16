@@ -15,7 +15,7 @@ private:
     int sArtHerramientas;
 
 public:
-    cInventario(int ArtFerre, int ArtElect, int ArtBazar, int ArtBanyo, int ArtCerraje, int ArtHerramientas);
+    cInventario(int ArtBanyo, int ArtBazar, int ArtCarraje, int ArtElect, int ArtFerre, int ArtHerram);
     ~cInventario();
 
     int getArtFerre();
