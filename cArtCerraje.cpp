@@ -5,11 +5,16 @@ cArtCerraje::cArtCerraje(eArtCerraje Tipo, double Precio, const string Medidas) 
 	this->tipo = Tipo;
 }
 
-cArtCerraje::cArtCerraje(const cArtCerraje& nuevaLlave) : cProducto(nuevaLlave), tipo(nuevaLlave.tipo) 
+cArtCerraje::cArtCerraje(const cArtCerraje& nuevaLlave) : cProducto(nuevaLlave)
 {
-	//this->tipo = nuevaLlave.tipo;
-		
+	this->tipo = nuevaLlave.tipo;
 }
 
 cArtCerraje::~cArtCerraje() {
 }
+
+void cArtCerraje::imprimir()
+{
+	cout << "\n" << tipo << "\t" << precio << "\t" << medidas << "\n";
+}
+

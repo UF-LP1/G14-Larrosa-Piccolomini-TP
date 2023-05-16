@@ -11,6 +11,9 @@ public:
     //constructor por copia
     cArtCerraje(const cArtCerraje& nuevaLlave);
     ~cArtCerraje();
+
+    void imprimir();
+
 };
 
 #endif //_CARTCERRAJE_H

@@ -17,6 +17,9 @@ public:
     void setPrecio(double Precio);
     void setEnvoltorio(bool newEnvol);
     bool getEnvoltorio();
+    
+    friend class cArtCerraje;
 };
+
 
 #endif //_CPRODUCTO_H

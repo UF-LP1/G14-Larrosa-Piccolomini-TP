@@ -94,6 +94,9 @@ int main(void) {
 	/*Hacer llavesSimple2 con un constructor por copia*/
 
 	cArtCerraje* llaveSimple3 = new cArtCerraje(*llaveSimple1);
+	llaveSimple1->imprimir();
+	llaveSimple3->imprimir();
+	//IMPRIMIR METODO IMPRIMIR EN CERRAJERIA
 
 	// Los de electricidad
 	cProducto* cable1 = new cArtElect(cables,25,"20 metros de largo, 1 cm de grueso");
@@ -106,6 +109,15 @@ int main(void) {
 	cProducto* amoladora1 = new cArtHerramientas(amoladora, 1000, "Roja,con bateria,marca Milwaukee");
 	cProducto* lijadora1 = new cArtHerramientas(lijadora, 900, "Verde,con bateria,marca Husqvarna");
 	cProducto* perforadora1 = new cArtHerramientas(perforadora, 2000, "Negra,con bateria,marca deWalt");
+
+	cRecibo* reciboPrueba = new cRecibo(1000, efectivo);
+	cRecibo* reciboCopia = new cRecibo(*reciboPrueba);
+	reciboPrueba->imprimir();
+	reciboCopia->imprimir();
+
+	delete reciboPrueba;
+	delete reciboCopia;
+	
 
 
 	delete ferreteriaBala;

@@ -4,14 +4,12 @@
 // Por default el envoltorio esta nuevo (true)
 cProducto::cProducto(double Precio, const string Medidas, bool envoltorio) : medidas(Medidas) {
     this->precio = Precio;
-    this->envoltorio = true;
+    this->envoltorio = envoltorio;
 }
-cProducto::cProducto(const cProducto& otro) : precio(otro.precio), medidas(otro.medidas), envoltorio(otro.envoltorio)
+cProducto::cProducto(const cProducto& otro) : medidas(otro.medidas)
 {
-    /*this->precio = precio;
-    this->envoltorio = true;
-    */
-
+    this->precio = otro.precio;
+    this->envoltorio = otro.envoltorio;
 }
 // Va vacio, no hay que hacer ningun delete
 cProducto::~cProducto() {
