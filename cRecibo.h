@@ -26,9 +26,6 @@ public:
 
     unsigned int getCuotas();
 
-    void imprimir() {
-        cout << pago << "\t" << metodoPago << "\t" << cuotas << endl;
-    }
 };
 
 #endif //_CRECIBO_H

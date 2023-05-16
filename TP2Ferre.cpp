@@ -86,14 +86,6 @@ int main(void) {
 	cArtCerraje* llaveDobleTamb1 = new cArtCerraje(llaveDobleTambor, 100, "Bronce, mango cuadrado");
 	cArtCerraje* llaveCod1 = new cArtCerraje(llaveCod, 150, "Acero, mango cuadrado");
 
-	/*
-	AHI NO COINCIDE
-	nosotros enviamos por datos a: TIPO. PRECIO. MEDIDAS
-	el constructor de cproducto necesita. precio medidas envoltorio
-	*/
-
-	//IMPRIMIR METODO IMPRIMIR EN CERRAJERIA
-
 	// Los de electricidad
 	cProducto* cable1 = new cArtElect(cables, 25, "20 metros de largo, 1 cm de grueso");
 	cProducto* lampara1 = new cArtElect(lamparas, 165, "30 cm de alto");
@@ -105,16 +97,6 @@ int main(void) {
 	cProducto* amoladora1 = new cArtHerramientas(amoladora, 1000, "Roja,con bateria,marca Milwaukee");
 	cProducto* lijadora1 = new cArtHerramientas(lijadora, 900, "Verde,con bateria,marca Husqvarna");
 	cProducto* perforadora1 = new cArtHerramientas(perforadora, 2000, "Negra,con bateria,marca deWalt");
-
-	cRecibo* reciboPrueba = new cRecibo(1000, efectivo);
-	cRecibo* reciboCopia = new cRecibo(*reciboPrueba);
-	reciboPrueba->imprimir();
-	reciboCopia->imprimir();
-
-	delete reciboPrueba;
-	delete reciboCopia;
-
-
 
 	delete ferreteriaBala;
 	delete inventarioBala;
@@ -146,6 +128,7 @@ int main(void) {
 	delete impBanyera1;
 
 	delete llaveSimple1;
+	delete llaveSimple2;
 	delete llaveDobleTamb1;
 	delete llaveCod1;
 
