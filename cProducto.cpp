@@ -2,11 +2,17 @@
 
 // Inicializa un producto dandole el precio y especificaciones por parametro
 // Por default el envoltorio esta nuevo (true)
-cProducto::cProducto(double Precio, const string Medidas) : medidas(Medidas) {
+cProducto::cProducto(double Precio, const string Medidas, bool envoltorio) : medidas(Medidas) {
     this->precio = Precio;
     this->envoltorio = true;
 }
+cProducto::cProducto(const cProducto& otro) : precio(otro.precio), medidas(otro.medidas), envoltorio(otro.envoltorio)
+{
+    /*this->precio = precio;
+    this->envoltorio = true;
+    */
 
+}
 // Va vacio, no hay que hacer ningun delete
 cProducto::~cProducto() {
 }

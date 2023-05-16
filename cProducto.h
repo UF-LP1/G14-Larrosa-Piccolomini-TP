@@ -8,10 +8,10 @@ private:
     double precio;
     const string medidas;
     bool envoltorio;
-    unsigned int stock;
 
 public:    
-    cProducto(double Precio, const string Medidas);
+    cProducto(double Precio, const string Medidas, bool envoltorio);
+    cProducto(const cProducto& otro);
     ~cProducto();
     double getPrecio();
     void setPrecio(double Precio);

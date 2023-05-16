@@ -81,10 +81,19 @@ int main(void) {
 	cProducto* impBanyera1 = new cArtBazar(impBanyera, 70, "Jabonera");
 
 	// Los de cerrajeria
-	cProducto* llaveSimple1 = new cArtCerraje(llaveSimple, 100, "Bronce, mango redondo");
+	cArtCerraje* llaveSimple1 = new cArtCerraje(llaveSimple, 100, "Bronce, mango redondo");
 	cProducto* llaveSimple2 = new cArtCerraje(llaveSimple, 100, "Bronce, mango cuadrado");
 	cProducto* llaveDobleTamb1 = new cArtCerraje(llaveDobleTambor, 100, "Bronce, mango cuadrado");
 	cProducto* llaveCod1 = new cArtCerraje(llaveCod, 150, "Acero, mango cuadrado");
+
+	/*AHI NO COINCIDE
+	*nosotros enviamos por datos a: TIPO. PRECIO. MEDIDAS
+	* el constructor de cproducto necesita. precio medidas envoltorio
+	* CONSTRUCTOR de ARTCERRAJE necesita
+	*/
+	/*Hacer llavesSimple2 con un constructor por copia*/
+
+	cArtCerraje* llaveSimple3 = new cArtCerraje(*llaveSimple1);
 
 	// Los de electricidad
 	cProducto* cable1 = new cArtElect(cables,25,"20 metros de largo, 1 cm de grueso");

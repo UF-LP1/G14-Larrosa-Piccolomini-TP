@@ -4,12 +4,15 @@
 cCerrajero::cCerrajero(bool AutorizacionMag, double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress) : cEmpleado(sueldo, Dni, Name, Tel, Email, Adress) {
     this->autorizacionMag = false;
 }
+// Constructor por copia
 
 cCerrajero::~cCerrajero() {
 }
 
 // A esto le falta desarrollo, no se especifica el tipo de llave por ejemplo
-cArtCerraje* cCerrajero::hacerLlave() {
+//hace copia de una llave por vez?
+//requiero un constructor por copia
+cArtCerraje* cCerrajero::hacerCopiaLlave(cArtCerraje* llaveSimple1) {
     cArtCerraje* llave = nullptr;
     return llave;
 }
