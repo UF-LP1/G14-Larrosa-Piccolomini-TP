@@ -44,7 +44,7 @@ int main(void) {
 	cCerrajero* cerrajero = new cCerrajero(false, 1300, "1003", "Toad", "10003", "cerrajero@ferreteria.com", "av4");
 
 	// Ahora comenzamos armando todos los objetos que representen productos del local
-	// Primero los de baño
+	// Primero los de baÃ±o
 	cArtBanyo* barralCortina1 = new cArtBanyo(barralesCortina, 300, "Gris, 2,2 metros de largo, fijacion por sopapas");
 	cArtBanyo* cepilloLimpieza1 = new cArtBanyo(cepilloLimpieza, 200, "Blanco, pelo grueso y duro");
 	cArtBanyo* paqueteVirulana1 = new cArtBanyo(virulana, 50, "Ultrafina, 6 unidades");
