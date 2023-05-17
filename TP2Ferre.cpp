@@ -32,16 +32,16 @@ int main(void) {
 	ferreteriaBala->setListaInventario(listaBala);
 
 	// Ahora vamos con el personal del local, primero el duenyo y jefe
-	cEmpleado* jefe = new cDuenyo(1500, "1000", "Wario", "10001", "jefe@ferreteria.com", "av1");
+	cDuenyo* jefe = new cDuenyo(1500, "1000", "Wario", "10001", "jefe@ferreteria.com", "av1");
 
 	// Un plomero que se llama mario... muy original lo mio
-	cEmpleado* plomero = new cPlomero(1200, "1001", "Mario", "10002", "plumber@ferreteria.com", "av2");
+	cPlomero* plomero = new cPlomero(1200, "1001", "Mario", "10002", "plumber@ferreteria.com", "av2");
 
 	// Ahora el despachante, hermano de mario
-	cEmpleado* despachante = new cDespachante(1000, "1002", "Luigi", "10002", "delivery@ferreteria.com", "av3");
+	cDespachante* despachante = new cDespachante(1000, "1002", "Luigi", "10002", "delivery@ferreteria.com", "av3");
 
 	// Por ultimo el cerrajero, amigo de mario, con la autorizacion negada desde el principio
-	cEmpleado* cerrajero = new cCerrajero(false, 1300, "1003", "Toad", "10003", "cerrajero@ferreteria.com", "av4");
+	cCerrajero* cerrajero = new cCerrajero(false, 1300, "1003", "Toad", "10003", "cerrajero@ferreteria.com", "av4");
 
 	// Ahora comenzamos armando todos los objetos que representen productos del local
 	// Primero los de baño
@@ -127,6 +127,8 @@ int main(void) {
 	cCliente* cliente3 = new cCliente(true, false, true, false, "777", 500, "6969", "2pac", "894", "california@love.com", "av7");
 	// Uno que quiere cambiar una compra previa
 	cCliente* cliente4 = new cCliente(false, false, false, true, "888", 500, "1234", "Grando Smokio", "555", "groove@street.com", "av8");
+	// Uno que quiere una llave magnetica
+	cCliente* cliente5 = new cCliente(false, false, false, false, "456", 1500, "654", "CJ", "472", "train@allyouhad.com", "av9");
 
 	// cliente1: Vamos con la lista de compras
 	vector<cProducto*> listaCL1;
@@ -161,7 +163,13 @@ int main(void) {
 
 	// cliente4: Unico producto que quiere alquilar
 	cArtHerramientas* perforadoraCL4 = new cArtHerramientas(perforadora, 2000, "Negra,con bateria,marca deWalt");
+	cliente4->agregarProducto(perforadoraCL4);
 
+	// cliente5: Solo quiere una llave magnetica
+	cliente5->agregarProducto(perforadoraCL4);
+
+	// Desarrollo del dia de trabajo
+	cArtCerraje* llaveSolicitada = (cerrajero->hacerLlaveMag());
 
 
 	// Deletes de la Ferreteria
@@ -208,6 +216,7 @@ int main(void) {
 	delete cliente2;
 	delete cliente3;
 	delete cliente4;
+	delete cliente5;
 
 	delete paqueteVirulanaCL1;
 	delete sogaCL1;
@@ -222,5 +231,7 @@ int main(void) {
 
 	delete perforadoraCL4;
 
+	delete llaveSolicitada;
+	
 	return 0;
 }

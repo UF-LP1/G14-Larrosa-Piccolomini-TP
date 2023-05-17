@@ -25,9 +25,10 @@ bool cCerrajero::getAutorizacionMag() {
     return this->autorizacionMag;
 }
 
-// Setea la autorizacion como valida, y 
+// Setea la autorizacion como valida, y genera una llave mag desde 0
 cArtCerraje* cCerrajero::hacerLlaveMag() {
     setAutorizacionMag(true);
     cArtCerraje* llaveMag = nullptr;
+    llaveMag = new cArtCerraje(llaveMagne, 200, "Llave magnetica solicitada");
     return llaveMag;
 }
