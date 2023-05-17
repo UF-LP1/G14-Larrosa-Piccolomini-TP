@@ -1,4 +1,4 @@
-#include "cFerreteria.h"
+    #include "cFerreteria.h"
 
 // Inicializa la ferreteria pasandoles los strings de datos del local, y si esta abierto o no como booleano,
 // el resto se nulifica para posterior uso
@@ -14,6 +14,21 @@ cFerreteria::cFerreteria(const string Name, const string Adress, const string Te
 
 // Va vacio, no hay que hacer ningun delete
 cFerreteria::~cFerreteria() {
+}
+
+void cFerreteria::setListaInventario(vector<cProducto*> newLista)
+{
+    this->listaInventario = newLista;
+}
+
+vector<cProducto*> cFerreteria::getListaInventario()
+{
+    return listaInventario; 
+}
+
+void cFerreteria::agregarAlListado(cProducto* newElement)
+{
+    getListaInventario().push_back(newElement);
 }
 
 void cFerreteria::setDuenyo(cDuenyo* Duenyo) {

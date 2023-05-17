@@ -12,6 +12,7 @@
 
 class cFerreteria {
 private:
+    vector<cProducto*> listaInventario;
     const string name;
     const string adress;
     const string telNum;
@@ -29,6 +30,11 @@ public:
     cFerreteria(const string Name, const string Adress, const string TelNum, const string Email, const string PagWeb, bool Estado);
     ~cFerreteria();
 
+    void setListaInventario(vector<cProducto*> newLista);
+
+    vector<cProducto*> getListaInventario();
+    void agregarAlListado(cProducto* newElement);
+
     void setDuenyo(cDuenyo* Duenyo);
     void setPlomero(cPlomero* Plomero);
     void setCerrajero(cCerrajero* Cerrajero);
@@ -40,14 +46,12 @@ public:
     void setInventario(cInventario* newInventario);
     cInventario* getInventario();
 
-
     void pagarSueldos();
     bool chequearStock();
     void reestablecerStock();
 
     double getFondos();
     void setFondos(double Fondos);
-
 
 };
 
