@@ -1,2 +1,28 @@
-﻿  cArtCerraje.cpp
-  TP2Ferre.vcxproj -> C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP2 Ferreteria\x64\Debug\TP2Ferre.exe
+﻿  cArtBanyo.cpp
+  cArtBazar.cpp
+  cArtCerraje.cpp
+  cArtElect.cpp
+  cArtFerre.cpp
+  cArtHerramientas.cpp
+  cCerrajero.cpp
+  cCliente.cpp
+C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP2 Ferreteria\cCliente.cpp(85,33): error C2661: 'std::vector<cProducto *,std::allocator<cProducto *>>::push_back': ninguna función sobrecargada acepta 0 argumentos
+C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP2 Ferreteria\cCliente.cpp(87,5): error C2143: error de sintaxis: falta ';' delante de 'return'
+  cDespachante.cpp
+  cDuenyo.cpp
+  cEmpleado.cpp
+  cFerreteria.cpp
+C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP2 Ferreteria\cFerreteria.cpp(152,5): error C2065: 'cCliente': identificador no declarado
+C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP2 Ferreteria\cFerreteria.cpp(152,14): error C2146: error de sintaxis: falta ';' delante del identificador 'siguiente'
+C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP2 Ferreteria\cFerreteria.cpp(152,14): error C2065: 'siguiente': identificador no declarado
+C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP2 Ferreteria\cFerreteria.cpp(152,32): error C2039: "clientesEspera": no es un miembro de "cFerreteria"
+C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP2 Ferreteria\cFerreteria.h(13): message : vea la declaración de 'cFerreteria'
+C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP2 Ferreteria\cFerreteria.cpp(153,5): error C2065: 'clientesEspera': identificador no declarado
+  cInventario.cpp
+  cPersona.cpp
+  cPlomero.cpp
+  cProducto.cpp
+  cRecibo.cpp
+  Source.cpp
+  TP2Ferre.cpp
+  Generando código...

@@ -2,9 +2,23 @@
 #define _CCLIENTE_H
 
 #include "cPersona.h"
-#include "cProducto.h"
+
+//#include "cProducto.h"
+//#include "cProducto.h" CONVIENE inlcuya a las hijas que YA incluyen al padre(producto). 
+//Analogia Padre mirando a hijo
+
+#include "cArtBanyo.h"
+#include "cArtBazar.h"
+#include "cArtCerraje.h"
+#include "cArtElect.h"
+#include "cArtFerre.h"
+#include "cArtHerramientas.h"
+
+
+#include "cArtHerramientas.h"
 #include "cRecibo.h"
 #include "cFerreteria.h"
+#include "Exception.h"
 
 class cCliente : public cPersona {
 
@@ -31,8 +45,8 @@ public:
     void comprarProducto();
     void comprarRepuesto();
     void cambiarProd(cFerreteria* ferreteria);
-    void alquilarProducto();
-    void pagarPresupuesto();
+    void alquilarProducto(cArtHerramientas* paraAlquilar );
+    void pagarPresupuesto(double temp);
 
     void setListaCompras(vector<cProducto*> newListaCompras);
     void setListaComprados(vector<cProducto*> newListaComprados);
@@ -52,7 +66,7 @@ public:
     bool getCambio();
     double getFondos();
 
-    friend class cFerreteria;
+    friend class cFerreteria; // ta bien o no dijo sirne
 };
 
 #endif //_CCERRAJERO_H

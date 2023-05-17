@@ -59,8 +59,10 @@ void cCliente::cambiarProd(cFerreteria* ferreteria) {
 
     int j = 0;
     
-    if (!getCambio() || (!getFoto() && !getArtRoto())) {
-        return;
+    if (!getCambio() || (!getFoto() && !getArtRoto())) {//get y set son para usarlos fuera de la clase
+        throw ComentarioException("No es posible la devolución"); 
+        //opcion1 y buscar como recibir en catch en main O... crear custom excepction
+        return; 
     }
     for (int i = 0; i < listaCompras.size(); i++)
         for (int j = 0; j < listaCompras.size(); j++)
@@ -69,27 +71,29 @@ void cCliente::cambiarProd(cFerreteria* ferreteria) {
                 listaComprados.push_back(ferreteria->getListaInventario()[j]);
             }
     return; 
-        /*hacer una sobrecarga en cProd de == donde
-        // se comparen todos los atributos de los objetos
-        // retorne false si alguno distinto
-        // retorne true si todos atb son iguales
-        
-        //acá podemos implementar TRYCATCH. 
-        //si cliente no posee ninguno. entonces imposible el repuesto
+        /*hacer una sobrecarga en cProd de == donde:
+        se comparen todos los atributos de los objetos
+        retorne false si alguno distinto
+        retorne true si todos atb son iguales
+        acá podemos implementar TRYCATCH. 
+        si cliente no posee ninguno. entonces imposible el repuesto
         */
-        
 }
 
-void cCliente::alquilarProducto() {
+void cCliente::alquilarProducto(cArtHerramientas* paraAlquilar) {
     //alquiler por dia
     double HerrSeguro = 0.0;
 
-    return;
-
+    //getListaCompras().push_back(paraAlquilar); ESTO ES VALIDO pero ya creamos una funcion para hacer lo mismo
+    agregarProducto(paraAlquilar);
+    //ahora genero presupuesto*= producto + seguro
+    double presuTotal = 0.0;
+    presuTotal = generarPresupuesto(listaCompras) + HerrSeguro;
+    pagarPresupuesto(presuTotal);
 }
 
-void cCliente::pagarPresupuesto() {
-    setFondos(getFondos() - generarPresupuesto(getListaCompras()));
+void cCliente::pagarPresupuesto(double temp) {
+    setFondos(getFondos() - temp);
 }
 
 vector<cProducto*> cCliente::getListaCompras() {
