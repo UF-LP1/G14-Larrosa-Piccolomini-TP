@@ -146,10 +146,3 @@ void cFerreteria::reestablecerStock() {
         setFondos(getFondos() - 10 * 100);
     }
 }
-
-void cFerreteria::PasarClienteMostrador()
-{
-    cCliente siguiente = this->clientesEspera.front();//copio el primer cliente de la cola
-    clientesEspera.pop();
-    return;
-}

@@ -42,7 +42,7 @@ void cCliente::comprarProducto() {
         // EL CATCH SE HACE EN EL MAIN
         throw;
     }
-    pagarPresupuesto();
+    pagarPresupuesto(aPagar);
 
     // Hay que hacer que en lista se queden todos los productos que NO pudo comprar el cliente
     // Puede ser un metodo separado

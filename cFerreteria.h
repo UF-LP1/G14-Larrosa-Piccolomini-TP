@@ -57,7 +57,6 @@ public:
     double getFondos();
     void setFondos(double Fondos);
 
-    void PasarClienteMostrador();
 };
 
 #endif //_CFERRETERIA_H
