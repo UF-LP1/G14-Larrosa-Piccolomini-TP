@@ -46,26 +46,36 @@ void cCliente::comprarProducto() {
 
     // Hay que hacer que en lista se queden todos los productos que NO pudo comprar el cliente
     // Puede ser un metodo separado
-}
+}   
 
 
 void cCliente::comprarRepuesto() {
-    if (!getBuscarRepuesto()) {
+    if (!getBuscarRepuesto()) 
         return;
-    }
-
 
 }
-
+//puede q precio varie. si +caro. cliente paga diferencia. si +barato yo se la pongo
 void cCliente::cambiarProd() {
     if (!getCambio() || (!getFoto() && !getArtRoto())) {
         return;
     }
-
+    for(int i=0; i< listaCompras.size(); i++)
+        for(int j=0; i<listaCompras.size();j++)
+        if (listaCompras[i] == listaCompras[j]) {}
+    //hacer una sobrecarga en cProd de == donde 
+    // se comparen todos los atributos de los objetos
+    // retorne false si alguno distinto
+    // retorne true si todos atb son iguales
+    //acá podemos implementar TRYCATCH. 
+    //si cliente no posee ninguno. entonces imposible el repuesto
 }
 
 void cCliente::alquilarProducto() {
+    //alquiler por dia
+    double HerrSeguro = 0.0;
+
     return;
+
 }
 
 void cCliente::pagarPresupuesto() {

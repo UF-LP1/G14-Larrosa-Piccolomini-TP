@@ -4,6 +4,7 @@
 #include "cPersona.h"
 #include "cProducto.h"
 #include "cRecibo.h"
+#include "cFerreteria.h"
 
 class cCliente : public cPersona {
 
