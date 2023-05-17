@@ -11,6 +11,12 @@ cProducto::cProducto(const cProducto& otro) : medidas(otro.medidas)
     this->precio = otro.precio;
     this->envoltorio = otro.envoltorio;
 }
+
+cProducto::cProducto(const cProducto& paraCopíar) : medidas(paraCopíar.medidas) {
+    this->precio = paraCopíar.precio;
+    this->envoltorio = paraCopíar.envoltorio;
+}
+
 // Va vacio, no hay que hacer ningun delete
 cProducto::~cProducto() {
 }

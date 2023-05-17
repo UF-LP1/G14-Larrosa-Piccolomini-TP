@@ -3,6 +3,7 @@
 
 #include "headers.h"
 
+// El duenyo va a generar un recibo, y el cliente recibira una copia del mismo
 class cRecibo {
 private:
     double pago;

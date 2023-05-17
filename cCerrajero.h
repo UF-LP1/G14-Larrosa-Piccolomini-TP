@@ -11,7 +11,7 @@ private:
 public: 
     cCerrajero(bool AutorizacionMag, double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
     ~cCerrajero();
-    cArtCerraje* hacerCopiaLlave(cArtCerraje* llave);
+    cArtCerraje* copiarLlave(const cArtCerraje& paraCopiar);
     void setAutorizacionMag(bool autorizo);
     bool getAutorizacionMag();
     cArtCerraje* hacerLlaveMag();

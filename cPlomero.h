@@ -3,6 +3,7 @@
 
 #include "cEmpleado.h"
 
+// No nos piden nada del plomero en el TP, de ahi que la clase esta vacia
 class cPlomero: public cEmpleado {
 public:
 	cPlomero(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);

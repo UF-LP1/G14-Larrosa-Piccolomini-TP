@@ -14,6 +14,23 @@ const string cPersona::getDni() {
     return this->dni;
 }
 
+const string cPersona::getName()
+{
+    return this->name;
+}
+
+string cPersona::getTel() {
+    return this->tel;
+}
+
+string cPersona::getEmail() {
+    return this->email;
+}
+
+string cPersona::getAdress() {
+    return this->adress;
+}
+
 void cPersona::setTel(string newTel) {
     this->tel = newTel;
 }

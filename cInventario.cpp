@@ -1,5 +1,7 @@
 #include "cInventario.h"
 
+int cInventario::cant = 0;
+
 cInventario::cInventario(int ArtFerre, int ArtElect, int ArtBazar, int ArtBanyo, int ArtCerraje, int ArtHerramientas) {
     this->sArtFerre = ArtFerre;
     this->sArtElect = ArtElect;
@@ -7,9 +9,16 @@ cInventario::cInventario(int ArtFerre, int ArtElect, int ArtBazar, int ArtBanyo,
     this->sArtBanyo = ArtBanyo;
     this->sArtCerraje = ArtCerraje;
     this->sArtHerramientas = ArtHerramientas;
+    cant = ArtFerre + ArtElect + ArtBazar + ArtBanyo + ArtCerraje + ArtHerramientas;
+    //estamos vinculando un static con instancias de la clase (objetos)
 }
+// definición del atributo estático "contador" e inicialización en 0
 
 cInventario::~cInventario() {
+}
+
+int cInventario::getCant() {
+    return cant;
 }
 
 int cInventario::getArtFerre() {
@@ -37,25 +46,38 @@ int cInventario::getArtHerramientas() {
 }
 
 void cInventario::setArtFerre(int newArt) {
+    int aux = newArt - getArtFerre();
+    cant += aux;
     this->sArtFerre = newArt;
 }
 
 void cInventario::setArtElect(int newArt) {
+    int aux = newArt - getArtElect();
+    cant += aux;
     this->sArtElect = newArt;
 }
 
 void cInventario::setArtBazar(int newArt) {
+    int aux = newArt - getArtBazar();
+    cant += aux;
     this->sArtBazar = newArt;
 }
 
 void cInventario::setArtBanyo(int newArt) {
+    int aux = newArt - getArtBanyo();
+    cant += aux;
     this->sArtBanyo = newArt;
 }
 
 void cInventario::setArtCerraje(int newArt) {
+    int aux = newArt - getArtCerraje();
+    cant += aux;
     this->sArtCerraje = newArt;
 }
 
 void cInventario::setArtHerramientas(int newArt) {
+    int aux = newArt - getArtHerramientas();
+    cant += aux;
     this->sArtHerramientas = newArt;
 }
+

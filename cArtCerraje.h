@@ -8,11 +8,8 @@ private:
     eArtCerraje tipo;
 public:
     cArtCerraje(eArtCerraje Tipo, double Precio, const string Medidas);
-    //constructor por copia
-    cArtCerraje(const cArtCerraje& nuevaLlave);
+    cArtCerraje(const cArtCerraje& paraCopiar);
     ~cArtCerraje();
-
-    void imprimir();
 
 };
 

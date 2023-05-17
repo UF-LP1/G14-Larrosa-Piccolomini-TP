@@ -53,3 +53,7 @@ double cDuenyo::getRecaudaciones() {
 void cDuenyo::setRecaudaciones(double newRecaudaciones) {
 	this->recaudaciones = newRecaudaciones;
 }
+
+void cDuenyo::setRecaudaciones(double newRecaudaciones) {
+	this->recaudaciones = newRecaudaciones;
+}
