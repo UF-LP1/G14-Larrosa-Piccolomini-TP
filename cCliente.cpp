@@ -54,20 +54,30 @@ void cCliente::comprarRepuesto() {
         return;
 
 }
-//puede q precio varie. si +caro. cliente paga diferencia. si +barato yo se la pongo
-void cCliente::cambiarProd() {
+//puede q precio varie. si precio+caro. cliente paga diferencia. si precio+barato yo se la pongo
+void cCliente::cambiarProd(cFerreteria* ferreteria) {
+
+    int j = 0;
+    
     if (!getCambio() || (!getFoto() && !getArtRoto())) {
         return;
     }
-    for(int i=0; i< listaCompras.size(); i++)
-        for(int j=0; i<listaCompras.size();j++)
-        if (listaCompras[i] == listaCompras[j]) {}
-    //hacer una sobrecarga en cProd de == donde 
-    // se comparen todos los atributos de los objetos
-    // retorne false si alguno distinto
-    // retorne true si todos atb son iguales
-    //acá podemos implementar TRYCATCH. 
-    //si cliente no posee ninguno. entonces imposible el repuesto
+    for (int i = 0; i < listaCompras.size(); i++)
+        for (int j = 0; j < listaCompras.size(); j++)
+            if (listaCompras[i] == ferreteria->getListaInventario()[j])
+            {
+                listaComprados.push_back(ferreteria->getListaInventario()[j]);
+            }
+    return; 
+        /*hacer una sobrecarga en cProd de == donde
+        // se comparen todos los atributos de los objetos
+        // retorne false si alguno distinto
+        // retorne true si todos atb son iguales
+        
+        //acá podemos implementar TRYCATCH. 
+        //si cliente no posee ninguno. entonces imposible el repuesto
+        */
+        
 }
 
 void cCliente::alquilarProducto() {
@@ -84,6 +94,11 @@ void cCliente::pagarPresupuesto() {
 
 vector<cProducto*> cCliente::getListaCompras() {
     return this->listaCompras;
+}
+
+vector<cProducto*> cCliente::getListaComprados()
+{
+    return this->listaComprados;
 }
 
 bool cCliente::getBuscarRepuesto() {
@@ -104,6 +119,11 @@ bool cCliente::getCambio() {
 
 void cCliente::setListaCompras(vector<cProducto*> newListaCompras) {
     this->listaCompras = newListaCompras;
+}
+
+void cCliente::setListaComprados(vector<cProducto*> newListaComprados)
+{
+    this->listaComprados = newListaComprados;
 }
 
 void cCliente::setTarjeta(string Tarjeta) {

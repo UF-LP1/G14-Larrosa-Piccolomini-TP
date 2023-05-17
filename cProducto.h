@@ -18,6 +18,15 @@ public:
     void setEnvoltorio(bool newEnvol);
     bool getEnvoltorio();
     
+    //sobrecarga del operador ==
+    bool operator==(const cProducto& otro) const {
+        return (precio == otro.precio) && (medidas == otro.medidas) && (envoltorio == otro.envoltorio);
+    }
+    //Para sobrecargar el operador de comparación en cada clase,
+    //debes implementar la función operator== correspondiente en cada una de ellas.
+
+
+
     friend class cArtCerraje;
     friend class cArtBanyo;
     friend class cArtBazar;
@@ -25,6 +34,7 @@ public:
     friend class cArtFerre;
     friend class cArtHerramientas;
 };
+
 
 
 #endif //_CPRODUCTO_H

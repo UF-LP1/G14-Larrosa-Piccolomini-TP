@@ -26,12 +26,11 @@ private:
     cCerrajero* cerrajero;
     cDespachante* despachante;
 
-public: 
+public:
     cFerreteria(const string Name, const string Adress, const string TelNum, const string Email, const string PagWeb, bool Estado);
     ~cFerreteria();
 
     void setListaInventario(vector<cProducto*> newLista);
-
     vector<cProducto*> getListaInventario();
     void agregarAlListado(cProducto* newElement);
 
@@ -40,6 +39,11 @@ public:
     void setCerrajero(cCerrajero* Cerrajero);
     void setDespachante(cDespachante* Despachante);
 
+    cDuenyo* getDuenyo();
+    cPlomero* getPlomero();
+    cCerrajero* getCerrajero();
+    cDespachante* getDespachante();
+
     void setEstado(bool Abierta);
     bool getEstado();
 
@@ -47,12 +51,13 @@ public:
     cInventario* getInventario();
 
     void pagarSueldos();
-    bool chequearStock();
     void reestablecerStock();
+    void depositarRecaudaciones();
 
     double getFondos();
     void setFondos(double Fondos);
 
+    void PasarClienteMostrador();
 };
 
 #endif //_CFERRETERIA_H
