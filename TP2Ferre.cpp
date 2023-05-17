@@ -32,7 +32,7 @@ int main(void) {
 	ferreteriaBala->setListaInventario(listaBala);
 
 	// Ahora vamos con el personal del local, primero el duenyo y jefe
-	cDuenyo* jefe = new cDuenyo(1500, "1000", "Wario", "10001", "jefe@ferreteria.com", "av1");
+	cDuenyo* jefe = new cDuenyo(1500, "1000", "Bowser", "10001", "jefe@ferreteria.com", "av1");
 
 	// Un plomero que se llama mario... muy original lo mio
 	cPlomero* plomero = new cPlomero(1200, "1001", "Mario", "10002", "plumber@ferreteria.com", "av2");
