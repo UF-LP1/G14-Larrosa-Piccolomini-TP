@@ -26,7 +26,7 @@ private:
     cCerrajero* cerrajero;
     cDespachante* despachante;
 
-public: 
+public:
     cFerreteria(const string Name, const string Adress, const string TelNum, const string Email, const string PagWeb, bool Estado);
     ~cFerreteria();
 

@@ -144,6 +144,7 @@
     <ClCompile Include="cPlomero.cpp" />
     <ClCompile Include="cProducto.cpp" />
     <ClCompile Include="cRecibo.cpp" />
+    <ClCompile Include="Exception.cpp" />
     <ClCompile Include="TP2Ferre.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +165,7 @@
     <ClInclude Include="cPlomero.h" />
     <ClInclude Include="cProducto.h" />
     <ClInclude Include="cRecibo.h" />
+    <ClInclude Include="Exception.h" />
     <ClInclude Include="headers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -2,9 +2,14 @@
 
 // Inicializa un producto dandole el precio y especificaciones por parametro
 // Por default el envoltorio esta nuevo (true)
-cProducto::cProducto(double Precio, const string Medidas) : medidas(Medidas) {
+cProducto::cProducto(double Precio, const string Medidas, bool envoltorio) : medidas(Medidas) {
     this->precio = Precio;
-    this->envoltorio = true;
+    this->envoltorio = envoltorio;
+}
+cProducto::cProducto(const cProducto& otro) : medidas(otro.medidas)
+{
+    this->precio = otro.precio;
+    this->envoltorio = otro.envoltorio;
 }
 
 cProducto::cProducto(const cProducto& paraCopíar) : medidas(paraCopíar.medidas) {

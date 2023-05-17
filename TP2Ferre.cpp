@@ -25,7 +25,7 @@ int main(void) {
 
 	// Primero inicializamos el local (abierto) y su inventario con su lista de productos
 	// El inventario de por si ya estara cargado con los datos iniciales
-	cFerreteria* ferreteriaBala = new cFerreteria("Carlitos Bala", "Calle Falsa 123", "08002090", "bala@ferreteria.com", "balaferre.com.ar", true); 
+	cFerreteria* ferreteriaBala = new cFerreteria("Carlitos Bala", "Calle Falsa 123", "08002090", "bala@ferreteria.com", "balaferre.com.ar", true);
 	cInventario* inventarioBala = new cInventario(5, 9, 4, 4, 3, 3);
 	ferreteriaBala->setInventario(inventarioBala);
 	vector<cProducto*> listaBala;
@@ -44,7 +44,7 @@ int main(void) {
 	cCerrajero* cerrajero = new cCerrajero(false, 1300, "1003", "Toad", "10003", "cerrajero@ferreteria.com", "av4");
 
 	// Ahora comenzamos armando todos los objetos que representen productos del local
-	// Primero los de baño
+	// Primero los de baÃ±o
 	cArtBanyo* barralCortina1 = new cArtBanyo(barralesCortina, 300, "Gris, 2,2 metros de largo, fijacion por sopapas");
 	cArtBanyo* cepilloLimpieza1 = new cArtBanyo(cepilloLimpieza, 200, "Blanco, pelo grueso y duro");
 	cArtBanyo* paqueteVirulana1 = new cArtBanyo(virulana, 50, "Ultrafina, 6 unidades");
@@ -117,7 +117,7 @@ int main(void) {
 	ferreteriaBala->agregarAlListado(amoladora1);
 	ferreteriaBala->agregarAlListado(lijadora1);
 	ferreteriaBala->agregarAlListado(perforadora1);
-	
+
 	// Ahora vamos a inicializar 4 clientes
 	// Uno con mucho dinero
 	cCliente* cliente1 = new cCliente(false, false, false, false, "123", 1500, "321", "Mateo", "666", "pumas@hotmail.com", "av5");
@@ -171,7 +171,17 @@ int main(void) {
 	// Desarrollo del dia de trabajo
 	cArtCerraje* llaveSolicitada = (cerrajero->hacerLlaveMag());
 
+	//actualizacion
+	
+	try {
 
+		cliente4->cambiarProd(ferreteriaBala);
+			//funcion a prueba
+	}
+	catch (ComentarioException e)
+	{
+		e.what();
+	};
 	// Deletes de la Ferreteria
 	delete ferreteriaBala;
 	delete inventarioBala;
@@ -232,6 +242,6 @@ int main(void) {
 	delete perforadoraCL4;
 
 	delete llaveSolicitada;
-	
+
 	return 0;
 }

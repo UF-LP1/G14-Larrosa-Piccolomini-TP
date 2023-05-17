@@ -94,7 +94,7 @@ void cFerreteria::setFondos(double newFondos) {
 void cFerreteria::depositarRecaudaciones() {
     double plata = getDuenyo()->getRecaudaciones();
     plata += getFondos();
-    setFondos( plata );
+    setFondos(plata);
 }
 
 // Resta los sueldos de cada empleado en parcicular del atributo fondos

@@ -16,7 +16,7 @@ public:
 	void atenderCliente();
 	double cobrarPago(vector<cProducto*> listaCompras);
 	void calcularVuelto(float montoCompra);
-	
+
 	vector<cRecibo*> getListaRecibos();
 	void setListaRecibos(vector<cRecibo*> newListado);
 
