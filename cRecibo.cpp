@@ -49,11 +49,6 @@ float cRecibo::getPago() {
     return this->pago;
 }
 
-void cRecibo::setPago(double newPago)
-{
-    this->pago = newPago;
-}
-
 unsigned int cRecibo::getCuotas() {
     return this->cuotas;
 }
