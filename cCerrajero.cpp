@@ -32,3 +32,15 @@ cArtCerraje* cCerrajero::hacerLlaveMag() {
     llaveMag = new cArtCerraje(llaveMagne, 200, "Llave magnetica solicitada");
     return llaveMag;
 }
+
+void cCerrajero::imprimir() {
+    string temp = "";
+
+    if (getAutorizacionMag())
+        temp = "Si";
+    else
+        temp = "No";
+
+    cout << getDni() << "\t" << getName() << "\t" << getTel() << "\t" << getEmail() << "\t" << getAdress() << "\n";
+    cout << "Cobra: " <<  getSueldo() << "\t" << "Esta autorizado a fabricar una llave magnetica: " << temp << endl << endl;
+}

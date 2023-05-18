@@ -18,6 +18,8 @@ public:
     cRecibo(const cRecibo& paraCopiar);
     ~cRecibo();
     
+    void imprimir();
+
     float getPago();
     void setPago(float newPago);
 

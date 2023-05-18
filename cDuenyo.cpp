@@ -10,11 +10,24 @@ cDuenyo::cDuenyo(double sueldo, const string Dni, const string Name, string Tel,
 cDuenyo::~cDuenyo() {
 }
 
+void cDuenyo::imprimir() {
+	cout << getDni() << "\t" << getName() << "\t" << getTel() << "\t" << getEmail() << "\t" << getAdress() << "\n";
+	cout << "Cobra: " << getSueldo() << "\tTiene Recaudado: " << getRecaudaciones() << endl;
+	int i = 0;
+	if (this->listaRecibos[0] != nullptr) {
+		for (i = 0; i < this->listaRecibos.size(); i++) {
+			this->listaRecibos[i]->imprimir();
+		}
+	}
+	cout << endl;
+}
+
 /*
 cRecibo* cDuenyo::generarRecibo() {
 
 }
 */
+
 void cDuenyo::atenderCliente() {
 
 }

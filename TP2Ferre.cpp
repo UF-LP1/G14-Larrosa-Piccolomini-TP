@@ -43,6 +43,11 @@ int main(void) {
 	// Por ultimo el cerrajero, amigo de mario, con la autorizacion negada desde el principio
 	cCerrajero* cerrajero = new cCerrajero(false, 1300, "1003", "Toad", "10003", "cerrajero@ferreteria.com", "av4");
 
+	jefe->imprimir();
+	plomero->imprimir();
+	despachante->imprimir();
+	cerrajero->imprimir();
+
 	// Ahora comenzamos armando todos los objetos que representen productos del local
 	// Primero los de baño
 	cArtBanyo* barralCortina1 = new cArtBanyo(barralesCortina, 300, "Gris, 2,2 metros de largo, fijacion por sopapas");
@@ -166,11 +171,21 @@ int main(void) {
 	cliente4->agregarProducto(perforadoraCL4);
 
 	// cliente5: Solo quiere una llave magnetica
+	// CORREGIR
 	cliente5->agregarProducto(perforadoraCL4);
 
 	// Desarrollo del dia de trabajo
 	cArtCerraje* llaveSolicitada = (cerrajero->hacerLlaveMag());
 
+	cliente1->imprimir();
+	cliente2->imprimir();
+	cliente3->imprimir();
+	cliente4->imprimir();
+	cliente5->imprimir();
+
+	cRecibo* reciboPrueba1 = new cRecibo(100, efectivo);
+	reciboPrueba1->imprimir();
+	delete reciboPrueba1;
 
 	// Deletes de la Ferreteria
 	delete ferreteriaBala;

@@ -24,6 +24,8 @@ public:
         const string Dni, const string Name, string Tel, string Email, string Adress);
     ~cCliente();
 
+    virtual void imprimir();
+
     void agregarProducto(cProducto* objeto);
     double generarPresupuesto(vector<cProducto*> ListaCompras);
     void comprarProducto();
@@ -42,6 +44,7 @@ public:
     void setCambio(bool newCambio);
 
     vector<cProducto*> getListaCompras();
+    string getTarjeta();
     bool getBuscarRepuesto();
     bool getFoto();
     bool getArtRoto();

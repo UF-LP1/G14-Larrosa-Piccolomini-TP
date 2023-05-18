@@ -20,6 +20,41 @@ cCliente::cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, st
 cCliente::~cCliente() {
 }
 
+void cCliente::imprimir() {
+    string temp = "";
+    cout << getDni() << "\t" << getName() << "\t" << getTel() << "\t" << getEmail() << "\t" << getAdress() << "\n";
+    cout << "Fondos Disponibles: " << getFondos() << "\tTarjeta:" << getTarjeta() << endl;
+
+    if (getCambio())
+        temp = "Si";
+    else
+        temp = "No";
+    cout << "Busca Cambio: " << temp << endl;
+
+    
+    if (getArtRoto())
+        temp = "Si";
+    else
+        temp = "No";
+    cout << "Tiene un articulo roto: " << temp << endl;
+
+
+    if (getFoto())
+        temp = "Si";
+    else
+        temp = "No";
+    cout << "Posee foto del articulo roto: " << temp << endl;
+
+
+    if (getBuscarRepuesto())
+        temp = "Si";
+    else
+        temp = "No";
+    cout << "Busca un repuesto: " << temp << endl;
+
+    cout << endl;
+}
+
 
 void cCliente::agregarProducto(cProducto* objeto) {
     this->listaCompras.push_back(objeto);
@@ -74,6 +109,10 @@ void cCliente::pagarPresupuesto() {
 
 vector<cProducto*> cCliente::getListaCompras() {
     return this->listaCompras;
+}
+
+string cCliente::getTarjeta() {
+    return this->tarjeta;
 }
 
 bool cCliente::getBuscarRepuesto() {

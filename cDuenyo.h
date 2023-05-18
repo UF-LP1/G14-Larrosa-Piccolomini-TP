@@ -12,6 +12,8 @@ public:
 	cDuenyo(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
 	~cDuenyo();
 
+	virtual void imprimir();
+
 	cRecibo* generarRecibo();
 	void atenderCliente();
 	double cobrarPago(vector<cProducto*> listaCompras);

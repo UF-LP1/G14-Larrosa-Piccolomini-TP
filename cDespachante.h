@@ -12,6 +12,8 @@ public:
     cDespachante(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
     ~cDespachante();
     
+    virtual void imprimir();
+
     void entregaDomicilio();
 
     cCliente* getAtendido();

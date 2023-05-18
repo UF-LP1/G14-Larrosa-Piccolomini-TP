@@ -24,6 +24,28 @@ cRecibo::cRecibo(const cRecibo& paraCopiar) {
 cRecibo::~cRecibo() {
 }
 
+void cRecibo::imprimir() {
+    string temp = "";
+    switch (getTipoPago()) {
+    case 0:
+        temp = "Tarjeta Debito";
+        break;
+    case 1:
+        temp = "Mercado Pago";
+        break;
+    case 2:
+        temp = "Efectivo";
+        break;
+    case 3:
+        temp = "Tarjeta Credito";
+        break;
+    default:
+        temp = "No tiene";
+        break;
+    }
+    cout << "Monto del Recibo: " << getPago() << "\tTipo de pago: " << temp << "\tCantidad de cuotas: " << getCuotas() << endl << endl;
+}
+
 float cRecibo::getPago() {
     return this->pago;
 }
