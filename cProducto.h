@@ -10,9 +10,9 @@ private:
     const string medidas;
     bool envoltorio;
 
-public:
-    cProducto(double Precio, const string Medidas);
-    cProducto(const cProducto& paraCopíar);
+public:    
+    cProducto(double Precio, const string Medidas, bool envoltorio);
+    cProducto(const cProducto& otro);
     ~cProducto();
 
     double getPrecio();
@@ -20,13 +20,24 @@ public:
 
     void setEnvoltorio(bool newEnvol);
     bool getEnvoltorio();
+    
+    //sobrecarga del operador ==
+    bool operator==(const cProducto& otro) const {
+        return (precio == otro.precio) && (medidas == otro.medidas) && (envoltorio == otro.envoltorio);
+    }
+    //Para sobrecargar el operador de comparación en cada clase,
+    //debes implementar la función operator== correspondiente en cada una de ellas.
 
+
+
+    friend class cArtCerraje;
     friend class cArtBanyo;
     friend class cArtBazar;
-    friend class cArtCerraje;
     friend class cArtElect;
     friend class cArtFerre;
-    friend class cArtGerramientas;
+    friend class cArtHerramientas;
 };
+
+
 
 #endif //_CPRODUCTO_H

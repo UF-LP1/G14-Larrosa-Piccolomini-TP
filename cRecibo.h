@@ -6,15 +6,14 @@
 // El duenyo va a generar un recibo, y el cliente recibira una copia del mismo
 class cRecibo {
 private:
-    float pago;
+    double pago;
     eTiposPago metodoPago;
     unsigned int cuotas;
 public:
     // Constructor por parametro
-    cRecibo(float Pago, eTiposPago tipoPago);
-
+    cRecibo(double Pago, eTiposPago tipoPago);
     // Constructor por copia
-    // (duenyo se queda con el original, cliente con la copia)
+   // (duenyo se queda con el original, cliente con la copia)
     cRecibo(const cRecibo& paraCopiar);
     ~cRecibo();
     
@@ -24,7 +23,7 @@ public:
     void setPago(float newPago);
 
     eTiposPago getTipoPago();
-    void setTipoPago(eTiposPago newTipoPago);
+    void setipoPago(eTiposPago tipoPago);
 
     unsigned int getCuotas();
 

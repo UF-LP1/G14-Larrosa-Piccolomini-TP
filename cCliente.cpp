@@ -77,34 +77,58 @@ void cCliente::comprarProducto() {
         // EL CATCH SE HACE EN EL MAIN
         throw;
     }
-    pagarPresupuesto();
+    pagarPresupuesto(aPagar);
 
     // Hay que hacer que en lista se queden todos los productos que NO pudo comprar el cliente
     // Puede ser un metodo separado
-}
+}   
 
 
 void cCliente::comprarRepuesto() {
-    if (!getBuscarRepuesto()) {
+    if (!getBuscarRepuesto()) 
         return;
-    }
+
+}
+//puede q precio varie. si precio+caro. cliente paga diferencia. si precio+barato yo se la pongo
+void cCliente::cambiarProd(cFerreteria* ferreteria) {
+
+    int j = 0;
     
-
-}
-
-void cCliente::cambiarProd() {
-    if ( !getCambio() || ( !getFoto() && !getArtRoto() ) ) {
-        return;
+    if (!getCambio() || (!getFoto() && !getArtRoto())) {//get y set son para usarlos fuera de la clase
+        throw ComentarioException("No es posible la devolución"); 
+        //opcion1 y buscar como recibir en catch en main O... crear custom excepction
+        return; 
     }
-
+    for (int i = 0; i < listaCompras.size(); i++)
+        for (int j = 0; j < listaCompras.size(); j++)
+            if (listaCompras[i] == ferreteria->getListaInventario()[j])
+            {
+                listaComprados.push_back(ferreteria->getListaInventario()[j]);
+            }
+    return; 
+        /*hacer una sobrecarga en cProd de == donde:
+        se comparen todos los atributos de los objetos
+        retorne false si alguno distinto
+        retorne true si todos atb son iguales
+        acá podemos implementar TRYCATCH. 
+        si cliente no posee ninguno. entonces imposible el repuesto
+        */
 }
 
-void cCliente::alquilarProducto() {
-    return;
+void cCliente::alquilarProducto(cArtHerramientas* paraAlquilar) {
+    //alquiler por dia
+    double HerrSeguro = 0.0;
+
+    //getListaCompras().push_back(paraAlquilar); ESTO ES VALIDO pero ya creamos una funcion para hacer lo mismo
+    agregarProducto(paraAlquilar);
+    //ahora genero presupuesto*= producto + seguro
+    double presuTotal = 0.0;
+    presuTotal = generarPresupuesto(listaCompras) + HerrSeguro;
+    pagarPresupuesto(presuTotal);
 }
 
-void cCliente::pagarPresupuesto() {
-    setFondos(getFondos() - generarPresupuesto(getListaCompras()));
+void cCliente::pagarPresupuesto(double temp) {
+    setFondos(getFondos() - temp);
 }
 
 vector<cProducto*> cCliente::getListaCompras() {
@@ -113,6 +137,11 @@ vector<cProducto*> cCliente::getListaCompras() {
 
 string cCliente::getTarjeta() {
     return this->tarjeta;
+}
+
+vector<cProducto*> cCliente::getListaComprados()
+{
+    return this->listaComprados;
 }
 
 bool cCliente::getBuscarRepuesto() {
@@ -133,6 +162,11 @@ bool cCliente::getCambio() {
 
 void cCliente::setListaCompras(vector<cProducto*> newListaCompras) {
     this->listaCompras = newListaCompras;
+}
+
+void cCliente::setListaComprados(vector<cProducto*> newListaComprados)
+{
+    this->listaComprados = newListaComprados;
 }
 
 void cCliente::setTarjeta(string Tarjeta) {
@@ -166,4 +200,3 @@ void cCliente::setArtRoto(bool newArtRoto) {
 void cCliente::setCambio(bool newCambio) {
     this->cambio = newCambio;
 }
-

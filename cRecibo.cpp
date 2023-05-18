@@ -1,8 +1,6 @@
 #include "cRecibo.h"
 
-// eTiposPago { tarjetaDebito, mercadoPago, efectivo, tarjetaCredito }
-
-cRecibo::cRecibo(float Pago, eTiposPago tipoPago) {
+cRecibo::cRecibo(double Pago, eTiposPago tipoPago) {
     this->pago = Pago;
     this->metodoPago = tipoPago;
 
@@ -15,7 +13,8 @@ cRecibo::cRecibo(float Pago, eTiposPago tipoPago) {
     }
 }
 
-cRecibo::cRecibo(const cRecibo& paraCopiar) {
+cRecibo::cRecibo(const cRecibo& paraCopiar)
+{
     this->pago = paraCopiar.pago;
     this->metodoPago = paraCopiar.metodoPago;
     this->cuotas = paraCopiar.cuotas;
@@ -50,8 +49,9 @@ float cRecibo::getPago() {
     return this->pago;
 }
 
-void cRecibo::setPago(float newPago) {
-    pago = newPago;
+void cRecibo::setPago(double newPago)
+{
+    this->pago = newPago;
 }
 
 unsigned int cRecibo::getCuotas() {
@@ -62,6 +62,7 @@ eTiposPago cRecibo::getTipoPago() {
     return this->metodoPago;
 }
 
-void cRecibo::setTipoPago(eTiposPago newTipoPago) {
-    this->metodoPago = newTipoPago;
+void cRecibo::setipoPago(eTiposPago newTipoPago)
+{
+    this->cuotas = newTipoPago;
 }
