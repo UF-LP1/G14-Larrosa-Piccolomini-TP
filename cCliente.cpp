@@ -1,5 +1,4 @@
 #include "cCliente.h"
-//constructor de cliente
 
 // Constructor de Cliente, los atributos del recibo y de si quiere alquilar o no, van por default
 // Siendo que no tiene recibo alguno en un principio, y no esta ddefinido de si quiere alquilar o no (false)
@@ -15,7 +14,6 @@ cCliente::cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, st
     // Lista compras no es necesario inicializarla porque comienza en nulo por default
     // Gracias C++ :)
 }
-
 
 cCliente::~cCliente() {
 }
@@ -55,82 +53,10 @@ void cCliente::imprimir() {
     cout << endl;
 }
 
-
 void cCliente::agregarProducto(cProducto* objeto) {
     this->listaCompras.push_back(objeto);
 }
-
-double cCliente::generarPresupuesto(vector<cProducto*> ListaCompras) {
-    double suma = 0;
-    for (int i = 0; i < ListaCompras.size(); i++) {
-        suma += ListaCompras[i]->getPrecio();
-    }
-    return suma;
-}
-
-
-// Funciones sin realizar (a desarrollar)
-void cCliente::comprarProducto() {
-    double aPagar = generarPresupuesto(getListaCompras());
-    if (aPagar > getFondos()) {
-        // NO SE QUE TENEMOS QUE TIRAR, PERO ESTA LA IDEA
-        // EL CATCH SE HACE EN EL MAIN
-        throw;
-    }
-    pagarPresupuesto(aPagar);
-
-    // Hay que hacer que en lista se queden todos los productos que NO pudo comprar el cliente
-    // Puede ser un metodo separado
-}   
-
-
-void cCliente::comprarRepuesto() {
-    if (!getBuscarRepuesto()) 
-        return;
-
-}
-//puede q precio varie. si precio+caro. cliente paga diferencia. si precio+barato yo se la pongo
-void cCliente::cambiarProd(cFerreteria* ferreteria) {
-
-    int j = 0;
-    
-    if (!getCambio() || (!getFoto() && !getArtRoto())) {//get y set son para usarlos fuera de la clase
-        throw ComentarioException("No es posible la devolución"); 
-        //opcion1 y buscar como recibir en catch en main O... crear custom excepction
-        return; 
-    }
-    for (int i = 0; i < listaCompras.size(); i++)
-        for (int j = 0; j < listaCompras.size(); j++)
-            if (listaCompras[i] == ferreteria->getListaInventario()[j])
-            {
-                listaComprados.push_back(ferreteria->getListaInventario()[j]);
-            }
-    return; 
-        /*hacer una sobrecarga en cProd de == donde:
-        se comparen todos los atributos de los objetos
-        retorne false si alguno distinto
-        retorne true si todos atb son iguales
-        acá podemos implementar TRYCATCH. 
-        si cliente no posee ninguno. entonces imposible el repuesto
-        */
-}
-
-void cCliente::alquilarProducto(cArtHerramientas* paraAlquilar) {
-    //alquiler por dia
-    double HerrSeguro = 0.0;
-
-    //getListaCompras().push_back(paraAlquilar); ESTO ES VALIDO pero ya creamos una funcion para hacer lo mismo
-    agregarProducto(paraAlquilar);
-    //ahora genero presupuesto*= producto + seguro
-    double presuTotal = 0.0;
-    presuTotal = generarPresupuesto(listaCompras) + HerrSeguro;
-    pagarPresupuesto(presuTotal);
-}
-
-void cCliente::pagarPresupuesto(double temp) {
-    setFondos(getFondos() - temp);
-}
-
+//implementaciones exportadas a duenyo
 vector<cProducto*> cCliente::getListaCompras() {
     return this->listaCompras;
 }
@@ -139,8 +65,7 @@ string cCliente::getTarjeta() {
     return this->tarjeta;
 }
 
-vector<cProducto*> cCliente::getListaComprados()
-{
+vector<cProducto*> cCliente::getListaComprados() {
     return this->listaComprados;
 }
 
@@ -164,8 +89,7 @@ void cCliente::setListaCompras(vector<cProducto*> newListaCompras) {
     this->listaCompras = newListaCompras;
 }
 
-void cCliente::setListaComprados(vector<cProducto*> newListaComprados)
-{
+void cCliente::setListaComprados(vector<cProducto*> newListaComprados) {
     this->listaComprados = newListaComprados;
 }
 

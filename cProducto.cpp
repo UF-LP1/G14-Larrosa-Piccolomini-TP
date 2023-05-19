@@ -2,14 +2,9 @@
 
 // Inicializa un producto dandole el precio y especificaciones por parametro
 // Por default el envoltorio esta nuevo (true)
-cProducto::cProducto(double Precio, const string Medidas, bool envoltorio) : medidas(Medidas) {
+cProducto::cProducto(double Precio, const string Medidas) : medidas(Medidas) {
     this->precio = Precio;
-    this->envoltorio = envoltorio;
-}
-cProducto::cProducto(const cProducto& otro) : medidas(otro.medidas)
-{
-    this->precio = otro.precio;
-    this->envoltorio = otro.envoltorio;
+    this->envoltorio = true;
 }
 
 cProducto::cProducto(const cProducto& paraCopíar) : medidas(paraCopíar.medidas) {
@@ -20,6 +15,16 @@ cProducto::cProducto(const cProducto& paraCopíar) : medidas(paraCopíar.medidas) 
 // Va vacio, no hay que hacer ningun delete
 cProducto::~cProducto() {
 }
+
+/*
+vector<cProducto*> cProducto::getListaInventario() {
+    return this->inventarioProdu;
+}
+
+void cProducto::setListaInventario(vector<cProducto*> newLista) {
+    this->inventarioProdu = newLista;
+}
+*/
 
 // Retorna el precio del objeto
 double cProducto::getPrecio() {

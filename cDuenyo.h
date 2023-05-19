@@ -4,6 +4,7 @@
 #include "cEmpleado.h"
 #include "cProducto.h"
 #include "cRecibo.h"
+#include "cCliente.h"
 
 class cDuenyo : public cEmpleado {
 	vector<cRecibo*> listaRecibos;
@@ -14,16 +15,25 @@ public:
 
 	virtual void imprimir();
 
+	//funciones importadas desde cliente
+	double generarPresupuesto(vector<cProducto*> ListaCompras);
+	void comprarProducto(cCliente* clienteAtendido);
+	void comprarRepuesto(cCliente* clienteAtendido);
+	void cambiarProd(/*cFerreteria* ferreteriaBala,*/cCliente* clienteAtendido);
+	void pagarPresupuesto(double temp, cCliente* clienteAtendido);
+	void alquilarProducto(cArtHerramientas* paraAlquilar, cCliente* clienteAtendido);
+
 	cRecibo* generarRecibo();
 	void atenderCliente();
-	double cobrarPago(vector<cProducto*> listaCompras);
-	void calcularVuelto(float montoCompra);
+	double cobrarPago(cCliente* alguien);
 
 	vector<cRecibo*> getListaRecibos();
 	void setListaRecibos(vector<cRecibo*> newListado);
 
 	double getRecaudaciones();
 	void setRecaudaciones(double newRecaudaciones);
+
+	friend class cFerreteria;
 };
 
 #endif //_CDUENYO_H

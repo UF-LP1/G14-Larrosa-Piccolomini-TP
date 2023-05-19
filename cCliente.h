@@ -20,7 +20,8 @@
 class cCliente : public cPersona {
 
 private:
-    // Lista de punteros de tipo producto, donde cada uno de estos punteros puede apuntar a las clases hijas
+    // Lista de punteros de tipo producto
+    // donde cada uno de estos punteros puede apuntar a las clases hijas
     vector<cProducto*> listaCompras;
     vector<cProducto*> listaComprados;
     bool buscaRepuesto;
@@ -40,12 +41,6 @@ public:
     virtual void imprimir();
 
     void agregarProducto(cProducto* objeto);
-    double generarPresupuesto(vector<cProducto*> ListaCompras);
-    void comprarProducto();
-    void comprarRepuesto();
-    void cambiarProd(cFerreteria* ferreteria);
-    void alquilarProducto(cArtHerramientas* paraAlquilar );
-    void pagarPresupuesto(double temp);
 
     void setListaCompras(vector<cProducto*> newListaCompras);
     void setListaComprados(vector<cProducto*> newListaComprados);
@@ -67,6 +62,7 @@ public:
     double getFondos();
 
     friend class cFerreteria; // ta bien o no dijo sirne
+    friend class cDuenyo;
 };
 
 #endif //_CCERRAJERO_H

@@ -5,16 +5,18 @@
 
 class cProducto {
 private:
-
+    // vector<cProducto*> inventarioProdu;
     double precio;
     const string medidas;
     bool envoltorio;
 
 public:    
-    cProducto(double Precio, const string Medidas, bool envoltorio);
+    cProducto(double Precio, const string Medidas);
     cProducto(const cProducto& otro);
     ~cProducto();
 
+    // vector<cProducto*> getListaInventario();
+    // void setListaInventario(vector<cProducto*> newLista);
     double getPrecio();
     void setPrecio(double Precio);
 
@@ -27,8 +29,6 @@ public:
     }
     //Para sobrecargar el operador de comparación en cada clase,
     //debes implementar la función operator== correspondiente en cada una de ellas.
-
-
 
     friend class cArtCerraje;
     friend class cArtBanyo;

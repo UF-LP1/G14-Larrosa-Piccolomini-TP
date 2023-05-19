@@ -19,7 +19,7 @@ public:
     
     void imprimir();
 
-    float getPago();
+    double getPago();
 
     eTiposPago getTipoPago();
     void setipoPago(eTiposPago tipoPago);

@@ -12,7 +12,6 @@ cFerreteria::cFerreteria(const string Name, const string Adress, const string Te
     this->despachante = nullptr;
 }
 
-// Va vacio, no hay que hacer ningun delete
 cFerreteria::~cFerreteria() {
     delete duenyo;
     delete plomero;
@@ -78,7 +77,7 @@ void cFerreteria::setInventario(cInventario* newInventario) {
 }
 
 cInventario* cFerreteria::getInventario() {
-    return inventario;
+    return this->inventario;
 }
 
 // Retorna la cantidad de fondos del local

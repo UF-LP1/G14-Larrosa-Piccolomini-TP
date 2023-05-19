@@ -13,8 +13,7 @@ cRecibo::cRecibo(double Pago, eTiposPago tipoPago) {
     }
 }
 
-cRecibo::cRecibo(const cRecibo& paraCopiar)
-{
+cRecibo::cRecibo(const cRecibo& paraCopiar) {
     this->pago = paraCopiar.pago;
     this->metodoPago = paraCopiar.metodoPago;
     this->cuotas = paraCopiar.cuotas;
@@ -45,7 +44,7 @@ void cRecibo::imprimir() {
     cout << "Monto del Recibo: " << getPago() << "\tTipo de pago: " << temp << "\tCantidad de cuotas: " << getCuotas() << endl << endl;
 }
 
-float cRecibo::getPago() {
+double cRecibo::getPago() {
     return this->pago;
 }
 
