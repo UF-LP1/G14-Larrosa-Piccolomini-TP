@@ -1,63 +1,33 @@
-﻿  cArtBanyo.cpp
-  cArtBazar.cpp
-  cArtCerraje.cpp
-  cArtElect.cpp
-  cArtFerre.cpp
-  cArtHerramientas.cpp
-  cCerrajero.cpp
-  cCliente.cpp
-D:\Favaloro\2023\1C\LP1\TP3\cDespachante.h(10,13): error C2143: error de sintaxis: falta ';' delante de '*'
-D:\Favaloro\2023\1C\LP1\TP3\cDespachante.h(10,13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-D:\Favaloro\2023\1C\LP1\TP3\cDespachante.h(10,23): error C2238: símbolos (token) inesperados delante de ';'
-D:\Favaloro\2023\1C\LP1\TP3\cDespachante.h(19,13): error C2143: error de sintaxis: falta ';' delante de '*'
-D:\Favaloro\2023\1C\LP1\TP3\cDespachante.h(19,13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-D:\Favaloro\2023\1C\LP1\TP3\cDespachante.h(19,28): error C2238: símbolos (token) inesperados delante de ';'
-D:\Favaloro\2023\1C\LP1\TP3\cDespachante.h(20,22): error C2061: error de sintaxis: identificador 'cCliente'
+﻿  cCliente.cpp
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.h(46,22): error C2061: error de sintaxis: identificador 'cFerreteria'
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.cpp(93,16): error C2511: 'void cCliente::cambiarProd(cFerreteria *)': la función miembro sobrecargada no se ha encontrado en 'cCliente'
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.h(20,7): message : vea la declaración de 'cCliente'
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.cpp(97,10): error C2352: 'cCliente::getCambio': una llamada de una función miembro no estática requiere un objeto
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.h(66,10): message : vea la declaración de 'cCliente::getCambio'
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.cpp(97,27): error C2352: 'cCliente::getFoto': una llamada de una función miembro no estática requiere un objeto
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.h(64,10): message : vea la declaración de 'cCliente::getFoto'
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.cpp(97,41): error C2352: 'cCliente::getArtRoto': una llamada de una función miembro no estática requiere un objeto
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.h(65,10): message : vea la declaración de 'cCliente::getArtRoto'
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.cpp(104): error C2597: referencia no válida a miembro no static 'cCliente::listaCompras'
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.cpp(104): error C3867: 'cCliente::listaCompras': sintaxis no estándar; utilice '&' para crear un puntero al miembro
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.cpp(104): error C2568: '[': no se puede resolver la sobrecarga de funciones
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.cpp(104): error C2027: uso del tipo 'cFerreteria' sin definir
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.h(69,18): message : vea la declaración de 'cFerreteria'
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.cpp(106,52): error C2027: uso del tipo 'cFerreteria' sin definir
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.h(69,18): message : vea la declaración de 'cFerreteria'
   cDespachante.cpp
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(27,17): error C2143: error de sintaxis: falta ';' delante de '*'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(27,17): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(27,30): error C2238: símbolos (token) inesperados delante de ';'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(40,25): error C2061: error de sintaxis: identificador 'cDespachante'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(45,17): error C2143: error de sintaxis: falta ';' delante de '*'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(45,17): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(45,35): error C2238: símbolos (token) inesperados delante de ';'
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.h(46,22): error C2061: error de sintaxis: identificador 'cFerreteria'
   cDuenyo.cpp
 D:\Favaloro\2023\1C\LP1\TP3\cDuenyo.cpp(70,15): error C2084: la función 'void cDuenyo::setRecaudaciones(double)' ya tiene un cuerpo
 D:\Favaloro\2023\1C\LP1\TP3\cDuenyo.cpp(66,15): message : vea la definición anterior de 'setRecaudaciones'
   cFerreteria.cpp
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(27,17): error C2143: error de sintaxis: falta ';' delante de '*'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(27,17): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(27,30): error C2238: símbolos (token) inesperados delante de ';'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(40,25): error C2061: error de sintaxis: identificador 'cDespachante'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(45,17): error C2143: error de sintaxis: falta ';' delante de '*'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(45,17): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(45,35): error C2238: símbolos (token) inesperados delante de ';'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.cpp(12,11): error C2039: "despachante": no es un miembro de "cFerreteria"
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(13,7): message : vea la declaración de 'cFerreteria'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.cpp(20,12): error C2065: 'despachante': identificador no declarado
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.cpp(20,23): error C2541: 'delete': no se pueden eliminar objetos que no sean punteros
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.cpp(47,19): error C2511: 'void cFerreteria::setDespachante(cDespachante *)': la función miembro sobrecargada no se ha encontrado en 'cFerreteria'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(13,7): message : vea la declaración de 'cFerreteria'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.cpp(48,5): error C2671: 'cFerreteria::setDespachante': las funciones miembro static no tienen punteros 'this'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.cpp(63,28): error C2039: "getDespachante": no es un miembro de "cFerreteria"
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(13,7): message : vea la declaración de 'cFerreteria'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.cpp(64,12): error C2355: 'this': solo se puede hacer referencia a this en funciones miembro no estáticas o inicializadores de miembro de datos no estáticos
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.cpp(108,20): error C2065: 'despachante': identificador no declarado
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.h(46,22): error C2061: error de sintaxis: identificador 'cFerreteria'
   cProducto.cpp
 D:\Favaloro\2023\1C\LP1\TP3\cProducto.cpp(15,12): error C2084: la función 'cProducto::cProducto(const cProducto &)' ya tiene un cuerpo
 D:\Favaloro\2023\1C\LP1\TP3\cProducto.cpp(9,12): message : vea la definición anterior de '{ctor}'
-  cRecibo.cpp
-D:\Favaloro\2023\1C\LP1\TP3\cRecibo.cpp(49,16): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Favaloro\2023\1C\LP1\TP3\cRecibo.cpp(52,15): error C2039: "setPago": no es un miembro de "cRecibo"
-D:\Favaloro\2023\1C\LP1\TP3\cRecibo.h(7,7): message : vea la declaración de 'cRecibo'
-D:\Favaloro\2023\1C\LP1\TP3\cRecibo.cpp(54,5): error C2355: 'this': solo se puede hacer referencia a this en funciones miembro no estáticas o inicializadores de miembro de datos no estáticos
-  Exception.cpp
   TP2Ferre.cpp
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(27,17): error C2143: error de sintaxis: falta ';' delante de '*'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(27,17): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(27,30): error C2238: símbolos (token) inesperados delante de ';'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(40,25): error C2061: error de sintaxis: identificador 'cDespachante'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(45,17): error C2143: error de sintaxis: falta ';' delante de '*'
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(45,17): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-D:\Favaloro\2023\1C\LP1\TP3\cFerreteria.h(45,35): error C2238: símbolos (token) inesperados delante de ';'
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.h(46,22): error C2061: error de sintaxis: identificador 'cFerreteria'
+D:\Favaloro\2023\1C\LP1\TP3\TP2Ferre.cpp(194,11): error C2660: 'cCliente::cambiarProd': la función no acepta 1 argumentos
+D:\Favaloro\2023\1C\LP1\TP3\cCliente.h(46,10): message : vea la declaración de 'cCliente::cambiarProd'
+D:\Favaloro\2023\1C\LP1\TP3\TP2Ferre.cpp(194,11): message : al hacer coincidir la lista de argumentos '(cFerreteria *)'
   Generando código...

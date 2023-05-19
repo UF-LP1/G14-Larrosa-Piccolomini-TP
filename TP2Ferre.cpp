@@ -187,8 +187,7 @@ int main(void) {
 	reciboPrueba1->imprimir();
 	delete reciboPrueba1;
 
-	//actualizacion
-	
+	/* TRY CATCH EN COMENTARIO POR CLIENTE
 	try {
 
 		cliente4->cambiarProd(ferreteriaBala);
@@ -198,6 +197,7 @@ int main(void) {
 	{
 		e.what();
 	};
+	*/
 	// Deletes de la Ferreteria
 	delete ferreteriaBala;
 	delete inventarioBala;

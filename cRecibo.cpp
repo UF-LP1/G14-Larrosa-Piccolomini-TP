@@ -57,7 +57,6 @@ eTiposPago cRecibo::getTipoPago() {
     return this->metodoPago;
 }
 
-void cRecibo::setipoPago(eTiposPago newTipoPago)
-{
+void cRecibo::setipoPago(eTiposPago newTipoPago) {
     this->cuotas = newTipoPago;
 }

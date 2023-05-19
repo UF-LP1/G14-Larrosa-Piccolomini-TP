@@ -14,10 +14,7 @@
 #include "cArtFerre.h"
 #include "cArtHerramientas.h"
 
-
-#include "cArtHerramientas.h"
 #include "cRecibo.h"
-#include "cFerreteria.h"
 #include "Exception.h"
 
 class cCliente : public cPersona {
