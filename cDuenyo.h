@@ -9,17 +9,20 @@
 class cDuenyo : public cEmpleado {
 	vector<cRecibo*> listaRecibos;
 	double recaudaciones;
+	cFerreteria* local;
 public:
 	cDuenyo(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
 	~cDuenyo();
 
+	void setLocal(cFerreteria* temp);
+	cFerreteria* getLocal();
 	virtual void imprimir();
 
-	//funciones importadas desde cliente
+	// Funciones importadas desde cliente
 	double generarPresupuesto(vector<cProducto*> ListaCompras);
 	void comprarProducto(cCliente* clienteAtendido);
 	void comprarRepuesto(cCliente* clienteAtendido);
-	void cambiarProd(/*cFerreteria* ferreteriaBala,*/cCliente* clienteAtendido);
+	void cambiarProd(cCliente* clienteAtendido);
 	void pagarPresupuesto(double temp, cCliente* clienteAtendido);
 	void alquilarProducto(cArtHerramientas* paraAlquilar, cCliente* clienteAtendido);
 
