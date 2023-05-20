@@ -1,22 +1,2 @@
-﻿  cArtBanyo.cpp
-  cArtBazar.cpp
-  cArtCerraje.cpp
-  cArtElect.cpp
-  cArtFerre.cpp
-  cArtHerramientas.cpp
-  cCerrajero.cpp
-  cCliente.cpp
-  cDespachante.cpp
-  cDuenyo.cpp
-  cEmpleado.cpp
-  cFerreteria.cpp
-  cInventario.cpp
-  cPersona.cpp
-  cPlomero.cpp
-  cProducto.cpp
-  cRecibo.cpp
-D:\Favaloro\2023\1C\LP1\TP3\cRecibo.cpp(49,16): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
-  Exception.cpp
-  TP2Ferre.cpp
-  Generando código...
+﻿  TP2Ferre.cpp
   TP2Ferre.vcxproj -> D:\Favaloro\2023\1C\LP1\TP3\x64\Debug\TP2Ferre.exe
