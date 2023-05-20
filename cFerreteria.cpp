@@ -24,7 +24,7 @@ void cFerreteria::setListaInventario(vector<cProducto*> newLista) {
 }
 
 vector<cProducto*> cFerreteria::getListaInventario() {
-    return listaInventario;
+    return this->listaInventario;
 }
 
 void cFerreteria::agregarAlListado(cProducto* newElement) {

@@ -49,7 +49,6 @@ int main(void) {
 	cerrajero->imprimir();
 
 	// Al jefe le asignamos el local
-	jefe->setLocal(ferreteriaBala);
 
 	// Asignamos los empleados al local
 	ferreteriaBala->setDuenyo(jefe);

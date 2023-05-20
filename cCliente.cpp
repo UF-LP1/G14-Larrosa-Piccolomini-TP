@@ -18,6 +18,16 @@ cCliente::cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, st
 cCliente::~cCliente() {
 }
 
+vector<cProducto*> cCliente::getListaInventario()
+{
+    return this->listaInventario;
+}
+
+void cCliente::setListaInventario(vector<cProducto*> newLista)
+{
+    this->listaInventario = newLista;
+}
+
 void cCliente::imprimir() {
     string temp = "";
     cout << getDni() << "\t" << getName() << "\t" << getTel() << "\t" << getEmail() << "\t" << getAdress() << "\n";

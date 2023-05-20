@@ -6,16 +6,15 @@
 #include "cRecibo.h"
 #include "cCliente.h"
 
+class cFerreteria; // Declaración anticipada de la clase cFerreteria
+
 class cDuenyo : public cEmpleado {
 	vector<cRecibo*> listaRecibos;
 	double recaudaciones;
-	cFerreteria* local;
 public:
 	cDuenyo(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
 	~cDuenyo();
 
-	void setLocal(cFerreteria* temp);
-	cFerreteria* getLocal();
 	virtual void imprimir();
 
 	// Funciones importadas desde cliente
@@ -25,7 +24,7 @@ public:
 	void cambiarProd(cCliente* clienteAtendido);
 	void pagarPresupuesto(double temp, cCliente* clienteAtendido);
 	void alquilarProducto(cArtHerramientas* paraAlquilar, cCliente* clienteAtendido);
-
+	
 	cRecibo* generarRecibo();
 	void atenderCliente();
 	double cobrarPago(cCliente* alguien);

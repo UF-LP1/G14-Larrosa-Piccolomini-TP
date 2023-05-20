@@ -9,14 +9,6 @@ cDuenyo::cDuenyo(double sueldo, const string Dni, const string Name, string Tel,
 cDuenyo::~cDuenyo() {
 }
 
-void cDuenyo::setLocal(cFerreteria* temp) {
-	this->local = temp;
-}
-
-cFerreteria* cDuenyo::getLocal() {
-	return this->local;
-}
-
 void cDuenyo::imprimir() {
 	cout << getDni() << "\t" << getName() << "\t" << getTel() << "\t" << getEmail() << "\t" << getAdress() << "\n";
 	cout << "Cobra: " << getSueldo() << "\tTiene Recaudado: " << getRecaudaciones() << endl;
@@ -51,7 +43,7 @@ void cDuenyo::comprarProducto(cCliente* clienteAtendido) {
 }
 
 // Puede que precio varie. si precio+caro. cliente paga diferencia. si precio+barato yo se la pongo DESARROLLAR
-void cDuenyo::cambiarProd(/*cFerreteria**/cCliente* clienteAtendido) {
+void cDuenyo::cambiarProd(cCliente* clienteAtendido) {
 
 	int j = 0;
 
@@ -63,17 +55,14 @@ void cDuenyo::cambiarProd(/*cFerreteria**/cCliente* clienteAtendido) {
 		return;
 	}
 
-
-	/* ESTO ROMPE EL CODIGO NO SABEMOS PORQUE
+	// ... Trabaja con la listaInventario como sea necesario ...
 	for (int i = 0; i < clienteAtendido->listaCompras.size(); i++) {	
-		for (int j = 0; j < local->getListaInventario().size(); j++) {
-			if (clienteAtendido->listaCompras[i] == local->getListaInventario()[j]) {
-				clienteAtendido->listaComprados.push_back(local->getListaInventario()[j]);
+		for (int j = 0; j < clienteAtendido->getListaInventario().size(); j++) {
+			if (clienteAtendido->listaCompras[i] == clienteAtendido->getListaInventario()[j]) {
+				clienteAtendido->listaComprados.push_back(clienteAtendido->getListaInventario()[j]);
 			}
 		}
 	}
-	*/
-
 
 	/*
 	** Hacer una sobrecarga en cProd de == donde:
