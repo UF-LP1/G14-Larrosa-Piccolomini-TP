@@ -16,6 +16,7 @@ public:
 
     double getPrecio();
     void setPrecio(double Precio);
+    string getMedidas();
 
     void setEnvoltorio(bool newEnvol);
     bool getEnvoltorio();
