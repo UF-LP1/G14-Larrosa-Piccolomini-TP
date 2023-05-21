@@ -3,9 +3,10 @@
 
 #include "cPersona.h"
 
-//#include "cProducto.h"
-//#include "cProducto.h" CONVIENE inlcuya a las hijas que YA incluyen al padre(producto). 
-//Analogia Padre mirando a hijo
+/*#include "cProducto.h"
+**#include "cProducto.h" CONVIENE inlcuya a las hijas que YA incluyen al padre(producto). 
+**Analogia Padre mirando a hijo
+*/
 
 #include "cArtBanyo.h"
 #include "cArtBazar.h"

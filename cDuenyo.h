@@ -17,16 +17,16 @@ public:
 
 	virtual void imprimir();
 
-	// Funciones importadas desde cliente
 	double generarPresupuesto(vector<cProducto*> ListaCompras);
 	void comprarProducto(cCliente* clienteAtendido);
-	void comprarRepuesto(cCliente* clienteAtendido);
+	double comprarRepuesto(cCliente* clienteAtendido);
 	void cambiarProd(cCliente* clienteAtendido);
+	double obtenerPrecio(vector <cProducto*> listToCompare, int pos);
 	void pagarPresupuesto(double temp, cCliente* clienteAtendido);
 	void alquilarProducto(cArtHerramientas* paraAlquilar, cCliente* clienteAtendido);
 	
-	cRecibo* generarRecibo();
-	void atenderCliente();
+	cRecibo* generarRecibo(); //imprime los datos como si en papel
+	//borro atenderCliente. se implementa como menu en main
 	double cobrarPago(cCliente* alguien);
 
 	vector<cRecibo*> getListaRecibos();
@@ -37,5 +37,4 @@ public:
 
 	friend class cFerreteria;
 };
-
 #endif //_CDUENYO_H
