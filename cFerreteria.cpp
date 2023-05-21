@@ -13,10 +13,17 @@ cFerreteria::cFerreteria(const string Name, const string Adress, const string Te
 }
 
 cFerreteria::~cFerreteria() {
-    delete duenyo;
-    delete plomero;
-    delete cerrajero;
-    delete despachante;
+    delete this->duenyo;
+    delete this->plomero;
+    delete this->cerrajero;
+    delete this->despachante;
+
+    delete this->inventario;
+    
+    int i = 0;
+    for (i = 0; i < this->listaInventario.size(); i++) {
+        delete this->listaInventario[i];
+    }
 }
 
 void cFerreteria::setListaInventario(vector<cProducto*> newLista) {
@@ -28,7 +35,7 @@ vector<cProducto*> cFerreteria::getListaInventario() {
 }
 
 void cFerreteria::agregarAlListado(cProducto* newElement) {
-    getListaInventario().push_back(newElement);
+    this->listaInventario.push_back(newElement);
 }
 
 void cFerreteria::setDuenyo(cDuenyo* Duenyo) {

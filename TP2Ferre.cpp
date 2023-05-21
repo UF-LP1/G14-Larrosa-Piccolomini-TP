@@ -48,14 +48,11 @@ int main(void) {
 	despachante->imprimir();
 	cerrajero->imprimir();
 
-	// Al jefe le asignamos el local
-
 	// Asignamos los empleados al local
 	ferreteriaBala->setDuenyo(jefe);
 	ferreteriaBala->setPlomero(plomero);
 	ferreteriaBala->setDespachante(despachante);
 	ferreteriaBala->setCerrajero(cerrajero);
-
 
 	// Ahora comenzamos armando todos los objetos que representen productos del local
 	// Primero los de baño
@@ -64,17 +61,17 @@ int main(void) {
 	cArtBanyo* paqueteVirulana1 = new cArtBanyo(virulana, 50, "Ultrafina, 6 unidades");
 	cArtBanyo* paqueteVirulana2 = new cArtBanyo(virulana, 60, "Fina, 6 unidades");
 	cArtBanyo* paqueteLanaMetal1 = new cArtBanyo(lanaMetal, 70, "Gruesa, 4 unidades");
-
+	
 	ferreteriaBala->agregarAlListado(barralCortina1);
 	ferreteriaBala->agregarAlListado(cepilloLimpieza1);
 	ferreteriaBala->agregarAlListado(paqueteVirulana1);
 	ferreteriaBala->agregarAlListado(paqueteVirulana2);
 	ferreteriaBala->agregarAlListado(paqueteLanaMetal1);
-
+	
 	// Los de bazar
 	cArtBazar* tenderRopa1 = new cArtBazar(tenderesRopa, 250, "Blanco, de metal");
 	cArtBazar* tenderRopa2 = new cArtBazar(tenderesRopa, 200, "Blanco, de plastico");
-	cArtBazar* tablasPlanchar1 = new cArtBazar(tablasPlanchar, 280, "Gris, 35cm de ancho y 145cm de largo");
+	cProducto* tablasPlanchar1 = new cArtBazar(tablasPlanchar, 280, "Gris, 35cm de ancho y 145cm de largo");
 	cArtBazar* soga1 = new cArtBazar(sogas, 50, "Nylon, 1 metro, fina");
 	cArtBazar* soga2 = new cArtBazar(sogas, 50, "Nylon, 1 metro, gruesa");
 	cArtBazar* soga3 = new cArtBazar(sogas, 45, "Cuerda, 1 metro, fina");
@@ -82,6 +79,7 @@ int main(void) {
 	cArtBazar* tablasInodoro2 = new cArtBazar(tablasInodoro, 100, "Negra");
 	cArtBazar* impBanyera1 = new cArtBazar(impBanyera, 70, "Jabonera");
 
+	// Los agregamos al listado de 
 	ferreteriaBala->agregarAlListado(tenderRopa1);
 	ferreteriaBala->agregarAlListado(tenderRopa2);
 	ferreteriaBala->agregarAlListado(tablasPlanchar1);
@@ -97,56 +95,65 @@ int main(void) {
 	cArtCerraje* llaveSimple2 = new cArtCerraje(*llaveSimple1);
 	cArtCerraje* llaveDobleTamb1 = new cArtCerraje(llaveDobleTambor, 100, "Bronce, mango cuadrado");
 	cArtCerraje* llaveCod1 = new cArtCerraje(llaveCod, 150, "Acero, mango cuadrado");
-
+	
 	ferreteriaBala->agregarAlListado(llaveSimple1);
 	ferreteriaBala->agregarAlListado(llaveSimple2);
 	ferreteriaBala->agregarAlListado(llaveDobleTamb1);
 	ferreteriaBala->agregarAlListado(llaveCod1);
-
+	
 	// Los de electricidad
 	cArtElect* cable1 = new cArtElect(cables, 25, "20 metros de largo, 1 cm de grueso");
 	cArtElect* lampara1 = new cArtElect(lamparas, 165, "30 cm de alto");
 	cArtElect* portaLampara1 = new cArtElect(portalamparas, 20, "10 cm de alto x 3 cm de radio");
 	cArtElect* enchufe1 = new cArtElect(enchufes, 30, "5 cm de alto x 7 cm de largo");
-
+	
 	ferreteriaBala->agregarAlListado(cable1);
 	ferreteriaBala->agregarAlListado(lampara1);
 	ferreteriaBala->agregarAlListado(portaLampara1);
 	ferreteriaBala->agregarAlListado(enchufe1);
-
+	
 	// Los de ferreteria generica
 	cArtFerre* paqueteClavos1 = new cArtFerre(clavos, 5, "50 Clavos de hierro");
 	cArtFerre* paqueteTarugos1 = new cArtFerre(tarugos, 10, "15 tarugos de hierro");
 	cArtFerre* paqueteTornillos1 = new cArtFerre(tornillos, 20, "30 tornillos de hierro");
-
+	
 	ferreteriaBala->agregarAlListado(paqueteClavos1);
 	ferreteriaBala->agregarAlListado(paqueteTarugos1);
 	ferreteriaBala->agregarAlListado(paqueteTornillos1);
-
+	
 	// Por ultimo, las herramientas caras
 	cArtHerramientas* amoladora1 = new cArtHerramientas(amoladora, 1000, "Roja,con bateria,marca Milwaukee");
 	cArtHerramientas* lijadora1 = new cArtHerramientas(lijadora, 900, "Verde,con bateria,marca Husqvarna");
 	cArtHerramientas* perforadora1 = new cArtHerramientas(perforadora, 2000, "Negra,con bateria,marca deWalt");
-
+	
 	ferreteriaBala->agregarAlListado(amoladora1);
 	ferreteriaBala->agregarAlListado(lijadora1);
 	ferreteriaBala->agregarAlListado(perforadora1);
+	
+	// Imprimimos las medidas de todo el inventario disponible del local
+	for (int i = 0; i< ferreteriaBala->getListaInventario().size();i++) {
+		cout << ferreteriaBala->getListaInventario()[i]->getMedidas() << endl;
+	}
+	cout << endl;
 
 	// Ahora vamos a inicializar 4 clientes
 	// Uno con mucho dinero
 	cCliente* cliente1 = new cCliente(false, false, false, false, "123", 1500, "321", "Mateo", "666", "pumas@hotmail.com", "av5");
+	cliente1->setListaInventario(listaBala);
 	// Uno pobre como yo
 	cCliente* cliente2 = new cCliente(false, false, false, false, "321", 150, "123", "Matias", "42069", "PC@hotmail.com", "av6");
+	cliente2->setListaInventario(listaBala);
 	// Uno que trae un articulo roto
 	cCliente* cliente3 = new cCliente(true, false, true, false, "777", 500, "6969", "2pac", "894", "california@love.com", "av7");
+	cliente3->setListaInventario(listaBala);
 	// Uno que quiere cambiar una compra previa
 	cCliente* cliente4 = new cCliente(false, false, false, true, "888", 500, "1234", "Grando Smokio", "555", "groove@street.com", "av8");
+	cliente4->setListaInventario(listaBala);
 	// Uno que quiere una llave magnetica
 	cCliente* cliente5 = new cCliente(false, false, false, false, "456", 1500, "654", "CJ", "472", "train@allyouhad.com", "av9");
+	cliente5->setListaInventario(listaBala);
 
 	// cliente1: Vamos con la lista de compras
-	vector<cProducto*> listaCL1;
-	cliente1->setListaCompras(listaCL1);
 	cArtBanyo* paqueteVirulanaCL1 = new cArtBanyo(virulana, 60, "Fina, 6 unidades");
 	cArtBazar* sogaCL1 = new cArtBazar(sogas, 50, "Nylon, 1 metro, gruesa");
 	cArtBazar* impBanyeraCL1 = new cArtBazar(impBanyera, 70, "Jabonera");
@@ -158,8 +165,6 @@ int main(void) {
 	cliente1->agregarProducto(lamparaCL1);
 
 	// cliente2: Lista de compras
-	vector<cProducto*> listaCL2;
-	cliente1->setListaCompras(listaCL2);
 	cArtBanyo* paqueteVirulanaCL2 = new cArtBanyo(virulana, 50, "Ultrafina, 6 unidades");
 	cArtElect* cableCL2 = new cArtElect(cables, 25, "20 metros de largo, 1 cm de grueso");
 	cArtCerraje* llaveCodCL2 = new cArtCerraje(llaveCod, 150, "Acero, mango cuadrado");
@@ -169,8 +174,6 @@ int main(void) {
 	cliente2->agregarProducto(llaveCodCL2);
 
 	// cliente3: Unico producto roto que quiere cambiar
-	vector<cProducto*> listaCL3;
-	cliente1->setListaCompras(listaCL3);
 	// Este enchufe esta roto
 	cArtElect* enchufeCL3 = new cArtElect(enchufes, 30, "5 cm de alto x 7 cm de largo");
 	cliente3->agregarProducto(enchufeCL3);
@@ -180,11 +183,8 @@ int main(void) {
 	cliente4->agregarProducto(perforadoraCL4);
 
 	// cliente5: Solo quiere una llave magnetica
-	// CORREGIR
-	cliente5->agregarProducto(perforadoraCL4);
-
-	// Desarrollo del dia de trabajo
 	cArtCerraje* llaveSolicitada = (cerrajero->hacerLlaveMag());
+	cliente5->agregarProducto(llaveSolicitada);
 
 	cliente1->imprimir();
 	cliente2->imprimir();
@@ -198,8 +198,8 @@ int main(void) {
 
 	// TRY CATCH EN COMENTARIO POR CLIENTE
 	try {
-		//cliente4->cambiarProd(ferreteriaBala);
-			//funcion a prueba
+		// cliente4->cambiarProd(ferreteriaBala);
+		// Funcion a prueba
 	}
 	catch (ComentarioException e) {
 		cout << e.what() << endl;
@@ -216,61 +216,18 @@ int main(void) {
 		cout << e.what() << endl;
 	};
 
-	// Deletes de la Ferreteria
+	// Delete de la Ferreteria
+	// Tambien deletea todo su inventario, y a sus empleados
+	// Como todo buen local en crisis argentina
 	delete ferreteriaBala;
-	delete inventarioBala;
 
-	delete barralCortina1;
-	delete cepilloLimpieza1;
-	delete paqueteVirulana1;
-	delete paqueteVirulana2;
-	delete paqueteLanaMetal1;
-
-	delete tenderRopa1;
-	delete tenderRopa2;
-	delete tablasPlanchar1;
-	delete soga1;
-	delete soga2;
-	delete soga3;
-	delete tablasInodoro1;
-	delete tablasInodoro2;
-	delete impBanyera1;
-
-	delete llaveSimple1;
-	delete llaveSimple2;
-	delete llaveDobleTamb1;
-	delete llaveCod1;
-
-	delete cable1;
-	delete lampara1;
-	delete portaLampara1;
-	delete enchufe1;
-
-	delete amoladora1;
-	delete lijadora1;
-	delete perforadora1;
-
-	// Deletes de los Clientes
+	// Genocidio de los Clientes
+	// Se eliminan tambien los objetos asignados a cada una de las listas de cada uno
 	delete cliente1;
 	delete cliente2;
 	delete cliente3;
 	delete cliente4;
 	delete cliente5;
-
-	delete paqueteVirulanaCL1;
-	delete sogaCL1;
-	delete impBanyeraCL1;
-	delete lamparaCL1;
-
-	delete paqueteVirulanaCL2;
-	delete cableCL2;
-	delete llaveCodCL2;
-
-	delete enchufeCL3;
-
-	delete perforadoraCL4;
-
-	delete llaveSolicitada;
 
 	return 0;
 }

@@ -16,15 +16,24 @@ cCliente::cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, st
 }
 
 cCliente::~cCliente() {
+    int i = 0;
+    for (i=0; i<this->listaInventario.size(); i++) {
+        delete this->listaInventario[i];
+    }
+    for (i = 0; i < this->listaCompras.size(); i++) {
+        delete this->listaCompras[i];
+    }
+    for (i = 0; i < this->listaComprados.size(); i++) {
+        delete this->listaComprados[i];
+    }
+    delete this->reciboCliente;
 }
 
-vector<cProducto*> cCliente::getListaInventario()
-{
+vector<cProducto*> cCliente::getListaInventario() {
     return this->listaInventario;
 }
 
-void cCliente::setListaInventario(vector<cProducto*> newLista)
-{
+void cCliente::setListaInventario(vector<cProducto*> newLista) {
     this->listaInventario = newLista;
 }
 
