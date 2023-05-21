@@ -3,9 +3,10 @@
 
 #include "cPersona.h"
 
-//#include "cProducto.h"
-//#include "cProducto.h" CONVIENE inlcuya a las hijas que YA incluyen al padre(producto). 
-//Analogia Padre mirando a hijo
+/*#include "cProducto.h"
+**#include "cProducto.h" CONVIENE inlcuya a las hijas que YA incluyen al padre(producto). 
+**Analogia Padre mirando a hijo
+*/
 
 #include "cArtBanyo.h"
 #include "cArtBazar.h"
@@ -22,6 +23,7 @@ class cCliente : public cPersona {
 private:
     // Lista de punteros de tipo producto
     // donde cada uno de estos punteros puede apuntar a las clases hijas
+    vector<cProducto*> listaInventario;
     vector<cProducto*> listaCompras;
     vector<cProducto*> listaComprados;
     bool buscaRepuesto;
@@ -38,6 +40,8 @@ public:
         const string Dni, const string Name, string Tel, string Email, string Adress);
     ~cCliente();
 
+    vector<cProducto*> getListaInventario();
+    void setListaInventario(vector<cProducto*> newLista);
     virtual void imprimir();
 
     void agregarProducto(cProducto* objeto);

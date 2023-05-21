@@ -9,14 +9,6 @@ cDuenyo::cDuenyo(double sueldo, const string Dni, const string Name, string Tel,
 cDuenyo::~cDuenyo() {
 }
 
-void cDuenyo::setLocal(cFerreteria* temp) {
-	this->local = temp;
-}
-
-cFerreteria* cDuenyo::getLocal() {
-	return this->local;
-}
-
 void cDuenyo::imprimir() {
 	cout << getDni() << "\t" << getName() << "\t" << getTel() << "\t" << getEmail() << "\t" << getAdress() << "\n";
 	cout << "Cobra: " << getSueldo() << "\tTiene Recaudado: " << getRecaudaciones() << endl;
@@ -51,28 +43,48 @@ void cDuenyo::comprarProducto(cCliente* clienteAtendido) {
 }
 
 // Puede que precio varie. si precio+caro. cliente paga diferencia. si precio+barato yo se la pongo DESARROLLAR
-void cDuenyo::cambiarProd(/*cFerreteria**/cCliente* clienteAtendido) {
+void cDuenyo::cambiarProd(cCliente* clienteAtendido) {
 
 	int j = 0;
 
 	if (!clienteAtendido->getCambio() || (!clienteAtendido->getFoto() && !clienteAtendido->getArtRoto())) {
-		// get y set son para usarlos fuera de la clase FUNCIONALIDAD
+		// get y set son para usarlos fuera de la clase: FUNCIONALIDAD
 
-		throw ComentarioException("No es posible la devolución");
+		throw ComentarioException("Rechazado. Brinde foto o artículo roto");
 		// opcion1 throw string y recibir en main de una O crear custom excepction
 		return;
 	}
 
-
-	/* ESTO ROMPE EL CODIGO NO SABEMOS PORQUE
+	// ... Trabaja con la listaInventario como sea necesario ...
 	for (int i = 0; i < clienteAtendido->listaCompras.size(); i++) {	
-		for (int j = 0; j < local->getListaInventario().size(); j++) {
-			if (clienteAtendido->listaCompras[i] == local->getListaInventario()[j]) {
-				clienteAtendido->listaComprados.push_back(local->getListaInventario()[j]);
+		for (int j = 0; j < clienteAtendido->getListaInventario().size(); j++) {
+			if (clienteAtendido->listaCompras[i] == clienteAtendido->getListaInventario()[j]) {
+				clienteAtendido->listaComprados.push_back(clienteAtendido->getListaInventario()[j]);
+
+				/*condición lo encontró.producto puede aparecer una única vez en la listaInventario aka folleto
+				**se dá que JUSTO la listaInvetario es = a la listaInventario usual
+				**deberia usar iteradores?---------------------------------------
+				**NECESITO COMPARAR EL PRECIO DE UN PRODUCTO ENTRE LAS DOS LISTAS
+				**CREO METODO RECIBA UNA LISTA TIPO VECTOR CPRODUCTO, RESCATO EL DOUBLE DE PRECIO
+				*/
+
+				//si quisiese modular y generar nueva funcion con el desarrollo,
+				//deberia crear varibale pos y mandarla como parametro
+				double precioOG = obtenerPrecio(clienteAtendido->getListaCompras(), i);
+				double precioFerre = obtenerPrecio(clienteAtendido->getListaInventario(), j);
+				if (precioFerre > precioOG)
+				{
+					//cliente paga la diferencia
+					pagarPresupuesto(precioFerre, clienteAtendido);
+				}
+				else {
+					double diferencia = precioFerre - precioOG;
+					clienteAtendido->setFondos(diferencia);
+				}
+
 			}
 		}
 	}
-	*/
 
 
 	/*
@@ -85,10 +97,24 @@ void cDuenyo::cambiarProd(/*cFerreteria**/cCliente* clienteAtendido) {
 	*/
 }
 
-void cDuenyo::comprarRepuesto(cCliente* clienteAtendido) {
+double cDuenyo::obtenerPrecio(vector<cProducto*> listToCompare, int pos)
+{
+	cProducto *PrecioProd = listToCompare.operator[](1);
+	double precio = PrecioProd->getPrecio();
+	
+	return precio;
+}
+
+double cDuenyo::comprarRepuesto(cCliente* clienteAtendido) {
 	if (!clienteAtendido->getBuscarRepuesto())
-		if (clienteAtendido->getFondos() > 0)
-			return;
+		return 0.0;
+	if(!clienteAtendido->getFoto() && !clienteAtendido->getArtRoto())
+		throw ComentarioException("Rechazado. Brinde foto o artículo roto");
+	if (clienteAtendido->getFondos() > 0)
+		throw ComentarioException("Fondos insuficientes");
+
+	double precioRepu = generarPresupuesto(clienteAtendido->listaCompras);
+
 }
 
 void cDuenyo::pagarPresupuesto(double temp, cCliente* clienteAtendido) {
@@ -113,12 +139,6 @@ cRecibo* cDuenyo::generarRecibo() {
 	return nullptr;
 }
 
-void cDuenyo::atenderCliente() {
-	/*
-	** que quiere: producto, servicio, o que lo coja?
-	*/
-}
-
 // Dueño cumple la funcion de cajero y realiza en tiempo de ejecucion
 double cDuenyo::cobrarPago(cCliente* alguien) {
 	if (alguien->listaCompras.empty()) {
@@ -130,7 +150,7 @@ double cDuenyo::cobrarPago(cCliente* alguien) {
 		montoTotal += alguien->listaCompras[i]->getPrecio();
 	}
 
-	// calcularVuelto(montoTotal, alguien);
+	// calcularVuelto(montoTotal, alguien); buscar en historial pusheos
 	return montoTotal;
 	// Monto será sumado a fondos de ferreteria y restado a fondos de cliente
 }
