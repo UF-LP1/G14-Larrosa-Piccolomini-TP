@@ -24,7 +24,7 @@ void cFerreteria::setListaInventario(vector<cProducto*> newLista) {
 }
 
 vector<cProducto*> cFerreteria::getListaInventario() {
-    return listaInventario;
+    return this->listaInventario;
 }
 
 void cFerreteria::agregarAlListado(cProducto* newElement) {
@@ -96,9 +96,10 @@ void cFerreteria::depositarRecaudaciones() {
     setFondos(plata);
 }
 
-// Resta los sueldos de cada empleado en parcicular del atributo fondos
-// Puede quedar negativo, significando una deuda, y en dicho caso se hace un throw al main
-// Diciendo que estamos en quiebra
+/*Resta los sueldos de cada empleado en parcicular del atributo fondos
+** Puede quedar negativo, significando una deuda, y en dicho caso se hace un throw al main
+** Diciendo que estamos en quiebra
+*/
 void cFerreteria::pagarSueldos() {
     double sumaSueldos = 0.0;
     sumaSueldos += duenyo->getSueldo();
@@ -108,16 +109,18 @@ void cFerreteria::pagarSueldos() {
 
     // Si no hay suficiente plata para poder pagar lo sueldos
     if (getFondos() < sumaSueldos) {
-        throw;
+        //catch en el main
+        throw ComentarioException("Fondos negativos. Deuda");
     }
 
     setFondos(getFondos() - sumaSueldos);
 }
 
-// Chequea si hay faltante de algun producto (cantidad = 0), y en caso de que si,
-// resta el precio de compra de fondos y reestablece dicha cantidad en en inventario de a 100
-// ACLARACION: solo se tiene el precio por el TIPO de producto, no el producto en si
-// Nos simplifica un poco la vida
+/* Chequea si hay faltante de algun producto(cantidad = 0), y en caso de que si,
+** resta el precio de compra de fondos y reestablece dicha cantidad en en inventario de a 100
+** ACLARACION: solo se tiene el precio por el TIPO de producto, no el producto en si
+** Nos simplifica un poco la vida
+*/
 void cFerreteria::reestablecerStock() {
 
     if (inventario->getArtFerre() == 0) {

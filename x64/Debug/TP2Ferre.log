@@ -15,8 +15,8 @@
   cPlomero.cpp
   cProducto.cpp
   cRecibo.cpp
-D:\Favaloro\2023\1C\LP1\TP3\cRecibo.cpp(49,16): warning C4244: 'return': conversión de 'double' a 'float'; posible pérdida de datos
   Exception.cpp
   TP2Ferre.cpp
   Generando código...
-  TP2Ferre.vcxproj -> D:\Favaloro\2023\1C\LP1\TP3\x64\Debug\TP2Ferre.exe
+C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP3 Ferreteria\cDuenyo.cpp(118): warning C4715: 'cDuenyo::comprarRepuesto': no todas las rutas de acceso de control devuelven un valor
+  TP2Ferre.vcxproj -> C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP3 Ferreteria\x64\Debug\TP2Ferre.exe

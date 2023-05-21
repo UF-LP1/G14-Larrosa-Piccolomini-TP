@@ -48,6 +48,15 @@ int main(void) {
 	despachante->imprimir();
 	cerrajero->imprimir();
 
+	// Al jefe le asignamos el local
+
+	// Asignamos los empleados al local
+	ferreteriaBala->setDuenyo(jefe);
+	ferreteriaBala->setPlomero(plomero);
+	ferreteriaBala->setDespachante(despachante);
+	ferreteriaBala->setCerrajero(cerrajero);
+
+
 	// Ahora comenzamos armando todos los objetos que representen productos del local
 	// Primero los de baño
 	cArtBanyo* barralCortina1 = new cArtBanyo(barralesCortina, 300, "Gris, 2,2 metros de largo, fijacion por sopapas");
@@ -187,25 +196,29 @@ int main(void) {
 	reciboPrueba1->imprimir();
 	delete reciboPrueba1;
 
-	/* TRY CATCH EN COMENTARIO POR CLIENTE
+	// TRY CATCH EN COMENTARIO POR CLIENTE
 	try {
-
-		cliente4->cambiarProd(ferreteriaBala);
+		//cliente4->cambiarProd(ferreteriaBala);
 			//funcion a prueba
 	}
-	catch (ComentarioException e)
-	{
-		e.what();
+	catch (ComentarioException e) {
+		cout << e.what() << endl;
 	};
-	*/
+
+	// TRY CATCH de cambiarProducto de cDuenyo
+	// A duenyo le llega un cliente con pocos fondos 
+	try {
+		jefe->comprarProducto(cliente2);
+		// cliente2 == cliente pobre (falta de fondos)
+		// Funcion a prueba
+	}
+	catch (ComentarioException e) {
+		cout << e.what() << endl;
+	};
+
 	// Deletes de la Ferreteria
 	delete ferreteriaBala;
 	delete inventarioBala;
-
-	delete jefe;
-	delete plomero;
-	delete despachante;
-	delete cerrajero;
 
 	delete barralCortina1;
 	delete cepilloLimpieza1;

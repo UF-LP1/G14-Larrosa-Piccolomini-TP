@@ -5,7 +5,6 @@
 
 class cProducto {
 private:
-    // vector<cProducto*> inventarioProdu;
     double precio;
     const string medidas;
     bool envoltorio;
@@ -15,8 +14,6 @@ public:
     cProducto(const cProducto& otro);
     ~cProducto();
 
-    // vector<cProducto*> getListaInventario();
-    // void setListaInventario(vector<cProducto*> newLista);
     double getPrecio();
     void setPrecio(double Precio);
 
