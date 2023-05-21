@@ -2,14 +2,25 @@
 #define _CCLIENTE_H
 
 #include "cPersona.h"
-#include "cProducto.h"
+
+#include "cArtBanyo.h"
+#include "cArtBazar.h"
+#include "cArtCerraje.h"
+#include "cArtElect.h"
+#include "cArtFerre.h"
+#include "cArtHerramientas.h"
+
 #include "cRecibo.h"
+#include "Exception.h"
 
+class cCliente : public cPersona {
 
-class cCliente: public cPersona {
-   
 private:
-    vector<cProducto> listaCompras;
+    // Lista de punteros de tipo producto,
+    // donde cada uno de estos punteros puede apuntar a las clases hijas
+    vector<cProducto*> listaInventario;
+    vector<cProducto*> listaCompras;
+    vector<cProducto*> listaComprados;
     bool buscaRepuesto;
     bool foto;
     bool artRoto;
@@ -19,25 +30,38 @@ private:
     cRecibo* reciboCliente;
     bool alquilerProducto;
 
-public: 
-    cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, string Tarjeta, double Fondos, 
+public:
+    cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, string Tarjeta, double Fondos,
         const string Dni, const string Name, string Tel, string Email, string Adress);
     ~cCliente();
 
-    void agregarProducto(const cProducto& objeto);
-    double generarPresupuesto(vector<cProducto> ListaCompras);
-    bool comprarProd();
-    void cambiarProd(bool, cProducto);
-    void alquilarProducto(bool, cProducto);
-    void pagarPresupuesto();
+    vector<cProducto*> getListaInventario();
+    void setListaInventario(vector<cProducto*> newLista);
+    virtual void imprimir();
 
-    void setListaCompras(vector<cProducto> newListaCompras);
+    void agregarProducto(cProducto* objeto);
+
+    void setListaCompras(vector<cProducto*> newListaCompras);
+    void setListaComprados(vector<cProducto*> newListaComprados);
     void setTarjeta(string newTarjeta);
     void setFondos(double newFondos);
     void setRecibo(cRecibo* newRecibo);
+    void setBuscarRepuesto(bool newBuscarRepuesto);
+    void setFoto(bool newFoto);
+    void setArtRoto(bool newArtRoto);
+    void setCambio(bool newCambio);
 
-    vector<cProducto> getListaCompras();
+    vector<cProducto*> getListaCompras();
+    vector<cProducto*> getListaComprados();
+    string getTarjeta();
+    bool getBuscarRepuesto();
+    bool getFoto();
+    bool getArtRoto();
+    bool getCambio();
     double getFondos();
+
+    friend class cFerreteria;
+    friend class cDuenyo;
 };
 
 #endif //_CCERRAJERO_H

@@ -8,7 +8,9 @@ private:
     eArtCerraje tipo;
 public:
     cArtCerraje(eArtCerraje Tipo, double Precio, const string Medidas);
+    cArtCerraje(const cArtCerraje& paraCopiar);
     ~cArtCerraje();
+
 };
 
 #endif //_CARTCERRAJE_H

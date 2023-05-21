@@ -9,6 +9,9 @@ private:
 public: 
     cEmpleado(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress);
     ~cEmpleado();
+
+    virtual void imprimir() = 0;
+
     double getSueldo();
     void setSueldo(double Sueldo);
     void cobrarSueldo(double Cobro);

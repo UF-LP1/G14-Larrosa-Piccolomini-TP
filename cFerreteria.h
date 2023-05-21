@@ -8,10 +8,15 @@
 #ifndef _CFERRETERIA_H
 #define _CFERRETERIA_H
 
+class cDuenyo;
+
 // MATI WAS HERE
 
 class cFerreteria {
 private:
+
+    //listaINventario static?
+    vector<cProducto*> listaInventario;
     const string name;
     const string adress;
     const string telNum;
@@ -25,28 +30,39 @@ private:
     cCerrajero* cerrajero;
     cDespachante* despachante;
 
-public: 
+public:
     cFerreteria(const string Name, const string Adress, const string TelNum, const string Email, const string PagWeb, bool Estado);
     ~cFerreteria();
+
+    //get y set lista inventario ya no son mas necesarios. te dejo the last chance para borrarlas matute
+    void setListaInventario(vector<cProducto*> newLista);
+    vector<cProducto*> getListaInventario();
+    void agregarAlListado(cProducto* newElement);
 
     void setDuenyo(cDuenyo* Duenyo);
     void setPlomero(cPlomero* Plomero);
     void setCerrajero(cCerrajero* Cerrajero);
     void setDespachante(cDespachante* Despachante);
 
+    cDuenyo* getDuenyo();
+    cPlomero* getPlomero();
+    cCerrajero* getCerrajero();
+    cDespachante* getDespachante();
+
     void setEstado(bool Abierta);
-    void setFondos(double Fondos);
+    bool getEstado();
 
+    void setInventario(cInventario* newInventario);
+    cInventario* getInventario();
 
-    void abrirLocal();
-    void cerrarLocal();
     void pagarSueldos();
-    bool chequearStock();
     void reestablecerStock();
+    void depositarRecaudaciones();
 
     double getFondos();
+    void setFondos(double Fondos);
 
-
+    friend class cDuenyo;
 };
 
 #endif //_CFERRETERIA_H

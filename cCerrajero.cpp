@@ -9,9 +9,10 @@ cCerrajero::~cCerrajero() {
 }
 
 // A esto le falta desarrollo, no se especifica el tipo de llave por ejemplo
-cArtCerraje* cCerrajero::hacerLlave() {
-    cArtCerraje* llave = nullptr;
-    return llave;
+cArtCerraje* cCerrajero::copiarLlave(const cArtCerraje& paraCopiar) {
+    cArtCerraje* nuevaLlave = nullptr;
+    nuevaLlave = new cArtCerraje(paraCopiar);
+    return nuevaLlave;
 }
 
 // Setea si esta avalada o no la autorizacion por parametro
@@ -24,9 +25,22 @@ bool cCerrajero::getAutorizacionMag() {
     return this->autorizacionMag;
 }
 
-// Setea la autorizacion como valida, y 
+// Setea la autorizacion como valida, y genera una llave mag desde 0
 cArtCerraje* cCerrajero::hacerLlaveMag() {
     setAutorizacionMag(true);
     cArtCerraje* llaveMag = nullptr;
+    llaveMag = new cArtCerraje(llaveMagne, 200, "Llave magnetica solicitada");
     return llaveMag;
+}
+
+void cCerrajero::imprimir() {
+    string temp = "";
+
+    if (getAutorizacionMag())
+        temp = "Si";
+    else
+        temp = "No";
+
+    cout << getDni() << "\t" << getName() << "\t" << getTel() << "\t" << getEmail() << "\t" << getAdress() << "\n";
+    cout << "Cobra: " <<  getSueldo() << "\t" << "Esta autorizado a fabricar una llave magnetica: " << temp << endl << endl;
 }
