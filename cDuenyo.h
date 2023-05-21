@@ -19,14 +19,16 @@ public:
 
 	double generarPresupuesto(vector<cProducto*> ListaCompras);
 	void comprarProducto(cCliente* clienteAtendido);
-	double comprarRepuesto(cCliente* clienteAtendido);
+	void comprarRepuesto(cCliente* clienteAtendido);
 	void cambiarProd(cCliente* clienteAtendido);
 	double obtenerPrecio(vector <cProducto*> listToCompare, int pos);
 	void pagarPresupuesto(double temp, cCliente* clienteAtendido);
 	void alquilarProducto(cArtHerramientas* paraAlquilar, cCliente* clienteAtendido);
-	
-	cRecibo* generarRecibo(); //imprime los datos como si en papel
-	//borro atenderCliente. se implementa como menu en main
+
+	// El duenyo imprime original y copia, del recibo de compra
+	// Se queda con el original, y la copia es asignada al ciente atendido
+	void generarRecibo(cCliente* clienteAtendido);
+
 	double cobrarPago(cCliente* alguien);
 
 	vector<cRecibo*> getListaRecibos();

@@ -1,12 +1,17 @@
 #include "cDuenyo.h"
 
 cDuenyo::cDuenyo(double sueldo, const string Dni, const string Name, string Tel, string Email, string Adress) : cEmpleado(sueldo, Dni, Name, Tel, Email, Adress) {
-	// La lista de recibos comienza con nullptr y dicha a posicion se le va a asignar el recibo del primer cliente
+	// La lista de recibos comienza con nullptr,
+	// y dicha a posicion se le va a asignar el recibo del primer cliente
 	this->listaRecibos.push_back(nullptr);
 	this->recaudaciones = 0.0;
 }
 
 cDuenyo::~cDuenyo() {
+	int i = 0;
+	for (i = 0; i < this->listaRecibos.size(); i++) {
+		delete this->listaRecibos[i];
+	}
 }
 
 void cDuenyo::imprimir() {
@@ -61,19 +66,19 @@ void cDuenyo::cambiarProd(cCliente* clienteAtendido) {
 			if (clienteAtendido->listaCompras[i] == clienteAtendido->getListaInventario()[j]) {
 				clienteAtendido->listaComprados.push_back(clienteAtendido->getListaInventario()[j]);
 
-				/*condición lo encontró.producto puede aparecer una única vez en la listaInventario aka folleto
-				**se dá que JUSTO la listaInvetario es = a la listaInventario usual
-				**deberia usar iteradores?---------------------------------------
-				**NECESITO COMPARAR EL PRECIO DE UN PRODUCTO ENTRE LAS DOS LISTAS
-				**CREO METODO RECIBA UNA LISTA TIPO VECTOR CPRODUCTO, RESCATO EL DOUBLE DE PRECIO
+				/*
+				** Condición lo encontró.producto puede aparecer una única vez en la listaInventario aka folleto
+				** Se dá que JUSTO la listaInvetario es = a la listaInventario usual
+				** Deberia usar iteradores?---------------------------------------
+				** NECESITO COMPARAR EL PRECIO DE UN PRODUCTO ENTRE LAS DOS LISTAS
+				** CREO METODO RECIBA UNA LISTA TIPO VECTOR CPRODUCTO, RESCATO EL DOUBLE DE PRECIO
 				*/
 
-				//si quisiese modular y generar nueva funcion con el desarrollo,
-				//deberia crear varibale pos y mandarla como parametro
+				// Si quisiese modular y generar nueva funcion con el desarrollo,
+				// Deberia crear varibale pos y mandarla como parametro
 				double precioOG = obtenerPrecio(clienteAtendido->getListaCompras(), i);
 				double precioFerre = obtenerPrecio(clienteAtendido->getListaInventario(), j);
-				if (precioFerre > precioOG)
-				{
+				if (precioFerre > precioOG) {
 					//cliente paga la diferencia
 					pagarPresupuesto(precioFerre, clienteAtendido);
 				}
@@ -97,23 +102,24 @@ void cDuenyo::cambiarProd(cCliente* clienteAtendido) {
 	*/
 }
 
-double cDuenyo::obtenerPrecio(vector<cProducto*> listToCompare, int pos)
-{
-	cProducto *PrecioProd = listToCompare.operator[](1);
+double cDuenyo::obtenerPrecio(vector<cProducto*> listToCompare, int pos) {
+	cProducto* PrecioProd = listToCompare.operator[](1);
 	double precio = PrecioProd->getPrecio();
 	
 	return precio;
 }
 
-double cDuenyo::comprarRepuesto(cCliente* clienteAtendido) {
-	if (!clienteAtendido->getBuscarRepuesto())
-		return 0.0;
-	if(!clienteAtendido->getFoto() && !clienteAtendido->getArtRoto())
+void cDuenyo::comprarRepuesto(cCliente* clienteAtendido) {
+	if (!clienteAtendido->getBuscarRepuesto()) {
+		return;
+	}
+	if (!clienteAtendido->getFoto() && !clienteAtendido->getArtRoto()) {
 		throw ComentarioException("Rechazado. Brinde foto o artículo roto");
-	if (clienteAtendido->getFondos() > 0)
+	}
+	if (clienteAtendido->getFondos() > 0) {
 		throw ComentarioException("Fondos insuficientes");
-
-	double precioRepu = generarPresupuesto(clienteAtendido->listaCompras);
+	}
+	double precioRepu = generarPresupuesto(clienteAtendido->getListaCompras());
 
 }
 
@@ -134,9 +140,31 @@ void cDuenyo::alquilarProducto(cArtHerramientas* paraAlquilar, cCliente* cliente
 	pagarPresupuesto(presuTotal, clienteAtendido);
 }
 
-cRecibo* cDuenyo::generarRecibo() {
-	// A desarrollar
-	return nullptr;
+void cDuenyo::generarRecibo(cCliente* clienteAtendido) {
+	double dinero = generarPresupuesto(clienteAtendido->getListaComprados());
+	unsigned int temp = rand() % 4;
+	eTiposPago tipo;
+
+	switch (temp) {
+	case 1:
+		tipo = mercadoPago;
+		break;
+	case 2:
+		tipo = efectivo;
+		break;
+	case 3:
+		tipo = tarjetaCredito;
+		break;
+	default:
+		tipo = tarjetaDebito;
+		break;
+	}
+
+	cRecibo* reciboGenerado = new cRecibo(dinero, tipo);
+	cRecibo* reciboCopia = new cRecibo(*reciboGenerado);
+
+	this->listaRecibos.push_back(reciboGenerado);
+	clienteAtendido->setRecibo(reciboCopia);
 }
 
 // Dueño cumple la funcion de cajero y realiza en tiempo de ejecucion

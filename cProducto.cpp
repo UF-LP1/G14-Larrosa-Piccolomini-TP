@@ -16,16 +16,6 @@ cProducto::cProducto(const cProducto& paraCopíar) : medidas(paraCopíar.medidas) 
 cProducto::~cProducto() {
 }
 
-/*
-vector<cProducto*> cProducto::getListaInventario() {
-    return this->inventarioProdu;
-}
-
-void cProducto::setListaInventario(vector<cProducto*> newLista) {
-    this->inventarioProdu = newLista;
-}
-*/
-
 // Retorna el precio del objeto
 double cProducto::getPrecio() {
     return this->precio;
@@ -34,6 +24,10 @@ double cProducto::getPrecio() {
 // Cambia el precio del objeto en caso de que lo necesite
 void cProducto::setPrecio(double newPrecio) {
     this->precio = newPrecio;
+}
+
+string cProducto::getMedidas() {
+    return this->medidas;
 }
 
 // Cambia el estado del envoltorio al pasado por parametro
