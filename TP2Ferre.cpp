@@ -71,7 +71,7 @@ int main(void) {
 	// Los de bazar
 	cArtBazar* tenderRopa1 = new cArtBazar(tenderesRopa, 250, "Blanco, de metal");
 	cArtBazar* tenderRopa2 = new cArtBazar(tenderesRopa, 200, "Blanco, de plastico");
-	cProducto* tablasPlanchar1 = new cArtBazar(tablasPlanchar, 280, "Gris, 35cm de ancho y 145cm de largo");
+	cArtBazar* tablasPlanchar1 = new cArtBazar(tablasPlanchar, 280, "Gris, 35cm de ancho y 145cm de largo");
 	cArtBazar* soga1 = new cArtBazar(sogas, 50, "Nylon, 1 metro, fina");
 	cArtBazar* soga2 = new cArtBazar(sogas, 50, "Nylon, 1 metro, gruesa");
 	cArtBazar* soga3 = new cArtBazar(sogas, 45, "Cuerda, 1 metro, fina");

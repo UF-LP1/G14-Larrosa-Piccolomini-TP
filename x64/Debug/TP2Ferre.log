@@ -1,9 +1,20 @@
 ﻿  TP2Ferre.cpp
+  cArtBanyo.cpp
+  cArtBazar.cpp
+  cArtCerraje.cpp
+  cArtElect.cpp
+  cArtFerre.cpp
+  cArtHerramientas.cpp
   cCerrajero.cpp
+  cCliente.cpp
   cDespachante.cpp
   cDuenyo.cpp
   cEmpleado.cpp
   cFerreteria.cpp
+  cInventario.cpp
+  cPersona.cpp
   cPlomero.cpp
+  cProducto.cpp
+  cRecibo.cpp
   Generando código...
   TP2Ferre.vcxproj -> C:\Users\54232\Desktop\Mateo\2022\BMI\LP1\TP3 Ferreteria\x64\Debug\TP2Ferre.exe
