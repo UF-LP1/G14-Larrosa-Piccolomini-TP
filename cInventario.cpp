@@ -80,4 +80,3 @@ void cInventario::setArtHerramientas(int newArt) {
     cant += aux;
     this->sArtHerramientas = newArt;
 }
-

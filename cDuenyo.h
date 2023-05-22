@@ -6,8 +6,6 @@
 #include "cRecibo.h"
 #include "cCliente.h"
 
-class cFerreteria; // Declaración anticipada de la clase cFerreteria
-
 class cDuenyo : public cEmpleado {
 	vector<cRecibo*> listaRecibos;
 	double recaudaciones;
@@ -28,8 +26,6 @@ public:
 	// El duenyo imprime original y copia, del recibo de compra
 	// Se queda con el original, y la copia es asignada al ciente atendido
 	void generarRecibo(cCliente* clienteAtendido);
-
-	double cobrarPago(cCliente* alguien);
 
 	vector<cRecibo*> getListaRecibos();
 	void setListaRecibos(vector<cRecibo*> newListado);
