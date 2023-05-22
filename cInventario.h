@@ -5,8 +5,8 @@
 
 class cInventario {
 private: 
-    // Cant contará la cantidad de productos que hay en total
-    static int cant;
+
+    static int cant; // Cuenta productos en total
     int sArtFerre;
     int sArtElect;
     int sArtBazar;
@@ -34,5 +34,4 @@ public:
 
     static int getCant();
 };
-
 #endif //_CINVENTARIO_H

@@ -19,7 +19,5 @@ public:
     bool getAutorizacionMag();
     cArtCerraje* hacerLlaveMag();
 
-
 };
-
 #endif //_CCERRAJERO_H

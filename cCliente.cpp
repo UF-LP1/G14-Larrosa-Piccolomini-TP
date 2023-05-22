@@ -1,7 +1,7 @@
 #include "cCliente.h"
 
 // Constructor de Cliente, los atributos del recibo y de si quiere alquilar o no, van por default
-// Siendo que no tiene recibo alguno en un principio, y no esta ddefinido de si quiere alquilar o no (false)
+// Siendo que no tiene recibo alguno en un principio, y no esta definido de si quiere alquilar o no (false)
 cCliente::cCliente(bool BuscarRepuesto, bool Foto, bool ArtRoto, bool Cambio, string Tarjeta, double Fondos, const string Dni, const string Name, string Tel, string Email, string Adress) : cPersona(Dni, Name, Tel, Email, Adress) {
     this->buscaRepuesto = BuscarRepuesto;
     this->foto = Foto;
@@ -75,7 +75,7 @@ void cCliente::imprimir() {
 void cCliente::agregarProducto(cProducto* objeto) {
     this->listaCompras.push_back(objeto);
 }
-//implementaciones exportadas a duenyo
+
 vector<cProducto*> cCliente::getListaCompras() {
     return this->listaCompras;
 }

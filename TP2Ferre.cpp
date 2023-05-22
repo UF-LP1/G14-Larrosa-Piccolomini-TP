@@ -136,7 +136,7 @@ int main(void) {
 	}
 	cout << endl;
 
-	// Ahora vamos a inicializar 4 clientes
+	// Ahora vamos a inicializar varios clientes
 	// Uno con mucho dinero
 	cCliente* cliente1 = new cCliente(false, false, false, false, "123", 1500, "321", "Mateo", "666", "pumas@hotmail.com", "av5");
 	cliente1->setListaInventario(listaBala);
@@ -196,21 +196,27 @@ int main(void) {
 	reciboPrueba1->imprimir();
 	delete reciboPrueba1;
 
-	// TRY CATCH EN COMENTARIO POR CLIENTE
+	// TRY CATCH de -cambiarProd-
 	try {
-		// cliente4->cambiarProd(ferreteriaBala);
-		// Funcion a prueba
+		jefe->cambiarProd(cliente3);
 	}
 	catch (ComentarioException e) {
 		cout << e.what() << endl;
 	};
 
-	// TRY CATCH de cambiarProducto de cDuenyo
+	// TRY CATCH de -comprarProducto- de cDuenyo
 	// A duenyo le llega un cliente con pocos fondos 
 	try {
 		jefe->comprarProducto(cliente2);
-		// cliente2 == cliente pobre (falta de fondos)
-		// Funcion a prueba
+		// cliente2 == (cliente pobre) (falta de fondos)
+	}
+	catch (ComentarioException e) {
+		cout << e.what() << endl;
+	};
+
+	// TRY CATCH EN pagarSueldos cFerreteria
+	try {
+		ferreteriaBala->pagarSueldos();
 	}
 	catch (ComentarioException e) {
 		cout << e.what() << endl;

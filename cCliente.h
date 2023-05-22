@@ -63,5 +63,4 @@ public:
     friend class cFerreteria;
     friend class cDuenyo;
 };
-
 #endif //_CCERRAJERO_H

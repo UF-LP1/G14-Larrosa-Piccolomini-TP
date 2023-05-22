@@ -8,8 +8,8 @@ cCerrajero::cCerrajero(bool AutorizacionMag, double sueldo, const string Dni, co
 cCerrajero::~cCerrajero() {
 }
 
-// A esto le falta desarrollo, no se especifica el tipo de llave por ejemplo
 cArtCerraje* cCerrajero::copiarLlave(const cArtCerraje& paraCopiar) {
+     //especificar tipo de llave
     cArtCerraje* nuevaLlave = nullptr;
     nuevaLlave = new cArtCerraje(paraCopiar);
     return nuevaLlave;

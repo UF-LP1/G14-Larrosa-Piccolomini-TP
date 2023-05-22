@@ -10,5 +10,4 @@ public:
     cArtBanyo(eArtBanyo Tipo, double Precio, const string Medidas);
     ~cArtBanyo();
 };
-
 #endif //_CARTBANYO_H
