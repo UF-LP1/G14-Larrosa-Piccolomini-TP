@@ -15,7 +15,5 @@ public:
     double getSueldo();
     void setSueldo(double Sueldo);
     void cobrarSueldo(double Cobro);
-
 };
-
 #endif //_CEMPLEADO_H

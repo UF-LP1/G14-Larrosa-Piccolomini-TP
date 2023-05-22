@@ -26,7 +26,7 @@ public:
         return (precio == otro.precio) && (medidas == otro.medidas) && (envoltorio == otro.envoltorio);
     }
     //Para sobrecargar el operador de comparación en cada clase,
-    //debes implementar la función operator== correspondiente en cada una de ellas.
+    //función operator== correspondiente en cada una de ellas.
 
     friend class cArtCerraje;
     friend class cArtBanyo;
@@ -35,7 +35,4 @@ public:
     friend class cArtFerre;
     friend class cArtHerramientas;
 };
-
-
-
 #endif //_CPRODUCTO_H

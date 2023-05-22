@@ -119,7 +119,6 @@ void cFerreteria::pagarSueldos() {
         //catch en el main
         throw ComentarioException("Fondos negativos. Deuda");
     }
-
     setFondos(getFondos() - sumaSueldos);
 }
 

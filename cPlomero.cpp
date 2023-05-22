@@ -10,5 +10,3 @@ void cPlomero::imprimir() {
 	cout << getDni() << "\t" << getName() << "\t" << getTel() << "\t" << getEmail() << "\t" << getAdress() << "\n";
 	cout << "Cobra: " << getSueldo() << endl << endl;
 }
-
-

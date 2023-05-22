@@ -19,7 +19,5 @@ public:
     cCliente* getAtendido();
     void setAtendido(cCliente* newAtendido);
 
-
 };
-
 #endif //_CDESPACHANTE_H
